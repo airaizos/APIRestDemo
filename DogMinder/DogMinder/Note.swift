@@ -29,8 +29,8 @@ enum PetSize: String, CaseIterable, Identifiable {
 }
 
 struct Note: Identifiable, Hashable {
-    let id = UUID()
-    let createdAt = Date.now
+    let id: UUID
+    let createdAt: Date
     
     var type: ReminderType
     var description: String
@@ -40,8 +40,11 @@ struct Note: Identifiable, Hashable {
     var comments: String?
     var measure: PetSize?
     var event: EventType?
+    var updatedAt: Date?
     
-    init(id: UUID = UUID(), type: ReminderType, description: String, value: Double? = nil, date: Date = Date.now, createdAt: Date = Date.now, comments: String? = nil, measure: PetSize?, event: EventType?) {
+    init(id: UUID = UUID(), type: ReminderType, description: String, value: Double? = nil, date: Date = Date.now, createdAt: Date = Date.now, comments: String? = nil, measure: PetSize?, event: EventType?, updatedAt: Date?) {
+        self.id = id
+        self.createdAt = createdAt
         self.type = type
         self.description = description
         self.value = value
@@ -49,9 +52,13 @@ struct Note: Identifiable, Hashable {
         self.comments = comments
         self.measure = measure
         self.event = event
+        self.updatedAt = updatedAt
     }
     
+    ///SIMPLE
     init(simpleReminder: String, date: Date, comments: String) {
+        self.id = UUID()
+        self.createdAt = Date.now
         self.type = .simple
         self.description = simpleReminder
         self.date = date
@@ -59,7 +66,10 @@ struct Note: Identifiable, Hashable {
 
     }
     
+    ///EXPENSE
     init(expense: String, amount: Double, date: Date, comments: String?) {
+        self.id = UUID()
+        self.createdAt = Date.now
         self.type = .expense
         self.description = expense
         self.value = amount
@@ -68,7 +78,10 @@ struct Note: Identifiable, Hashable {
   
     }
     
+    ///EVENT
     init(eventType: EventType, description: String, date: Date, comments: String?) {
+        self.id = UUID()
+        self.createdAt = Date.now
         self.type = .event
         self.event = eventType
         self.date = date
@@ -77,15 +90,12 @@ struct Note: Identifiable, Hashable {
         
     }
     
-//    init(general: String, date: Date, comments: String) {
-//        self.type = .general
-//        self.description = general
-//        self.date = date
-//        self.comments = comments
-//    }
-    
+    ///BODYPART
     init(bodyPart: PetSize, value: Double, date: Date, comments: String) {
+        self.id = UUID()
+        self.createdAt = Date.now
         self.type = .measure
+        self.measure = bodyPart
         self.description = "Measure for \(bodyPart.rawValue) : \(value)"
         self.value = value
         self.date = date
@@ -105,6 +115,10 @@ extension Note {
                           Note(simpleReminder: "Baño", date: "2024-02-12T19:00:00+0100".toDate(), comments: "Usar champú suave, cepillado")
    ]
     
+    static let testSimple = Note(simpleReminder: "Simple Test", date: .dateTest, comments: "Comments")
+    static let testExpense = Note(expense: "Comida", amount: 100.00, date: .dateTest, comments: "Comments")
+    static let testEvent = Note(eventType: .accident, description: "Caida", date: .dateTest, comments: "Comments")
+    static let testMeasure = Note(bodyPart: .weight, value: 10.00, date: .dateTest, comments: "Comments")
 }
 
 
