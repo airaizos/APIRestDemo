@@ -88,9 +88,21 @@ final class ViewModel {
         }
     }
 
+    ///Guarda la información dada por la vista
+    func updateNote(id: UUID, type: ReminderType, newDescription: String, newDate: Date, newComments: String, newAmount: String, newEvent:EventType, newBodyPart: PetSize) {
+        let value = Double(newAmount) ?? 0
+        
+        switch type {
+        case .simple: updateNote(simple: newDescription, id: id, newDate: newDate, newComments: newComments)
+        case .expense: updateNote(expense: newDescription, id: id, newAmount: value, newDate: newDate, newComments: newComments)
+        case .event: updateNote(event: newEvent,id: id, newDescription: newDescription, newDate: newDate, newComments: newComments)
+        case .measure: updateNote(bodyPart: newBodyPart,id: id, newValue: value, newDate: newDate, newComments: newComments)
+        }
+    }
     //MARK: Remove
     func removeNote(id: UUID) {
         notes.removeAll(where: { $0.id == id })
    
     }
+
 }

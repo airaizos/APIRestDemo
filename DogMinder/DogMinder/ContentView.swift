@@ -16,16 +16,22 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(viewModel.notes) { note in
-                    VStack(alignment:.leading){
-                        Text(note.description)
-                            .font(.headline.bold())
-                        Text(note.date.formatted(date: .abbreviated, time: .shortened))
-                            .font(.caption2)
-                            .foregroundStyle(.gray)
+                    NavigationLink {
+                        NoteDetail(noteId: note.id, viewModel: viewModel)
+                    } label:{
+                        VStack(alignment:.leading){
+                            Text(note.description)
+                                .font(.headline.bold())
+                            Text(note.date.formatted(date: .abbreviated, time: .shortened))
+                                .font(.caption2)
+                                .foregroundStyle(.gray)
+                        }
                     }
                 }
             }
-           
+            .navigationDestination(for: Note.self) { value in
+                NoteDetail(noteId: value.id, viewModel: viewModel)
+            }
           
         }
         .navigationTitle("DogMinder")
@@ -41,9 +47,9 @@ struct ContentView: View {
             }
         }
         .fullScreenCover(isPresented: $showNewNote) {
-            CreateNewNote(viewModel: viewModel)
-          
+            NoteDetail(noteId: nil, viewModel: viewModel)
         }
+        
     }
 }
 

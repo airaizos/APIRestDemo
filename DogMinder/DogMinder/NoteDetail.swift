@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct CreateNewNote: View {
+struct NoteDetail: View {
     @Environment(\.dismiss) private var dismiss
     
-
+    let noteId: UUID?
     var viewModel: ViewModel
     @State var noteType: ReminderType = .simple
     
@@ -24,7 +24,11 @@ struct CreateNewNote: View {
     
     var body: some View {
         NavigationStack{
+            
             VStack(alignment:.leading) {
+                Text(noteId == nil ? "New Note" : "Edit Note")
+                    .font(.largeTitle.bold())
+                    .foregroundStyle(Color.black)
                 Picker("Tipo", selection: $noteType) {
                     ForEach(ReminderType.allCases) { type in
                         Text(type.rawValue.firstUppercased)
@@ -92,22 +96,54 @@ struct CreateNewNote: View {
                     }
                 }
                 ToolbarItem(placement: .primaryAction) {
-                    Button("Save") {
-                        viewModel.saveNote(type: noteType, description: description, date: date, comments: comments, amount: amount, event: eventType, bodyPart: bodyPart)
+                    Button(noteId == nil ? "Save" : "Update") {
+                        if let noteId {
+                            viewModel.updateNote(id: noteId, type: noteType, newDescription: description, newDate: date, newComments: comments, newAmount: amount, newEvent: eventType, newBodyPart: bodyPart)
+                        } else {
+                            viewModel.saveNote(type: noteType, description: description, date: date, comments: comments, amount: amount, event: eventType, bodyPart: bodyPart)
+                        }
                         dismiss()
+                    }
+                }
+                
+                if noteId != nil{
+                    ToolbarItem(placement: .destructiveAction) {
+                        Button("Delete") {
+                            if let noteId {
+                                viewModel.removeNote(id: noteId)
+                            }
+                            dismiss()
+                        }
+                        .foregroundStyle(Color.red)
                     }
                 }
             }
         }
-        .navigationTitle("New Note")
-        .navigationBarTitleDisplayMode(.large)
+            .navigationTitle(noteId == nil ? "New Note" : "Edit Note")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden()
+            .onAppear {
+                editNote()
+            }
+        }
+    
         
-       
+    private func editNote() {
+        guard let noteId, let editNote = viewModel.notes.first(where: { $0.id == noteId }) else { return }
+    
+        noteType = editNote.type
+        comments = editNote.comments ?? ""
+        description = editNote.description
+        date = editNote.date
+        amount = "\(editNote.value ?? 0)"
+        eventType = editNote.event ?? .treatment
+        bodyPart = editNote.measure ?? .weight
+
     }
 }
 
 #Preview {
     NavigationStack{
-        CreateNewNote(viewModel: ViewModel())
+        NoteDetail(noteId: nil, viewModel: ViewModel())
     }
 }
