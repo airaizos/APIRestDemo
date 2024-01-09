@@ -8,6 +8,6 @@
 import Foundation
 
 extension UUID {
-    static let testUUID =  UUID(uuidString: "0679B32D-C309-48D7-BA95-6426CEF897AF")!
+    static let testUUID = UUID(uuidString: "0679B32D-C309-48D7-BA95-6426CEF897AF")!
     
 }

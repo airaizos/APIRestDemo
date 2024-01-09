@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 
 enum ReminderType: String,CaseIterable,Identifiable {
@@ -33,7 +34,7 @@ struct Note: Identifiable, Hashable {
     let createdAt: Date
     
     var type: ReminderType
-    var description: String
+    var title: String
     var date: Date
     
     var value: Double?
@@ -42,11 +43,11 @@ struct Note: Identifiable, Hashable {
     var event: EventType?
     var updatedAt: Date?
     
-    init(id: UUID = UUID(), type: ReminderType, description: String, value: Double? = nil, date: Date = Date.now, createdAt: Date = Date.now, comments: String? = nil, measure: PetSize?, event: EventType?, updatedAt: Date?) {
+    init(id: UUID = UUID(), type: ReminderType, title: String, value: Double? = nil, date: Date = Date.now, createdAt: Date = Date.now, comments: String? = nil, measure: PetSize?, event: EventType?, updatedAt: Date? = nil) {
         self.id = id
         self.createdAt = createdAt
         self.type = type
-        self.description = description
+        self.title = title
         self.value = value
         self.date = date
         self.comments = comments
@@ -60,7 +61,7 @@ struct Note: Identifiable, Hashable {
         self.id = UUID()
         self.createdAt = Date.now
         self.type = .simple
-        self.description = simpleReminder
+        self.title = simpleReminder
         self.date = date
         self.comments = comments
 
@@ -71,7 +72,7 @@ struct Note: Identifiable, Hashable {
         self.id = UUID()
         self.createdAt = Date.now
         self.type = .expense
-        self.description = expense
+        self.title = expense
         self.value = amount
         self.date = date
         self.comments = comments ?? ""
@@ -79,13 +80,13 @@ struct Note: Identifiable, Hashable {
     }
     
     ///EVENT
-    init(eventType: EventType, description: String, date: Date, comments: String?) {
+    init(eventType: EventType, title: String, date: Date, comments: String?) {
         self.id = UUID()
         self.createdAt = Date.now
         self.type = .event
         self.event = eventType
         self.date = date
-        self.description = description
+        self.title = title
         self.comments = comments
         
     }
@@ -96,7 +97,7 @@ struct Note: Identifiable, Hashable {
         self.createdAt = Date.now
         self.type = .measure
         self.measure = bodyPart
-        self.description = "Measure for \(bodyPart.rawValue) : \(value)"
+        self.title = "Measure for \(bodyPart.rawValue) : \(value)"
         self.value = value
         self.date = date
         self.comments = comments
@@ -104,7 +105,7 @@ struct Note: Identifiable, Hashable {
     
 }
 
-
+//MARK: Examples
 extension Note {
    static let examplesSimples = [Note(simpleReminder: "Vacuna",
                                date: "2024-02-05T19:00:00+0100".toDate(),
@@ -117,15 +118,9 @@ extension Note {
     
     static let testSimple = Note(simpleReminder: "Simple Test", date: .dateTest, comments: "Comments")
     static let testExpense = Note(expense: "Comida", amount: 100.00, date: .dateTest, comments: "Comments")
-    static let testEvent = Note(eventType: .accident, description: "Caida", date: .dateTest, comments: "Comments")
+    static let testEvent = Note(eventType: .accident, title: "Caida", date: .dateTest, comments: "Comments")
     static let testMeasure = Note(bodyPart: .weight, value: 10.00, date: .dateTest, comments: "Comments")
 }
 
 
-extension String {
-    func toDate() -> Date {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        return dateFormatter.date(from: self) ?? Date.now
-    }
-}
+

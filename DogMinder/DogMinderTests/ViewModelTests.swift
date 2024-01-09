@@ -15,7 +15,7 @@ final class ViewModelTests: XCTestCase {
     let noteComments = "Comments"
     
     override func setUpWithError() throws {
-        sut = ViewModel()
+        sut = .previewViewModel
       
     }
     
@@ -32,7 +32,7 @@ final class ViewModelTests: XCTestCase {
         let sutNote = try XCTUnwrap(sut.notes.first)
         XCTAssertEqual(sut.notes.count, 1)
         XCTAssertEqual(sutNote.comments, "Comments")
-        XCTAssertEqual(sutNote.description, "Test Note")
+        XCTAssertEqual(sutNote.title, "Test Note")
     }
     
     func testCreateExpenseNote() throws {
@@ -45,7 +45,7 @@ final class ViewModelTests: XCTestCase {
         XCTAssertEqual(sut.notes.count, 1)
         XCTAssertEqual(sutNote.comments, noteComments)
         XCTAssertEqual(sutNote.value, Double(amount))
-        XCTAssertEqual(sutNote.description, noteDescription)
+        XCTAssertEqual(sutNote.title, noteDescription)
         XCTAssertEqual(sutNote.type, .expense)
     }
     
@@ -55,7 +55,7 @@ final class ViewModelTests: XCTestCase {
         sut.createNote(event: .accident, description: noteDescription, date: .dateTest, comments: noteComments)
         let sutNote = try XCTUnwrap(sut.notes.first)
         XCTAssertEqual(sut.notes.count, 1)
-        XCTAssertEqual(sutNote.description, noteDescription)
+        XCTAssertEqual(sutNote.title, noteDescription)
         XCTAssertEqual(sutNote.date, .dateTest)
         XCTAssertEqual(sutNote.comments, noteComments)
     }
@@ -69,7 +69,7 @@ final class ViewModelTests: XCTestCase {
         sut.createNote(bodyPart: bodyPart, value: value, date: .dateTest, comments: noteComments)
         let sutNote = try XCTUnwrap(sut.notes.first)
         XCTAssertEqual(sut.notes.count, 1)
-        XCTAssertEqual(sutNote.description, "Measure for \(bodyPart.rawValue) : \(value)")
+        XCTAssertEqual(sutNote.title, "Measure for \(bodyPart.rawValue) : \(value)")
         XCTAssertEqual(sutNote.date, .dateTest)
         XCTAssertEqual(sutNote.comments, noteComments)
     }
@@ -150,7 +150,7 @@ final class ViewModelTests: XCTestCase {
         let value = "60.0"
         let newEvent = EventType.treatment
         let newMeasure = PetSize.height
-        let note = Note(id: .testUUID, type: .simple, description: noteDescription, value: Double(value)!, date: .dateTest, createdAt: .dateTest, comments: noteComments, measure: .chest, event: .accident, updatedAt: nil)
+        let note = Note(id: .testUUID, type: .simple, title: noteDescription, value: Double(value)!, date: .dateTest, createdAt: .dateTest, comments: noteComments, measure: .chest, event: .accident, updatedAt: nil)
         sut.notes.append(note)
         let newDescription = noteDescription + " Updated"
         let newComments = noteComments + " Updated"
@@ -158,7 +158,7 @@ final class ViewModelTests: XCTestCase {
         sut.updateNote(id: .testUUID, type: .simple, newDescription: newDescription, newDate: .dateTest, newComments: newComments, newAmount: value, newEvent: newEvent, newBodyPart: newMeasure)
         let noteUpdated = try XCTUnwrap(sut.notes.first(where: { $0.id == note.id }))
         
-        XCTAssertEqual(noteUpdated.description, newDescription)
+        XCTAssertEqual(noteUpdated.title, newDescription)
         XCTAssertEqual(noteUpdated.comments, newComments)
         
     }
@@ -170,7 +170,7 @@ final class ViewModelTests: XCTestCase {
         let newEvent = EventType.treatment
         let newMeasure = PetSize.height
     
-        let note = Note(id: .testUUID, type: .simple, description: noteDescription, value: Double(value)!, date: .dateTest, createdAt: .dateTest, comments: noteComments, measure: .chest, event: .accident, updatedAt: nil)
+        let note = Note(id: .testUUID, type: .simple, title: noteDescription, value: Double(value)!, date: .dateTest, createdAt: .dateTest, comments: noteComments, measure: .chest, event: .accident, updatedAt: nil)
         XCTAssertEqual(sut.notes.count, 0)
         sut.notes.append(note)
         XCTAssertEqual(sut.notes.count, 1)

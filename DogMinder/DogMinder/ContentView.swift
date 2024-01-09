@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var viewModel = ViewModel()
+    @StateObject var viewModel = ViewModel()
     
     @State var showNewNote = false
     
@@ -20,7 +20,7 @@ struct ContentView: View {
                         NoteDetail(noteId: note.id, viewModel: viewModel)
                     } label:{
                         VStack(alignment:.leading){
-                            Text(note.description)
+                            Text(note.title)
                                 .font(.headline.bold())
                             Text(note.date.formatted(date: .abbreviated, time: .shortened))
                                 .font(.caption2)
@@ -54,7 +54,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    NavigationStack {
-        ContentView(viewModel: ViewModel(reminders: Note.examplesSimples))
+   NavigationStack {
+        ContentView(viewModel: .previewViewModel)
     }
 }

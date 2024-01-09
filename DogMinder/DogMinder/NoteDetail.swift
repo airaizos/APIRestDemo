@@ -107,7 +107,7 @@ struct NoteDetail: View {
                 }
                 
                 if noteId != nil{
-                    ToolbarItem(placement: .destructiveAction) {
+                    ToolbarItem(placement: .status) {
                         Button("Delete") {
                             if let noteId {
                                 viewModel.removeNote(id: noteId)
@@ -115,6 +115,7 @@ struct NoteDetail: View {
                             dismiss()
                         }
                         .foregroundStyle(Color.red)
+                        .buttonStyle(.bordered)
                     }
                 }
             }
@@ -133,7 +134,7 @@ struct NoteDetail: View {
     
         noteType = editNote.type
         comments = editNote.comments ?? ""
-        description = editNote.description
+        description = editNote.title
         date = editNote.date
         amount = "\(editNote.value ?? 0)"
         eventType = editNote.event ?? .treatment

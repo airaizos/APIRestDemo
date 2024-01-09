@@ -15,22 +15,22 @@ final class NoteInitTests: XCTestCase {
         
         XCTAssertEqual(simpleNote.comments, "Comments")
         XCTAssertEqual(simpleNote.date, .dateTest)
-        XCTAssertEqual(simpleNote.description, "Simple Test")
+        XCTAssertEqual(simpleNote.title, "Simple Test")
     }
     
     func testNoteExpenseInit() {
         let expenseNote = Note(expense: "Comida", amount: 100.0, date: .dateTest, comments: "Comments")
-        XCTAssertEqual(expenseNote.description, "Comida")
+        XCTAssertEqual(expenseNote.title, "Comida")
         XCTAssertEqual(expenseNote.date, .dateTest)
         XCTAssertEqual(expenseNote.value, 100.0)
         XCTAssertEqual(expenseNote.comments, "Comments")
     }
 
     func testNoteEventInit() {
-        let eventNote = Note(eventType: .accident, description: "Caida", date: .dateTest, comments: "Comments")
+        let eventNote = Note(eventType: .accident, title: "Caida", date: .dateTest, comments: "Comments")
         XCTAssertEqual(eventNote.type,.event)
         XCTAssertEqual(eventNote.event, .accident)
-        XCTAssertEqual(eventNote.description, "Caida")
+        XCTAssertEqual(eventNote.title, "Caida")
         XCTAssertEqual(eventNote.date, .dateTest)
         XCTAssertEqual(eventNote.comments, "Comments")
     }
