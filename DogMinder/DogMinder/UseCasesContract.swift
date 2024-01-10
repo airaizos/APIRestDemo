@@ -23,3 +23,12 @@ protocol NoteCreator {
 protocol NoteFetcher {
     func fetchAll() throws -> [Note]
 }
+
+
+protocol NoteUpdater {
+    func updateNote(id: UUID, type: ReminderType, newTitle: String, newDate: Date, newComments: String, newAmount: String, newEvent:EventType, newBodyPart: PetSize) throws
+}
+
+protocol NoteRemover {
+    func removeNote(id: UUID) throws
+}

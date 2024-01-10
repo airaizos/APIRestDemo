@@ -15,7 +15,9 @@ final class ViewModelTests: XCTestCase {
     override func setUpWithError() throws {
       let mockCreateNote = MockCreateNote()
       let mockFetchNote = MockFetchNote()
-        sut = ViewModel(createNoteUseCase: mockCreateNote, fetchAllNotesUseCase: mockFetchNote)
+      let mockUpdateNote = MockUpdateNote()
+        sut = ViewModel(createNoteUseCase: mockCreateNote, fetchAllNotesUseCase: mockFetchNote, updateNoteUseCase: mockUpdateNote)
+                        
     }
     
     override func tearDownWithError() throws {
@@ -103,19 +105,22 @@ final class ViewModelTests: XCTestCase {
     
     //UPDATE
     func testUpdateNote() throws {
-        let value = "60.0"
-        let newEvent = EventType.treatment
-        let newMeasure = PetSize.height
-        
         let note = Note(id: .testUUID, type: .simple, title: testNote.title, value: Double(testNote.amount)!, date: .dateTest, createdAt: .dateTest, comments: testNote.comments, measure: testNote.bodyPart, event: testNote.eventType, updatedAt: nil)
-        sut.notes.append(note)
-        let newDescription = testNote.title + " Updated"
+        mockDataBase.append(note)
+        
+        let newType = ReminderType.measure
+        let newEvent = EventType.estrus
+        let newTitle = testNote.title + " Updated"
+        let newDate = "2025-02-12T19:00:00+0100".toDate()
+        let newAmount = "120.00"
         let newComments = testNote.comments + " Updated"
+        let newMeasure = PetSize.length
         
-        sut.updateNote(id: .testUUID, type: .simple, newDescription: newDescription, newDate: .dateTest, newComments: newComments, newAmount: value, newEvent: newEvent, newBodyPart: newMeasure)
-        let noteUpdated = try XCTUnwrap(sut.notes.first(where: { $0.id == note.id }))
+        sut.updateNote(id: .testUUID, type: newType, newTitle: newTitle, newDate: newDate, newComments: newComments, newAmount: newAmount, newEvent: newEvent, newBodyPart: newMeasure)
+        let noteUpdated = try XCTUnwrap(mockDataBase.first(where: { $0.id == note.id }))
         
-        XCTAssertEqual(noteUpdated.title, newDescription)
+        XCTAssertEqual(noteUpdated.type, newType)
+        XCTAssertEqual(noteUpdated.title, newTitle)
         XCTAssertEqual(noteUpdated.comments, newComments)
         
     }
@@ -123,10 +128,9 @@ final class ViewModelTests: XCTestCase {
     //MARK: Delete
     
     func testRemoveNote()  throws {
-
-    
         let note = Note(id: .testUUID, type: .simple, title: testNote.title, value: Double(testNote.amount)!, date: .dateTest, createdAt: .dateTest, comments: testNote.comments, measure: testNote.bodyPart, event: testNote.eventType, updatedAt: nil)
         XCTAssertEqual(sut.notes.count, 0)
+        
         sut.notes.append(note)
         XCTAssertEqual(sut.notes.count, 1)
         

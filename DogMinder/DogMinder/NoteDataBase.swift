@@ -16,8 +16,6 @@ final class NoteDataBase: PersistenceProtocol {
     init(context: NSManagedObjectContext = CoreDataContainer.shared.container.viewContext ) {
         self.context = context
     }
-//    let context = CoreDataContainer.shared.container.viewContext
-
     
     func fetchAll() throws -> [Note] {
         let request = NoteEntity.fetchRequest()
@@ -40,12 +38,12 @@ final class NoteDataBase: PersistenceProtocol {
         }
     }
     
-    func update(id: UUID, type: ReminderType, newDescription: String, newDate: Date, newComments: String, newAmount: String, newEvent: EventType, newBodyPart: PetSize) throws {
+    func update(id: UUID, type: ReminderType, newTitle: String, newDate: Date, newComments: String, newAmount: String, newEvent: EventType, newBodyPart: PetSize) throws {
     
         do {
             guard let note = noteQuery(by: id) else { throw DataBaseError.update }
                 note.reminderType = type.rawValue
-                note.title = newDescription
+                note.title = newTitle
                 note.date = newDate
                 note.comments = newComments
                 note.value = Double(newAmount) ?? 0
@@ -68,7 +66,7 @@ final class NoteDataBase: PersistenceProtocol {
     func noteQuery(by id: UUID) -> NoteEntity? {
         let request = NoteEntity.fetchRequest()
         request.fetchLimit = 1
-        request.predicate = NSPredicate(format: "%K = %i", id.uuidString,"id")
+        request.predicate = NSPredicate(format: "id = %@", id as CVarArg)
         
         return try? context.fetch(request).first
     }

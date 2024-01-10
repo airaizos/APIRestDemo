@@ -98,7 +98,7 @@ struct NoteDetail: View {
                 ToolbarItem(placement: .primaryAction) {
                     Button(noteId == nil ? "Save" : "Update") {
                         if let noteId {
-                            viewModel.updateNote(id: noteId, type: noteType, newDescription: description, newDate: date, newComments: comments, newAmount: amount, newEvent: eventType, newBodyPart: bodyPart)
+                            viewModel.updateNote(id: noteId, type: noteType, newTitle: description, newDate: date, newComments: comments, newAmount: amount, newEvent: eventType, newBodyPart: bodyPart)
                         } else {
                             viewModel.saveNote(type: noteType, title: description, date: date, comments: comments, amount: amount, event: eventType, bodyPart: bodyPart)
                         }

@@ -10,7 +10,7 @@ import Foundation
 protocol PersistenceProtocol {
     func fetchAll() throws -> [Note]
     func insert(note: Note) throws
-    func update(id: UUID, type: ReminderType, newDescription: String, newDate: Date, newComments: String, newAmount: String, newEvent:EventType, newBodyPart: PetSize) throws
+    func update(id: UUID, type: ReminderType, newTitle: String, newDate: Date, newComments: String, newAmount: String, newEvent:EventType, newBodyPart: PetSize) throws
     func delete(id:UUID) throws
     
 }

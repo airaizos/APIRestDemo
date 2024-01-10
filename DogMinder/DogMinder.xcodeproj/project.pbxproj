@@ -25,6 +25,8 @@
 		3A3BB3C72B4C83C900622FC0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3BB3C62B4C83C900622FC0 /* Extensions.swift */; };
 		3A56A9212B4EBC1D00465450 /* UseCasesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56A9202B4EBC1D00465450 /* UseCasesContract.swift */; };
 		3A56A9242B4EBD8700465450 /* UseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56A9232B4EBD8700465450 /* UseCaseMock.swift */; };
+		3A56A9262B4EF57E00465450 /* UpdateNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56A9252B4EF57E00465450 /* UpdateNoteUseCase.swift */; };
+		3A56A9282B4EF59700465450 /* RemoveNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56A9272B4EF59700465450 /* RemoveNoteUseCase.swift */; };
 		3A643C492B4DDDA0003613B6 /* PreviewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A643C482B4DDDA0003613B6 /* PreviewExtensions.swift */; };
 		3A643C4B2B4DDE55003613B6 /* ViewModelIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A643C4A2B4DDE55003613B6 /* ViewModelIntegrationTests.swift */; };
 		3AD372282B4DBF6200B7CCE9 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD372272B4DBF6200B7CCE9 /* CoreDataHelpers.swift */; };
@@ -65,6 +67,8 @@
 		3A3BB3C62B4C83C900622FC0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3A56A9202B4EBC1D00465450 /* UseCasesContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesContract.swift; sourceTree = "<group>"; };
 		3A56A9232B4EBD8700465450 /* UseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseMock.swift; sourceTree = "<group>"; };
+		3A56A9252B4EF57E00465450 /* UpdateNoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteUseCase.swift; sourceTree = "<group>"; };
+		3A56A9272B4EF59700465450 /* RemoveNoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveNoteUseCase.swift; sourceTree = "<group>"; };
 		3A643C482B4DDDA0003613B6 /* PreviewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewExtensions.swift; sourceTree = "<group>"; };
 		3A643C4A2B4DDE55003613B6 /* ViewModelIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelIntegrationTests.swift; sourceTree = "<group>"; };
 		3AD372272B4DBF6200B7CCE9 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 				3A56A9202B4EBC1D00465450 /* UseCasesContract.swift */,
 				3AD3722E2B4DCAF000B7CCE9 /* CreateNoteUseCase.swift */,
 				3AD372302B4DCCE400B7CCE9 /* FetchAllNotesUseCase.swift */,
+				3A56A9252B4EF57E00465450 /* UpdateNoteUseCase.swift */,
+				3A56A9272B4EF59700465450 /* RemoveNoteUseCase.swift */,
 			);
 			name = "\U0010UseCases";
 			sourceTree = "<group>";
@@ -328,9 +334,11 @@
 				3A07F7BB2B4DB8200062CC42 /* NoteEntityExtensions.swift in Sources */,
 				3A07F7AF2B4DB2550062CC42 /* UserDefaultsContainer.swift in Sources */,
 				3AD3722C2B4DC62F00B7CCE9 /* NoteDataBase.swift in Sources */,
+				3A56A9282B4EF59700465450 /* RemoveNoteUseCase.swift in Sources */,
 				3A3BB3C42B4C805700622FC0 /* NoteDetail.swift in Sources */,
 				3A643C492B4DDDA0003613B6 /* PreviewExtensions.swift in Sources */,
 				3A56A9212B4EBC1D00465450 /* UseCasesContract.swift in Sources */,
+				3A56A9262B4EF57E00465450 /* UpdateNoteUseCase.swift in Sources */,
 				3A07F7B12B4DB2680062CC42 /* PersistenceProtocol.swift in Sources */,
 				3A3BB3C72B4C83C900622FC0 /* Extensions.swift in Sources */,
 				3A3BB3BF2B4C661000622FC0 /* Note.swift in Sources */,

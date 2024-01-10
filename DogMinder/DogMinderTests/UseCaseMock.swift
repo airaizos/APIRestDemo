@@ -40,11 +40,22 @@ struct MockCreateNote: NoteCreator {
         case .event: try createNote(event: event, title: title, date: date, comments: comments)
         }
     }
-    
 }
 
 struct MockFetchNote: NoteFetcher {
     func fetchAll() throws -> [DogMinder.Note] {
         mockDataBase
     }
+}
+
+struct MockUpdateNote: NoteUpdater {
+    func updateNote(id: UUID, type: DogMinder.ReminderType, newTitle: String, newDate: Date, newComments: String, newAmount: String, newEvent: DogMinder.EventType, newBodyPart: DogMinder.PetSize) throws {
+        if let index = mockDataBase.firstIndex(where: { $0.id == id }) {
+            let newValue = Double(newAmount) ?? 0
+            let updatedNote = Note(id: id, type: type, title: newTitle, value: newValue, date: newDate, comments: newComments, measure: newBodyPart, event: newEvent, updatedAt: Date.now)
+            mockDataBase[index] = updatedNote
+        }
+    }
+    
+    
 }

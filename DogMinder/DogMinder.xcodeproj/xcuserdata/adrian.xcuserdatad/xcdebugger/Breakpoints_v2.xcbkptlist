@@ -77,8 +77,8 @@
             filePath = "DogMinder/NoteDataBase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "fetchAll()"
             landmarkType = "7">
          </BreakpointContent>
@@ -86,16 +86,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "066295F7-3153-4AF7-9503-A7A56DA4BFCA"
-            shouldBeEnabled = "Yes"
+            uuid = "F4CBBF94-1C2C-4599-B415-B563D4DA6EDE"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DogMinder/CreateNoteUseCase.swift"
+            filePath = "DogMinderTests/ViewModelTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "createNote(type:title:date:comments:amount:event:bodyPart:)"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "testUpdateNote()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

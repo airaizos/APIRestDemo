@@ -13,21 +13,22 @@ final class ViewModel: ObservableObject {
 
     var createNoteUseCase: NoteCreator
     var fetchAllNotesUseCase: NoteFetcher
+    var updateNoteUseCase: NoteUpdater
     
     @Published var notes: [Note]
     @Published var showError = false
     @Published var errorMessage: (title: String, message: String) = ("","")
     
-    init(reminders: [Note] = [], createNoteUseCase: NoteCreator = CreateNoteUseCase(), fetchAllNotesUseCase: NoteFetcher = FetchAllNotesUseCase()) {
+    init(reminders: [Note] = [], createNoteUseCase: NoteCreator = CreateNoteUseCase(), fetchAllNotesUseCase: NoteFetcher = FetchAllNotesUseCase(), updateNoteUseCase: NoteUpdater = UpdateNoteUseCase()) {
         self.notes = reminders
         self.createNoteUseCase = createNoteUseCase
         self.fetchAllNotesUseCase = fetchAllNotesUseCase
+        self.updateNoteUseCase = updateNoteUseCase
         fetchAllNotes()
     }
     
     ///Guarda la información dada por la vista
     func saveNote(type: ReminderType, title: String, date: Date, comments: String, amount: String, event:EventType, bodyPart: PetSize) {
-        let value = Double(amount) ?? 0
         do {
             try createNoteUseCase.createNote(type: type, title:title, date: date, comments: comments, amount: amount, event:event, bodyPart: bodyPart )
             fetchAllNotes()
@@ -53,12 +54,14 @@ final class ViewModel: ObservableObject {
     //MARK: Updates
     
     ///Guarda la nota con la información dada por la vista
-    func updateNote(id: UUID, type: ReminderType, newDescription: String, newDate: Date, newComments: String, newAmount: String, newEvent:EventType, newBodyPart: PetSize) {
-        
-        if let index = notes.firstIndex(where:  {$0.id == id }) {
-            let value = Double(newAmount) ?? 0
-            let updatedNote = Note(id: id, type: type, title: newDescription, value: value, date: newDate, createdAt: notes[index].createdAt, comments: newComments, measure: newBodyPart, event: newEvent, updatedAt: Date.now)
-            notes[index] = updatedNote
+    func updateNote(id: UUID, type: ReminderType, newTitle: String, newDate: Date, newComments: String, newAmount: String, newEvent:EventType, newBodyPart: PetSize) {
+        do {
+            try updateNoteUseCase.updateNote(id: id, type: type, newTitle: newTitle, newDate: newDate, newComments: newComments, newAmount: newAmount, newEvent: newEvent, newBodyPart: newBodyPart)
+            fetchAllNotes()
+        } catch {
+            showError.toggle()
+            errorMessage.title = "Error Updating note"
+            errorMessage.message = "Can't update note"
         }
     }
     
@@ -67,5 +70,4 @@ final class ViewModel: ObservableObject {
         notes.removeAll(where: { $0.id == id })
         
     }
-    
 }
