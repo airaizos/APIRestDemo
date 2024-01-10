@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct FetchAllNotesUseCase {
+struct FetchAllNotesUseCase: NoteFetcher {
     var notesDataBase: PersistenceProtocol
     
     init(notesDataBase: PersistenceProtocol = NoteDataBase.shared) {

@@ -11,63 +11,25 @@ import Observation
 
 final class ViewModel: ObservableObject {
 
-    var createNoteUseCase: CreateNoteUseCase
-    var fetchAllNotesUseCase: FetchAllNotesUseCase
+    var createNoteUseCase: NoteCreator
+    var fetchAllNotesUseCase: NoteFetcher
     
     @Published var notes: [Note]
     @Published var showError = false
     @Published var errorMessage: (title: String, message: String) = ("","")
     
-    init(reminders: [Note] = [], createNoteUseCase: CreateNoteUseCase = CreateNoteUseCase(),fetchAllNotesUseCase: FetchAllNotesUseCase = FetchAllNotesUseCase()) {
+    init(reminders: [Note] = [], createNoteUseCase: NoteCreator = CreateNoteUseCase(), fetchAllNotesUseCase: NoteFetcher = FetchAllNotesUseCase()) {
         self.notes = reminders
         self.createNoteUseCase = createNoteUseCase
         self.fetchAllNotesUseCase = fetchAllNotesUseCase
         fetchAllNotes()
     }
     
-    //MARK: Create Reminder Type
-    
-    ///Crea nota Simple
-    func createNote(simple: String, date: Date, comments: String) {
-        let reminder = Note(simpleReminder: simple, date: date, comments: comments)
-        notes.append(reminder)
-    }
-    
-    ///Crea nota para Gastos
-    func createNote(expense: String, amount: Double, date: Date, comments:String) {
-        let reminder = Note(expense: expense, amount: amount, date: date, comments: comments)
-        notes.append(reminder)
-    }
-    
-    ///Crea una nota de tipo de Evento
-    func createNote(event: EventType, description: String, date: Date, comments: String) {
-        let reminder = Note(eventType: event, title: description, date: date, comments: comments)
-        notes.append(reminder)
-    }
-    
-    ///Crea una nota de medida del cuerpo
-    func createNote(bodyPart: PetSize, value: Double,  date: Date, comments:String) {
-        let reminder = Note(bodyPart: bodyPart, value: value, date: date, comments: comments)
-        notes.append(reminder)
-    }
-    
     ///Guarda la información dada por la vista
-    //    func saveNote(type: ReminderType, description: String, date: Date, comments: String, amount: String, event:EventType, bodyPart: PetSize) {
-    //        let value = Double(amount) ?? 0
-    //
-    //        switch type {
-    //        case .simple: createNote(simple: description, date: date, comments: comments)
-    //        case .expense: createNote(expense: description, amount: value, date: date, comments: comments)
-    //        case .event: createNote(event: event, description: description, date: date, comments: comments)
-    //        case .measure: createNote(bodyPart: bodyPart, value: value, date: date, comments: comments)
-    //        }
-    //    }
-    
-    ///Guarda la información dada por la vista
-    func saveNote(type: ReminderType, description: String, date: Date, comments: String, amount: String, event:EventType, bodyPart: PetSize) {
+    func saveNote(type: ReminderType, title: String, date: Date, comments: String, amount: String, event:EventType, bodyPart: PetSize) {
         let value = Double(amount) ?? 0
         do {
-            try createNoteUseCase.createNote(type: type, title: description, value: value, date: date, comments: comments, measure: bodyPart, event: event)
+            try createNoteUseCase.createNote(type: type, title:title, date: date, comments: comments, amount: amount, event:event, bodyPart: bodyPart )
             fetchAllNotes()
         } catch {
             showError.toggle()

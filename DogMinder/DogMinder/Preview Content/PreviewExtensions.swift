@@ -15,4 +15,5 @@ extension ViewModel {
         let noteDataBase = NoteDataBase(context: context)
         return ViewModel(reminders:  [], createNoteUseCase: CreateNoteUseCase(notesDataBase: noteDataBase), fetchAllNotesUseCase: FetchAllNotesUseCase(notesDataBase: noteDataBase))
     }
+    
 }

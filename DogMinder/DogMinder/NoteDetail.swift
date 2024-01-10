@@ -100,7 +100,7 @@ struct NoteDetail: View {
                         if let noteId {
                             viewModel.updateNote(id: noteId, type: noteType, newDescription: description, newDate: date, newComments: comments, newAmount: amount, newEvent: eventType, newBodyPart: bodyPart)
                         } else {
-                            viewModel.saveNote(type: noteType, description: description, date: date, comments: comments, amount: amount, event: eventType, bodyPart: bodyPart)
+                            viewModel.saveNote(type: noteType, title: description, date: date, comments: comments, amount: amount, event: eventType, bodyPart: bodyPart)
                         }
                         dismiss()
                     }

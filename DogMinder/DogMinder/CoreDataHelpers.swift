@@ -28,18 +28,18 @@ extension Note {
     }
 }
 
-extension NSManagedObject {
-    static func queryData<T:CVarArg>(field:String, filter:T, type:DataType, context:NSManagedObjectContext) -> Self? {
-        guard let entityName = entity().name else { return nil }
-        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        fetch.predicate = NSPredicate(format: "%K = \(type.rawValue)", field, filter)
-        return try? context.fetch(fetch).first as? Self
-    }
-    
-}
-
-enum DataType:String {
-   case string = "%@"
-   case number = "%i"
-   case decimal = "%d"
-}
+//extension NSManagedObject {
+//    static func queryData<T:CVarArg>(field:String, filter:T, type:DataType, context:NSManagedObjectContext) -> Self? {
+//        guard let entityName = entity().name else { return nil }
+//        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+//        fetch.predicate = NSPredicate(format: "%K = \(type.rawValue)", field, filter)
+//        return try? context.fetch(fetch).first as? Self
+//    }
+//    
+//}
+//
+//enum DataType:String {
+//   case string = "%@"
+//   case number = "%i"
+//   case decimal = "%d"
+//}

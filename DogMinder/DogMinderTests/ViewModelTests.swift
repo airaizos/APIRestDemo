@@ -9,140 +9,96 @@ import XCTest
 
 @testable import DogMinder
 final class ViewModelTests: XCTestCase {
-
     var sut: ViewModel!
-    let noteDescription = "Test Note"
-    let noteComments = "Comments"
+    let testNote = TestNote()
     
     override func setUpWithError() throws {
-        sut = .previewViewModel
-      
+      let mockCreateNote = MockCreateNote()
+      let mockFetchNote = MockFetchNote()
+        sut = ViewModel(createNoteUseCase: mockCreateNote, fetchAllNotesUseCase: mockFetchNote)
     }
     
     override func tearDownWithError() throws {
+        mockDataBase = []
         sut = nil
     }
 
     //MARK: Create
     func testCreateSimpleNote() throws {
+        XCTAssertEqual(mockDataBase.count, 0)
         
-        XCTAssertEqual(sut.notes.count, 0)
-        
-        sut.createNote(simple: noteDescription, date: .dateTest, comments: noteComments)
-        let sutNote = try XCTUnwrap(sut.notes.first)
-        XCTAssertEqual(sut.notes.count, 1)
+        try sut.createNoteUseCase.createNote(type: .simple, title: testNote.title, date: .dateTest, comments: testNote.comments, amount: testNote.amount, event: testNote.eventType, bodyPart: testNote.bodyPart)
+        print(mockDataBase.count,"Cuenta")
+        let sutNote = try XCTUnwrap(mockDataBase.first)
+        XCTAssertEqual(mockDataBase.count, 1)
         XCTAssertEqual(sutNote.comments, "Comments")
         XCTAssertEqual(sutNote.title, "Test Note")
+        
+        XCTAssertNil(sutNote.value)
+        XCTAssertNil(sutNote.event)
+        XCTAssertNil(sutNote.measure)
     }
     
     func testCreateExpenseNote() throws {
-        let amount = 100.00
+        let value = try XCTUnwrap(Double(testNote.amount))
+        XCTAssertEqual(mockDataBase.count, 0)
         
-        XCTAssertEqual(sut.notes.count, 0)
+        try sut.createNoteUseCase.createNote(type: .expense, title: testNote.title, date: .dateTest, comments: testNote.comments, amount: testNote.amount, event: testNote.eventType, bodyPart: testNote.bodyPart)
         
-        sut.createNote(expense: noteDescription, amount: amount, date: .dateTest, comments: noteComments)
-        let sutNote = try XCTUnwrap(sut.notes.first)
-        XCTAssertEqual(sut.notes.count, 1)
-        XCTAssertEqual(sutNote.comments, noteComments)
-        XCTAssertEqual(sutNote.value, Double(amount))
-        XCTAssertEqual(sutNote.title, noteDescription)
+        let sutNote = try XCTUnwrap(mockDataBase.first)
+        
+        XCTAssertEqual(mockDataBase.count, 1)
+        
+        XCTAssertEqual(sutNote.comments, testNote.comments)
+        XCTAssertEqual(sutNote.value, value)
+        XCTAssertEqual(sutNote.title, testNote.title)
         XCTAssertEqual(sutNote.type, .expense)
     }
     
+
     func testCreateEventNote() throws {
-        XCTAssertEqual(sut.notes.count, 0)
+        XCTAssertEqual(mockDataBase.count, 0)
         
-        sut.createNote(event: .accident, description: noteDescription, date: .dateTest, comments: noteComments)
-        let sutNote = try XCTUnwrap(sut.notes.first)
-        XCTAssertEqual(sut.notes.count, 1)
-        XCTAssertEqual(sutNote.title, noteDescription)
+        try sut.createNoteUseCase.createNote(type: .event, title: testNote.title, date: .dateTest, comments: testNote.comments, amount: testNote.amount, event: testNote.eventType, bodyPart: testNote.bodyPart)
+        
+        let sutNote = try XCTUnwrap(mockDataBase.first)
+        XCTAssertEqual(mockDataBase.count, 1)
+        
+        XCTAssertEqual(sutNote.title, testNote.title)
         XCTAssertEqual(sutNote.date, .dateTest)
-        XCTAssertEqual(sutNote.comments, noteComments)
+        XCTAssertEqual(sutNote.comments, testNote.comments)
+        XCTAssertEqual(sutNote.event, .accident)
+        
+        XCTAssertNil(sutNote.value)
+        XCTAssertNil(sutNote.measure)
     }
     
     func testCreateMeasureNote() throws {
-        let bodyPart = PetSize.chest
-        let value = 60.0
-        
+        let value = try XCTUnwrap(Double(testNote.amount))
         XCTAssertEqual(sut.notes.count, 0)
         
-        sut.createNote(bodyPart: bodyPart, value: value, date: .dateTest, comments: noteComments)
-        let sutNote = try XCTUnwrap(sut.notes.first)
-        XCTAssertEqual(sut.notes.count, 1)
-        XCTAssertEqual(sutNote.title, "Measure for \(bodyPart.rawValue) : \(value)")
+        try sut.createNoteUseCase.createNote(type: .measure, title: testNote.title, date: .dateTest, comments: testNote.comments, amount: testNote.amount, event: testNote.eventType, bodyPart: testNote.bodyPart)
+        
+        let sutNote = try XCTUnwrap(mockDataBase.first)
+        XCTAssertEqual(mockDataBase.count, 1)
+        XCTAssertEqual(sutNote.title, "Measure for \(testNote.bodyPart.rawValue) : \(value)")
         XCTAssertEqual(sutNote.date, .dateTest)
-        XCTAssertEqual(sutNote.comments, noteComments)
-    }
-    
-    func testSaveNoteCaseSimple() throws {
-        let type = ReminderType.simple
-        let amount = "60.0"
-        let eventType = EventType.accident
-        let bodyPart = PetSize.chest
-        
-        XCTAssertEqual(sut.notes.count, 0)
-        
-        sut.saveNote(type: type, description: noteDescription, date: .dateTest, comments: noteComments, amount: amount, event: eventType, bodyPart: bodyPart)
-        let sutNote = try XCTUnwrap(sut.notes.first)
-        
-        XCTAssertEqual(sut.notes.count, 1)
-        XCTAssertEqual(sutNote.type, .simple)
-        XCTAssertEqual(sutNote.date, .dateTest)
-        XCTAssertEqual(sutNote.comments, noteComments)
-    }
-    
-    
-    func testSaveNoteCaseExpense() throws {
-        let type = ReminderType.expense
-        let amount = "60.0"
-        let eventType = EventType.accident
-        let bodyPart = PetSize.chest
-        
-        XCTAssertEqual(sut.notes.count, 0)
-        
-        sut.saveNote(type: type, description: noteDescription, date: .dateTest, comments: noteComments, amount: amount, event: eventType, bodyPart: bodyPart)
-        
-        let sutNote = try XCTUnwrap(sut.notes.first)
-        
-        XCTAssertEqual(sut.notes.count, 1)
-        XCTAssertEqual(sutNote.type, .expense)
-        XCTAssertEqual(sutNote.value, Double(amount))
-        XCTAssertEqual(sutNote.date, .dateTest)
-        XCTAssertEqual(sutNote.comments, noteComments)
-    }
-    
-    func testSaveNoteCaseEvent() throws {
-        let type = ReminderType.event
-        let amount = "60.0"
-        let eventType = EventType.accident
-        let bodyPart = PetSize.chest
-        XCTAssertEqual(sut.notes.count, 0)
-        
-        sut.saveNote(type: type, description: noteDescription, date: .dateTest, comments: noteComments, amount: amount, event: eventType, bodyPart: bodyPart)
-        let sutNote = try XCTUnwrap(sut.notes.first)
-        
-        XCTAssertEqual(sut.notes.count, 1)
-        XCTAssertEqual(sutNote.type, type)
-        XCTAssertEqual(sutNote.event, .accident)
-        XCTAssertEqual(sutNote.date, .dateTest)
-        XCTAssertEqual(sutNote.comments, noteComments)
-    }
-   
-    func testSaveNoteCaseMeasure() throws {
-        let type = ReminderType.measure
-        let amount = "60.0"
-        let eventType = EventType.accident
-        let bodyPart = PetSize.chest
-        XCTAssertEqual(sut.notes.count, 0)
-        
-        sut.saveNote(type: type, description: noteDescription, date: .dateTest, comments: noteComments, amount: amount, event: eventType, bodyPart: bodyPart)
-        let sutNote = try XCTUnwrap(sut.notes.first)
-        
-        XCTAssertEqual(sut.notes.count, 1)
-        XCTAssertEqual(sutNote.type, type)
+        XCTAssertEqual(sutNote.comments, testNote.comments)
         XCTAssertEqual(sutNote.measure, .chest)
-        XCTAssertEqual(sutNote.date, .dateTest)
-        XCTAssertEqual(sutNote.comments, noteComments)
+        
+        XCTAssertNil(sutNote.event)
+    }
+    
+    
+    //FETCH
+    
+    func testFetchAllNotes() throws {
+        mockDataBase.append(.testSimple)
+        
+        mockDataBase = try sut.fetchAllNotesUseCase.fetchAll()
+        
+        XCTAssertGreaterThan(mockDataBase.count, 0)
+        
     }
     
     //UPDATE
@@ -150,10 +106,11 @@ final class ViewModelTests: XCTestCase {
         let value = "60.0"
         let newEvent = EventType.treatment
         let newMeasure = PetSize.height
-        let note = Note(id: .testUUID, type: .simple, title: noteDescription, value: Double(value)!, date: .dateTest, createdAt: .dateTest, comments: noteComments, measure: .chest, event: .accident, updatedAt: nil)
+        
+        let note = Note(id: .testUUID, type: .simple, title: testNote.title, value: Double(testNote.amount)!, date: .dateTest, createdAt: .dateTest, comments: testNote.comments, measure: testNote.bodyPart, event: testNote.eventType, updatedAt: nil)
         sut.notes.append(note)
-        let newDescription = noteDescription + " Updated"
-        let newComments = noteComments + " Updated"
+        let newDescription = testNote.title + " Updated"
+        let newComments = testNote.comments + " Updated"
         
         sut.updateNote(id: .testUUID, type: .simple, newDescription: newDescription, newDate: .dateTest, newComments: newComments, newAmount: value, newEvent: newEvent, newBodyPart: newMeasure)
         let noteUpdated = try XCTUnwrap(sut.notes.first(where: { $0.id == note.id }))
@@ -166,11 +123,9 @@ final class ViewModelTests: XCTestCase {
     //MARK: Delete
     
     func testRemoveNote()  throws {
-        let value = "60.0"
-        let newEvent = EventType.treatment
-        let newMeasure = PetSize.height
+
     
-        let note = Note(id: .testUUID, type: .simple, title: noteDescription, value: Double(value)!, date: .dateTest, createdAt: .dateTest, comments: noteComments, measure: .chest, event: .accident, updatedAt: nil)
+        let note = Note(id: .testUUID, type: .simple, title: testNote.title, value: Double(testNote.amount)!, date: .dateTest, createdAt: .dateTest, comments: testNote.comments, measure: testNote.bodyPart, event: testNote.eventType, updatedAt: nil)
         XCTAssertEqual(sut.notes.count, 0)
         sut.notes.append(note)
         XCTAssertEqual(sut.notes.count, 1)
