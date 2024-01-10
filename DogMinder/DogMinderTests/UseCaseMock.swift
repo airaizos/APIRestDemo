@@ -57,5 +57,14 @@ struct MockUpdateNote: NoteUpdater {
         }
     }
     
+}
+
+struct MockRemoveNote: NoteRemover {
+    func removeNote(id: UUID) throws {
+        if let index = mockDataBase.firstIndex(where:  { $0.id == id }) {
+            mockDataBase.remove(at: index)
+        }
+    }
+    
     
 }

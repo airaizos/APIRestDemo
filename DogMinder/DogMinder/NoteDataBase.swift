@@ -60,7 +60,9 @@ final class NoteDataBase: PersistenceProtocol {
     
     func delete(id: UUID) throws {
         guard let note = noteQuery(by: id) else { throw DataBaseError.delete }
+        
         context.delete(note)
+        try context.save()
     }
     
     func noteQuery(by id: UUID) -> NoteEntity? {

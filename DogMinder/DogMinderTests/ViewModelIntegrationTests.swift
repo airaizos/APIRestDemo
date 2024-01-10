@@ -56,7 +56,6 @@ final class ViewModelIntegrationTests: XCTestCase {
         XCTAssertEqual(sut.notes.count, 3)
     }
 
-    
     func testUpdateNote() throws {
         let newType = ReminderType.expense
         let newTitle = "Title Updated"
@@ -81,6 +80,18 @@ final class ViewModelIntegrationTests: XCTestCase {
         XCTAssertEqual(note.value, try XCTUnwrap(Double(newAmount)))
         XCTAssertEqual(note.event, newEvent)
         XCTAssertEqual(note.measure,newBodyPart)
+    }
+    
+    
+    func testRemoveNote() throws {
+        sut.fetchAllNotes()
+        XCTAssertEqual(sut.notes.count, 0)
+        sut.saveNote(type: testNote.type, title: testNote.title, date: testNote.date, comments: testNote.comments, amount: testNote.amount, event: testNote.eventType, bodyPart: testNote.bodyPart)
+        XCTAssertEqual(sut.notes.count, 1)
+        let noteId = try XCTUnwrap(sut.notes.first?.id)
+        
+        sut.removeNote(id: noteId)
+        XCTAssertEqual(sut.notes.count, 0)
         
     }
 }

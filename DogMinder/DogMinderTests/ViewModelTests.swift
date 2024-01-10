@@ -16,8 +16,8 @@ final class ViewModelTests: XCTestCase {
       let mockCreateNote = MockCreateNote()
       let mockFetchNote = MockFetchNote()
       let mockUpdateNote = MockUpdateNote()
-        sut = ViewModel(createNoteUseCase: mockCreateNote, fetchAllNotesUseCase: mockFetchNote, updateNoteUseCase: mockUpdateNote)
-                        
+      let mockRemoveNote = MockRemoveNote()
+        sut = ViewModel(createNoteUseCase: mockCreateNote, fetchAllNotesUseCase: mockFetchNote, updateNoteUseCase: mockUpdateNote,removeNoteUseCase: mockRemoveNote)
     }
     
     override func tearDownWithError() throws {
@@ -126,15 +126,14 @@ final class ViewModelTests: XCTestCase {
     }
     
     //MARK: Delete
-    
     func testRemoveNote()  throws {
         let note = Note(id: .testUUID, type: .simple, title: testNote.title, value: Double(testNote.amount)!, date: .dateTest, createdAt: .dateTest, comments: testNote.comments, measure: testNote.bodyPart, event: testNote.eventType, updatedAt: nil)
         XCTAssertEqual(sut.notes.count, 0)
         
-        sut.notes.append(note)
-        XCTAssertEqual(sut.notes.count, 1)
+        mockDataBase.append(note)
+        XCTAssertEqual(mockDataBase.count, 1)
         
         sut.removeNote(id: .testUUID)
-        XCTAssertEqual(sut.notes.count, 0)
+        XCTAssertEqual(mockDataBase.count, 0)
     }
 }

@@ -14,16 +14,18 @@ final class ViewModel: ObservableObject {
     var createNoteUseCase: NoteCreator
     var fetchAllNotesUseCase: NoteFetcher
     var updateNoteUseCase: NoteUpdater
+    var removeNoteUseCase: NoteRemover
     
     @Published var notes: [Note]
     @Published var showError = false
     @Published var errorMessage: (title: String, message: String) = ("","")
     
-    init(reminders: [Note] = [], createNoteUseCase: NoteCreator = CreateNoteUseCase(), fetchAllNotesUseCase: NoteFetcher = FetchAllNotesUseCase(), updateNoteUseCase: NoteUpdater = UpdateNoteUseCase()) {
+    init(reminders: [Note] = [], createNoteUseCase: NoteCreator = CreateNoteUseCase(), fetchAllNotesUseCase: NoteFetcher = FetchAllNotesUseCase(), updateNoteUseCase: NoteUpdater = UpdateNoteUseCase(), removeNoteUseCase: NoteRemover = RemoveNoteUseCase()) {
         self.notes = reminders
         self.createNoteUseCase = createNoteUseCase
         self.fetchAllNotesUseCase = fetchAllNotesUseCase
         self.updateNoteUseCase = updateNoteUseCase
+        self.removeNoteUseCase = removeNoteUseCase
         fetchAllNotes()
     }
     
@@ -67,7 +69,13 @@ final class ViewModel: ObservableObject {
     
     //MARK: Remove
     func removeNote(id: UUID) {
-        notes.removeAll(where: { $0.id == id })
-        
+        do {
+            try removeNoteUseCase.removeNote(id: id)
+            fetchAllNotes()
+        } catch {
+            showError.toggle()
+            errorMessage.title = "Error Deleting note"
+            errorMessage.message = "Can't delete note"
+        }
     }
 }

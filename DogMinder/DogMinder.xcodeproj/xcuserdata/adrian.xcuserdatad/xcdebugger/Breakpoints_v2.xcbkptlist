@@ -99,5 +99,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2AF88B1C-DFF0-4B1C-83BD-C8D951897DA1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogMinder/NoteDataBase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "delete(id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2AF88B1C-DFF0-4B1C-83BD-C8D951897DA1 - 7aaf9997709e7d14"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogMinder.NoteDataBase.delete(id: Foundation.UUID) throws -&gt; ()"
+                  moduleName = "DogMinder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/DogMinder/DogMinder/NoteDataBase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "2AF88B1C-DFF0-4B1C-83BD-C8D951897DA1 - 7aaf9997709e7d14"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogMinder.NoteDataBase.delete(id: Foundation.UUID) throws -&gt; ()"
+                  moduleName = "DogMinder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/DogMinder/DogMinder/NoteDataBase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

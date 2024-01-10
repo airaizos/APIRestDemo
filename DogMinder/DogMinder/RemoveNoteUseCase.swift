@@ -8,7 +8,13 @@
 import Foundation
 
 struct RemoveNoteUseCase: NoteRemover {
-    func removeNote(id: UUID) {
-        
+    var notesDataBase: PersistenceProtocol
+    
+    init(notesDataBase: PersistenceProtocol = NoteDataBase.shared) {
+        self.notesDataBase = notesDataBase
+    }
+    
+    func removeNote(id: UUID) throws {
+        try notesDataBase.delete(id: id)
     }
 }

@@ -13,7 +13,7 @@ extension ViewModel {
         let context = CoreDataContainer(forPreview: true).container.viewContext
         let noteDataBase = NoteDataBase(context: context)
         
-        return ViewModel(reminders: [], createNoteUseCase: CreateNoteUseCase(notesDataBase: noteDataBase), fetchAllNotesUseCase: FetchAllNotesUseCase(notesDataBase: noteDataBase), updateNoteUseCase: UpdateNoteUseCase(notesDataBase: noteDataBase))
+        return ViewModel(reminders: [], createNoteUseCase: CreateNoteUseCase(notesDataBase: noteDataBase), fetchAllNotesUseCase: FetchAllNotesUseCase(notesDataBase: noteDataBase), updateNoteUseCase: UpdateNoteUseCase(notesDataBase: noteDataBase), removeNoteUseCase: RemoveNoteUseCase(notesDataBase: noteDataBase))
     }
     
 }
