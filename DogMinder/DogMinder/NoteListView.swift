@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NoteListView: View {
-    var viewModel: ViewModel
+    @ObservedObject var viewModel: ViewModel
     var body: some View {
         List {
             ForEach(viewModel.filteredNotes) { note in

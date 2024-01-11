@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ReminderTypeGridView: View {
-    var viewModel: ViewModel
+    @ObservedObject var viewModel: ViewModel
     var grid = [GridItem(),GridItem()]
     var body: some View {
         LazyHGrid(rows: grid) {
