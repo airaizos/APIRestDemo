@@ -17,6 +17,15 @@ final class ViewModel: ObservableObject {
     var removeNoteUseCase: NoteRemover
     
     @Published var notes: [Note]
+    @Published var noteFilter: ReminderType? = nil
+    
+    var filteredNotes: [Note] {
+        switch noteFilter {
+        case nil: notes.sorted { $0.date > $1.date }
+        default: notes.filter { $0.type == noteFilter }.sorted{ $0.date > $1.date }
+        }
+    }
+    
     @Published var showError = false
     @Published var errorMessage: (title: String, message: String) = ("","")
     
@@ -77,5 +86,11 @@ final class ViewModel: ObservableObject {
             errorMessage.title = "Error Deleting note"
             errorMessage.message = "Can't delete note"
         }
+    }
+    
+    //MARK: View
+    
+    func countBy(_ type: ReminderType) -> Int {
+        notes.filter { $0.type == type }.count
     }
 }

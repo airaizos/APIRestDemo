@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3A07F7AA2B4DA0650062CC42 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A07F7A92B4DA0650062CC42 /* Helpers.swift */; };
 		3A07F7AD2B4DB2210062CC42 /* CoreDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A07F7AC2B4DB2210062CC42 /* CoreDataContainer.swift */; };
-		3A07F7AF2B4DB2550062CC42 /* UserDefaultsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A07F7AE2B4DB2550062CC42 /* UserDefaultsContainer.swift */; };
 		3A07F7B12B4DB2680062CC42 /* PersistenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A07F7B02B4DB2680062CC42 /* PersistenceProtocol.swift */; };
 		3A07F7B52B4DB38E0062CC42 /* DogminderDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A07F7B32B4DB38E0062CC42 /* DogminderDataModel.xcdatamodeld */; };
 		3A07F7BB2B4DB8200062CC42 /* NoteEntityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A07F7BA2B4DB8200062CC42 /* NoteEntityExtensions.swift */; };
@@ -29,6 +28,10 @@
 		3A56A9282B4EF59700465450 /* RemoveNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56A9272B4EF59700465450 /* RemoveNoteUseCase.swift */; };
 		3A643C492B4DDDA0003613B6 /* PreviewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A643C482B4DDDA0003613B6 /* PreviewExtensions.swift */; };
 		3A643C4B2B4DDE55003613B6 /* ViewModelIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A643C4A2B4DDE55003613B6 /* ViewModelIntegrationTests.swift */; };
+		3A7AE26F2B500C7500B017DD /* ListCellNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7AE26E2B500C7500B017DD /* ListCellNoteView.swift */; };
+		3A7AE2722B5018E800B017DD /* ReminderTypeGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7AE2712B5018E800B017DD /* ReminderTypeGrid.swift */; };
+		3A7AE2752B50191700B017DD /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7AE2742B50191700B017DD /* NoteListView.swift */; };
+		3A7C03292B4F308100936947 /* ReminderTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C03282B4F308100936947 /* ReminderTypeView.swift */; };
 		3AD372282B4DBF6200B7CCE9 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD372272B4DBF6200B7CCE9 /* CoreDataHelpers.swift */; };
 		3AD3722A2B4DC12C00B7CCE9 /* DataBaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD372292B4DC12C00B7CCE9 /* DataBaseError.swift */; };
 		3AD3722C2B4DC62F00B7CCE9 /* NoteDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3722B2B4DC62F00B7CCE9 /* NoteDataBase.swift */; };
@@ -49,7 +52,6 @@
 /* Begin PBXFileReference section */
 		3A07F7A92B4DA0650062CC42 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		3A07F7AC2B4DB2210062CC42 /* CoreDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataContainer.swift; sourceTree = "<group>"; };
-		3A07F7AE2B4DB2550062CC42 /* UserDefaultsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsContainer.swift; sourceTree = "<group>"; };
 		3A07F7B02B4DB2680062CC42 /* PersistenceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceProtocol.swift; sourceTree = "<group>"; };
 		3A07F7B42B4DB38E0062CC42 /* DogminderDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DogminderDataModel.xcdatamodel; sourceTree = "<group>"; };
 		3A07F7BA2B4DB8200062CC42 /* NoteEntityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEntityExtensions.swift; sourceTree = "<group>"; };
@@ -71,6 +73,10 @@
 		3A56A9272B4EF59700465450 /* RemoveNoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveNoteUseCase.swift; sourceTree = "<group>"; };
 		3A643C482B4DDDA0003613B6 /* PreviewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewExtensions.swift; sourceTree = "<group>"; };
 		3A643C4A2B4DDE55003613B6 /* ViewModelIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelIntegrationTests.swift; sourceTree = "<group>"; };
+		3A7AE26E2B500C7500B017DD /* ListCellNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellNoteView.swift; sourceTree = "<group>"; };
+		3A7AE2712B5018E800B017DD /* ReminderTypeGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTypeGrid.swift; sourceTree = "<group>"; };
+		3A7AE2742B50191700B017DD /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
+		3A7C03282B4F308100936947 /* ReminderTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTypeView.swift; sourceTree = "<group>"; };
 		3AD372272B4DBF6200B7CCE9 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		3AD372292B4DC12C00B7CCE9 /* DataBaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseError.swift; sourceTree = "<group>"; };
 		3AD3722B2B4DC62F00B7CCE9 /* NoteDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataBase.swift; sourceTree = "<group>"; };
@@ -99,11 +105,9 @@
 		3A07F7AB2B4DB2020062CC42 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				3A56A9222B4EBD1400465450 /* ViewModel */,
 				3AD3722D2B4DCAE300B7CCE9 /* UseCases */,
 				3A07F7B22B4DB35E0062CC42 /* CoreData */,
 				3A07F7B02B4DB2680062CC42 /* PersistenceProtocol.swift */,
-				3A07F7AE2B4DB2550062CC42 /* UserDefaultsContainer.swift */,
 			);
 			name = Persistence;
 			sourceTree = "<group>";
@@ -126,6 +130,7 @@
 			children = (
 				3A3BB3C32B4C805700622FC0 /* NoteDetail.swift */,
 				3A3BB3B12B4C65CC00622FC0 /* ContentView.swift */,
+				3A7AE2702B5018D800B017DD /* Components */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -163,11 +168,12 @@
 		3A3BB3AE2B4C65CC00622FC0 /* DogMinder */ = {
 			isa = PBXGroup;
 			children = (
-				3A07F7AB2B4DB2020062CC42 /* Persistence */,
-				3A08F5E82B4D6DF800BBD4DD /* Views */,
-				3A3BB3C52B4C83BA00622FC0 /* Helpers */,
-				3A3BB3C02B4C683900622FC0 /* Model */,
 				3A3BB3AF2B4C65CC00622FC0 /* DogMinderApp.swift */,
+				3A3BB3C02B4C683900622FC0 /* Model */,
+				3A08F5E82B4D6DF800BBD4DD /* Views */,
+				3A56A9222B4EBD1400465450 /* ViewModel */,
+				3A07F7AB2B4DB2020062CC42 /* Persistence */,
+				3A3BB3C52B4C83BA00622FC0 /* Helpers */,
 				3A3BB3B32B4C65CE00622FC0 /* Assets.xcassets */,
 				3A3BB3B52B4C65CE00622FC0 /* Preview Content */,
 			);
@@ -205,6 +211,17 @@
 				3A3BB3C12B4C684C00622FC0 /* ViewModel.swift */,
 			);
 			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		3A7AE2702B5018D800B017DD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3A7C03282B4F308100936947 /* ReminderTypeView.swift */,
+				3A7AE26E2B500C7500B017DD /* ListCellNoteView.swift */,
+				3A7AE2712B5018E800B017DD /* ReminderTypeGrid.swift */,
+				3A7AE2742B50191700B017DD /* NoteListView.swift */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 		3AD3722D2B4DCAE300B7CCE9 /* UseCases */ = {
@@ -332,8 +349,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A07F7BB2B4DB8200062CC42 /* NoteEntityExtensions.swift in Sources */,
-				3A07F7AF2B4DB2550062CC42 /* UserDefaultsContainer.swift in Sources */,
 				3AD3722C2B4DC62F00B7CCE9 /* NoteDataBase.swift in Sources */,
+				3A7AE2752B50191700B017DD /* NoteListView.swift in Sources */,
 				3A56A9282B4EF59700465450 /* RemoveNoteUseCase.swift in Sources */,
 				3A3BB3C42B4C805700622FC0 /* NoteDetail.swift in Sources */,
 				3A643C492B4DDDA0003613B6 /* PreviewExtensions.swift in Sources */,
@@ -344,12 +361,15 @@
 				3A3BB3BF2B4C661000622FC0 /* Note.swift in Sources */,
 				3A07F7B52B4DB38E0062CC42 /* DogminderDataModel.xcdatamodeld in Sources */,
 				3AD372282B4DBF6200B7CCE9 /* CoreDataHelpers.swift in Sources */,
+				3A7C03292B4F308100936947 /* ReminderTypeView.swift in Sources */,
+				3A7AE2722B5018E800B017DD /* ReminderTypeGrid.swift in Sources */,
 				3A3BB3B22B4C65CC00622FC0 /* ContentView.swift in Sources */,
 				3AD372312B4DCCE400B7CCE9 /* FetchAllNotesUseCase.swift in Sources */,
 				3AD3722F2B4DCAF000B7CCE9 /* CreateNoteUseCase.swift in Sources */,
 				3A07F7AD2B4DB2210062CC42 /* CoreDataContainer.swift in Sources */,
 				3A3BB3C22B4C684C00622FC0 /* ViewModel.swift in Sources */,
 				3AD3722A2B4DC12C00B7CCE9 /* DataBaseError.swift in Sources */,
+				3A7AE26F2B500C7500B017DD /* ListCellNoteView.swift in Sources */,
 				3A3BB3B02B4C65CC00622FC0 /* DogMinderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

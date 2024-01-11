@@ -5,8 +5,9 @@
 //  Created by Adrian Iraizos Mendoza on 8/1/24.
 //
 
-import Foundation
+import SwiftUI
 import CoreData
+
 
 
 enum ReminderType: String,CaseIterable,Identifiable {
@@ -15,7 +16,6 @@ enum ReminderType: String,CaseIterable,Identifiable {
     var id: Self {
         self
     }
-    
 }
 
 enum EventType: String, CaseIterable, Identifiable {
@@ -123,4 +123,52 @@ extension Note {
 }
 
 
+// Extensions for Views
+extension ReminderType {
+    var imageName: String {
+        switch self {
+        case .simple: "note.text"
+        case .expense: "banknote"
+        case .event: "calendar.badge.exclamationmark"
+        case .measure: "ruler"
+        }
+    }
+    
+    var color: Color {
+        switch self {
+        case .simple: Color.orange
+        case .expense: Color.indigo
+        case .event: Color.teal
+        case .measure: Color.mint
+        }
+    }
+}
 
+extension Note {
+    var valueView: String {
+        value != nil ? "\(value ?? 0)" : ""
+    }
+    
+    var commentsView:String {
+        comments ?? ""
+    }
+    var measureView: String {
+        measure?.rawValue.firstUppercased ?? ""
+    }
+    
+    var eventTypeView: String {
+        event?.rawValue.firstUppercased ?? ""
+    }
+    
+    var updatedView: String {
+        updatedAt?.formatted(date: .abbreviated, time: .shortened) ?? ""
+    }
+    var createdView:String {
+        createdAt.formatted(date: .abbreviated, time: .shortened)
+    }
+    
+    var dateView: String {
+        date.formatted(date: .abbreviated, time: .shortened)
+    }
+    
+}

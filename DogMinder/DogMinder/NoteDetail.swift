@@ -26,9 +26,9 @@ struct NoteDetail: View {
         NavigationStack{
             
             VStack(alignment:.leading) {
-                Text(noteId == nil ? "New Note" : "Edit Note")
+                Text(noteId == nil ? "New \(noteType.rawValue.firstUppercased) Note" : "Edit Note")
                     .font(.largeTitle.bold())
-                    .foregroundStyle(Color.black)
+                    .foregroundStyle(noteType.color)
                 Picker("Tipo", selection: $noteType) {
                     ForEach(ReminderType.allCases) { type in
                         Text(type.rawValue.firstUppercased)
@@ -37,8 +37,6 @@ struct NoteDetail: View {
                 .pickerStyle(.segmented)
                 
                 Group {
-                    Text(noteType.rawValue.firstUppercased)
-                        .font(.title)
                     switch noteType {
                     case .simple: Text("")
                     case .expense:
@@ -84,6 +82,7 @@ struct NoteDetail: View {
                         .lineLimit(10,reservesSpace: true)
                 }
             }
+            
             .textFieldStyle(.roundedBorder)
             .font(.headline.bold())
             .foregroundStyle(.gray)
@@ -120,7 +119,7 @@ struct NoteDetail: View {
                 }
             }
         }
-            .navigationTitle(noteId == nil ? "New Note" : "Edit Note")
+        .navigationTitle(noteId == nil ? "New Note" : "Edit Note")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden()
             .onAppear {
