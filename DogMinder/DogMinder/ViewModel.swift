@@ -51,7 +51,6 @@ final class ViewModel: ObservableObject {
     }
     
     //MARK: Fetch Notes
-    
     func fetchAllNotes() {
         do {
             notes = try fetchAllNotesUseCase.fetchAll()
@@ -89,8 +88,7 @@ final class ViewModel: ObservableObject {
     }
     
     //MARK: View
-    
-    func countBy(_ type: ReminderType) -> Int {
+    func countNotes(for type: ReminderType) -> Int {
         notes.filter { $0.type == type }.count
     }
 }

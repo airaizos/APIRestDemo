@@ -167,7 +167,7 @@ extension Note {
         createdAt.formatted(date: .abbreviated, time: .shortened)
     }
     
-    var dateView: String {
+    var dateView: String {
         date.formatted(date: .abbreviated, time: .shortened)
     }
     

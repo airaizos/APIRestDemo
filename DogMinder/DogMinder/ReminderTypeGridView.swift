@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ReminderTypeGrid: View {
+struct ReminderTypeGridView: View {
     var viewModel: ViewModel
     var grid = [GridItem(),GridItem()]
     var body: some View {
@@ -22,7 +22,7 @@ struct ReminderTypeGrid: View {
                     viewModel.noteFilter = reminder
                 }
             label: {
-                ReminderTypeView(name: reminder.rawValue.firstUppercased, imageName: reminder.imageName, count: viewModel.countBy(reminder), color: reminder.color)
+                ReminderTypeView(name: reminder.rawValue.firstUppercased, imageName: reminder.imageName, count: viewModel.countNotes(for: reminder), color: reminder.color)
             }
             }
         }
@@ -32,5 +32,5 @@ struct ReminderTypeGrid: View {
 
 
 #Preview {
-    ReminderTypeGrid(viewModel: ViewModel())
+    ReminderTypeGridView(viewModel: ViewModel())
 }

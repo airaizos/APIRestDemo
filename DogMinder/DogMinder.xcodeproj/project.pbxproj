@@ -29,8 +29,10 @@
 		3A643C492B4DDDA0003613B6 /* PreviewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A643C482B4DDDA0003613B6 /* PreviewExtensions.swift */; };
 		3A643C4B2B4DDE55003613B6 /* ViewModelIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A643C4A2B4DDE55003613B6 /* ViewModelIntegrationTests.swift */; };
 		3A7AE26F2B500C7500B017DD /* ListCellNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7AE26E2B500C7500B017DD /* ListCellNoteView.swift */; };
-		3A7AE2722B5018E800B017DD /* ReminderTypeGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7AE2712B5018E800B017DD /* ReminderTypeGrid.swift */; };
+		3A7AE2722B5018E800B017DD /* ReminderTypeGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7AE2712B5018E800B017DD /* ReminderTypeGridView.swift */; };
 		3A7AE2752B50191700B017DD /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7AE2742B50191700B017DD /* NoteListView.swift */; };
+		3A7AE2772B50204C00B017DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3A7AE2762B50204C00B017DD /* README.md */; };
+		3A7AE2792B5020AE00B017DD /* Testing.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7AE2782B5020AE00B017DD /* Testing.png */; };
 		3A7C03292B4F308100936947 /* ReminderTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C03282B4F308100936947 /* ReminderTypeView.swift */; };
 		3AD372282B4DBF6200B7CCE9 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD372272B4DBF6200B7CCE9 /* CoreDataHelpers.swift */; };
 		3AD3722A2B4DC12C00B7CCE9 /* DataBaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD372292B4DC12C00B7CCE9 /* DataBaseError.swift */; };
@@ -74,8 +76,10 @@
 		3A643C482B4DDDA0003613B6 /* PreviewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewExtensions.swift; sourceTree = "<group>"; };
 		3A643C4A2B4DDE55003613B6 /* ViewModelIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelIntegrationTests.swift; sourceTree = "<group>"; };
 		3A7AE26E2B500C7500B017DD /* ListCellNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellNoteView.swift; sourceTree = "<group>"; };
-		3A7AE2712B5018E800B017DD /* ReminderTypeGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTypeGrid.swift; sourceTree = "<group>"; };
+		3A7AE2712B5018E800B017DD /* ReminderTypeGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTypeGridView.swift; sourceTree = "<group>"; };
 		3A7AE2742B50191700B017DD /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
+		3A7AE2762B50204C00B017DD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3A7AE2782B5020AE00B017DD /* Testing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Testing.png; sourceTree = "<group>"; };
 		3A7C03282B4F308100936947 /* ReminderTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTypeView.swift; sourceTree = "<group>"; };
 		3AD372272B4DBF6200B7CCE9 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		3AD372292B4DC12C00B7CCE9 /* DataBaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseError.swift; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				3A3BB3AE2B4C65CC00622FC0 /* DogMinder */,
+				3A7AE2762B50204C00B017DD /* README.md */,
+				3A7AE2782B5020AE00B017DD /* Testing.png */,
 				3A08F5EE2B4D776400BBD4DD /* DogMinderTests */,
 				3A3BB3AD2B4C65CC00622FC0 /* Products */,
 			);
@@ -218,7 +224,7 @@
 			children = (
 				3A7C03282B4F308100936947 /* ReminderTypeView.swift */,
 				3A7AE26E2B500C7500B017DD /* ListCellNoteView.swift */,
-				3A7AE2712B5018E800B017DD /* ReminderTypeGrid.swift */,
+				3A7AE2712B5018E800B017DD /* ReminderTypeGridView.swift */,
 				3A7AE2742B50191700B017DD /* NoteListView.swift */,
 			);
 			name = Components;
@@ -324,6 +330,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7AE2792B5020AE00B017DD /* Testing.png in Resources */,
+				3A7AE2772B50204C00B017DD /* README.md in Resources */,
 				3A3BB3B72B4C65CE00622FC0 /* Preview Assets.xcassets in Resources */,
 				3A3BB3B42B4C65CE00622FC0 /* Assets.xcassets in Resources */,
 			);
@@ -362,7 +370,7 @@
 				3A07F7B52B4DB38E0062CC42 /* DogminderDataModel.xcdatamodeld in Sources */,
 				3AD372282B4DBF6200B7CCE9 /* CoreDataHelpers.swift in Sources */,
 				3A7C03292B4F308100936947 /* ReminderTypeView.swift in Sources */,
-				3A7AE2722B5018E800B017DD /* ReminderTypeGrid.swift in Sources */,
+				3A7AE2722B5018E800B017DD /* ReminderTypeGridView.swift in Sources */,
 				3A3BB3B22B4C65CC00622FC0 /* ContentView.swift in Sources */,
 				3AD372312B4DCCE400B7CCE9 /* FetchAllNotesUseCase.swift in Sources */,
 				3AD3722F2B4DCAF000B7CCE9 /* CreateNoteUseCase.swift in Sources */,

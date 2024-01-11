@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                ReminderTypeGrid(viewModel: viewModel)
+                ReminderTypeGridView(viewModel: viewModel)
                 NoteListView(viewModel: viewModel)
             }
             .background(.fill)
