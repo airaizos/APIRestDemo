@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A3783B02B5AA71600D2AFCD /* CommunesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */; };
+		3A3783B22B5AA74100D2AFCD /* CommuneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */; };
+		3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */; };
+		3A3783B72B5AAE3300D2AFCD /* CommunesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B62B5AAE3300D2AFCD /* CommunesTableViewController.swift */; };
+		3A3783B92B5AB50F00D2AFCD /* RegionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B82B5AB50E00D2AFCD /* RegionsTableViewController.swift */; };
+		3A3783BB2B5AB51D00D2AFCD /* DepartementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783BA2B5AB51D00D2AFCD /* DepartementsTableViewController.swift */; };
 		3A65BFDE2B583CBE0095794A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFDD2B583CBE0095794A /* AppDelegate.swift */; };
 		3A65BFE02B583CBE0095794A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFDF2B583CBE0095794A /* SceneDelegate.swift */; };
 		3A65BFE22B583CBE0095794A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFE12B583CBE0095794A /* ViewController.swift */; };
@@ -19,9 +25,19 @@
 		3A65BFFC2B5864EA0095794A /* NumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFFB2B5864EA0095794A /* NumberModel.swift */; };
 		3A65BFFE2B5869DB0095794A /* NumbersPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFFD2B5869DB0095794A /* NumbersPersistence.swift */; };
 		3A65C0002B586BF10095794A /* NumbersModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFFF2B586BF10095794A /* NumbersModelLogic.swift */; };
+		3A660DC32B5AE3F400E1BC69 /* PersistenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A660DC22B5AE3F400E1BC69 /* PersistenceError.swift */; };
+		3A660DC52B5AE76000E1BC69 /* CommunesModeLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A660DC42B5AE76000E1BC69 /* CommunesModeLogic.swift */; };
+		3A851C002B5ED4F6005758FA /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851BFF2B5ED4F6005758FA /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesInterface.swift; sourceTree = "<group>"; };
+		3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuneModel.swift; sourceTree = "<group>"; };
+		3A3783B32B5AA8D100D2AFCD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesPersistence.swift; sourceTree = "<group>"; };
+		3A3783B62B5AAE3300D2AFCD /* CommunesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesTableViewController.swift; sourceTree = "<group>"; };
+		3A3783B82B5AB50E00D2AFCD /* RegionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsTableViewController.swift; sourceTree = "<group>"; };
+		3A3783BA2B5AB51D00D2AFCD /* DepartementsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartementsTableViewController.swift; sourceTree = "<group>"; };
 		3A65BFDA2B583CBE0095794A /* APIRestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIRestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A65BFDD2B583CBE0095794A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A65BFDF2B583CBE0095794A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +52,9 @@
 		3A65BFFB2B5864EA0095794A /* NumberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberModel.swift; sourceTree = "<group>"; };
 		3A65BFFD2B5869DB0095794A /* NumbersPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersPersistence.swift; sourceTree = "<group>"; };
 		3A65BFFF2B586BF10095794A /* NumbersModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersModelLogic.swift; sourceTree = "<group>"; };
+		3A660DC22B5AE3F400E1BC69 /* PersistenceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceError.swift; sourceTree = "<group>"; };
+		3A660DC42B5AE76000E1BC69 /* CommunesModeLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesModeLogic.swift; sourceTree = "<group>"; };
+		3A851BFF2B5ED4F6005758FA /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +68,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A3783AE2B5AA64C00D2AFCD /* Communes */ = {
+			isa = PBXGroup;
+			children = (
+				3A660DC02B5AE3C000E1BC69 /* VC */,
+				3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */,
+				3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */,
+				3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */,
+				3A660DC42B5AE76000E1BC69 /* CommunesModeLogic.swift */,
+				3A851BFF2B5ED4F6005758FA /* Helpers.swift */,
+			);
+			name = Communes;
+			sourceTree = "<group>";
+		};
 		3A65BFD12B583CBE0095794A = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +109,7 @@
 				3A65BFEB2B583CCC0095794A /* LaunchScreen.storyboard */,
 				3A65BFEE2B583CCC0095794A /* Info.plist */,
 				3A65BFE62B583CBE0095794A /* APIRestDemo.xcdatamodeld */,
+				3A3783B32B5AA8D100D2AFCD /* MyPlayground.playground */,
 			);
 			path = APIRestDemo;
 			sourceTree = "<group>";
@@ -84,6 +117,8 @@
 		3A65BFF42B5861820095794A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3A660DC12B5AE3E700E1BC69 /* Commons */,
+				3A3783AE2B5AA64C00D2AFCD /* Communes */,
 				3A65BFF72B58646D0095794A /* NumbersAPI */,
 			);
 			name = Controllers;
@@ -107,6 +142,24 @@
 				3A65BFFF2B586BF10095794A /* NumbersModelLogic.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		3A660DC02B5AE3C000E1BC69 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				3A3783B82B5AB50E00D2AFCD /* RegionsTableViewController.swift */,
+				3A3783BA2B5AB51D00D2AFCD /* DepartementsTableViewController.swift */,
+				3A3783B62B5AAE3300D2AFCD /* CommunesTableViewController.swift */,
+			);
+			name = VC;
+			sourceTree = "<group>";
+		};
+		3A660DC12B5AE3E700E1BC69 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				3A660DC22B5AE3F400E1BC69 /* PersistenceError.swift */,
+			);
+			name = Commons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,14 +233,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A660DC32B5AE3F400E1BC69 /* PersistenceError.swift in Sources */,
 				3A65BFFC2B5864EA0095794A /* NumberModel.swift in Sources */,
 				3A65BFF92B5864860095794A /* NumbersInterface.swift in Sources */,
+				3A660DC52B5AE76000E1BC69 /* CommunesModeLogic.swift in Sources */,
+				3A3783B72B5AAE3300D2AFCD /* CommunesTableViewController.swift in Sources */,
+				3A3783B02B5AA71600D2AFCD /* CommunesInterface.swift in Sources */,
+				3A3783BB2B5AB51D00D2AFCD /* DepartementsTableViewController.swift in Sources */,
+				3A3783B92B5AB50F00D2AFCD /* RegionsTableViewController.swift in Sources */,
 				3A65BFE22B583CBE0095794A /* ViewController.swift in Sources */,
 				3A65C0002B586BF10095794A /* NumbersModelLogic.swift in Sources */,
 				3A65BFE82B583CBE0095794A /* APIRestDemo.xcdatamodeld in Sources */,
 				3A65BFFE2B5869DB0095794A /* NumbersPersistence.swift in Sources */,
 				3A65BFDE2B583CBE0095794A /* AppDelegate.swift in Sources */,
+				3A851C002B5ED4F6005758FA /* Helpers.swift in Sources */,
+				3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */,
 				3A65BFF62B58620D0095794A /* NumbersAPIViewController.swift in Sources */,
+				3A3783B22B5AA74100D2AFCD /* CommuneModel.swift in Sources */,
 				3A65BFE02B583CBE0095794A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
