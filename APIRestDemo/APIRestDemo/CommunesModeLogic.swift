@@ -11,11 +11,7 @@ import SwiftUI
 final class CommunesModeLogic {
     static let shared = CommunesModeLogic()
     
-    weak var tableView: UITableViewController?
-    
-    let persistence: CommunesPersistence
-    
-   
+    let persistence: CommunesFetcher
     
     private var regions = [Region]() {
         didSet {
@@ -34,10 +30,9 @@ final class CommunesModeLogic {
         }
     }
     
-    init(persistence: CommunesPersistence = .shared) {
+    init(persistence: CommunesFetcher = CommunesPersistence.shared) {
         self.persistence = persistence
         
-       fetchRegions()
     }
     
     //MARK: Regions
@@ -62,9 +57,7 @@ final class CommunesModeLogic {
     
     func moveRegion(indexPath from: IndexPath, to: IndexPath) {
         regions.swapAt(from.row, to.row)
-        
-//        let index = IndexSet(integer: from.row)
-//        regions.move(fromOffsets: index, toOffset: to.row)
+
     }
     
     //MARK: Department
@@ -113,5 +106,12 @@ final class CommunesModeLogic {
     func moveCommune(from: IndexPath, to: IndexPath) {
         communes.swapAt(from.row, to.row)
     }
+    
+}
+
+
+protocol CommunesFetcher {
+    var session: URLSession { get }
+    func getJSON<JSON:Decodable>(url: URL, type: JSON.Type, receiveValue: @escaping (JSON) -> ())
     
 }

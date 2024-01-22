@@ -42,3 +42,8 @@ extension Commune {
     }
     
 }
+extension Region:Equatable {
+    static func ==(lhs: Region, rhs: Region) -> Bool {
+        lhs.code == rhs.code
+     }
+ }

@@ -28,7 +28,20 @@
 		3A660DC32B5AE3F400E1BC69 /* PersistenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A660DC22B5AE3F400E1BC69 /* PersistenceError.swift */; };
 		3A660DC52B5AE76000E1BC69 /* CommunesModeLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A660DC42B5AE76000E1BC69 /* CommunesModeLogic.swift */; };
 		3A851C002B5ED4F6005758FA /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851BFF2B5ED4F6005758FA /* Helpers.swift */; };
+		3A851C082B5EEF9E005758FA /* APIRestDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851C072B5EEF9E005758FA /* APIRestDemoTests.swift */; };
+		3A851C102B5EEFB6005758FA /* CommunesUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851C0F2B5EEFB6005758FA /* CommunesUnitTests.swift */; };
+		3A851C122B5EF04B005758FA /* CommunesTestsHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851C112B5EF04B005758FA /* CommunesTestsHelpers.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A851C092B5EEF9E005758FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A65BFD22B583CBE0095794A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A65BFD92B583CBE0095794A;
+			remoteInfo = APIRestDemo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesInterface.swift; sourceTree = "<group>"; };
@@ -55,10 +68,21 @@
 		3A660DC22B5AE3F400E1BC69 /* PersistenceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceError.swift; sourceTree = "<group>"; };
 		3A660DC42B5AE76000E1BC69 /* CommunesModeLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesModeLogic.swift; sourceTree = "<group>"; };
 		3A851BFF2B5ED4F6005758FA /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		3A851C052B5EEF9E005758FA /* APIRestDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIRestDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A851C072B5EEF9E005758FA /* APIRestDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRestDemoTests.swift; sourceTree = "<group>"; };
+		3A851C0F2B5EEFB6005758FA /* CommunesUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesUnitTests.swift; sourceTree = "<group>"; };
+		3A851C112B5EF04B005758FA /* CommunesTestsHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesTestsHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3A65BFD72B583CBE0095794A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A851C022B5EEF9E005758FA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -85,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				3A65BFDC2B583CBE0095794A /* APIRestDemo */,
+				3A851C062B5EEF9E005758FA /* APIRestDemoTests */,
 				3A65BFDB2B583CBE0095794A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				3A65BFDA2B583CBE0095794A /* APIRestDemo.app */,
+				3A851C052B5EEF9E005758FA /* APIRestDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,6 +188,24 @@
 			name = Commons;
 			sourceTree = "<group>";
 		};
+		3A851C062B5EEF9E005758FA /* APIRestDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A851C0E2B5EEFA4005758FA /* Communes */,
+				3A851C072B5EEF9E005758FA /* APIRestDemoTests.swift */,
+			);
+			path = APIRestDemoTests;
+			sourceTree = "<group>";
+		};
+		3A851C0E2B5EEFA4005758FA /* Communes */ = {
+			isa = PBXGroup;
+			children = (
+				3A851C0F2B5EEFB6005758FA /* CommunesUnitTests.swift */,
+				3A851C112B5EF04B005758FA /* CommunesTestsHelpers.swift */,
+			);
+			path = Communes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,6 +226,24 @@
 			productReference = 3A65BFDA2B583CBE0095794A /* APIRestDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3A851C042B5EEF9E005758FA /* APIRestDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A851C0B2B5EEF9E005758FA /* Build configuration list for PBXNativeTarget "APIRestDemoTests" */;
+			buildPhases = (
+				3A851C012B5EEF9E005758FA /* Sources */,
+				3A851C022B5EEF9E005758FA /* Frameworks */,
+				3A851C032B5EEF9E005758FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A851C0A2B5EEF9E005758FA /* PBXTargetDependency */,
+			);
+			name = APIRestDemoTests;
+			productName = APIRestDemoTests;
+			productReference = 3A851C052B5EEF9E005758FA /* APIRestDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -194,6 +256,10 @@
 				TargetAttributes = {
 					3A65BFD92B583CBE0095794A = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					3A851C042B5EEF9E005758FA = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 3A65BFD92B583CBE0095794A;
 					};
 				};
 			};
@@ -211,6 +277,7 @@
 			projectRoot = "";
 			targets = (
 				3A65BFD92B583CBE0095794A /* APIRestDemo */,
+				3A851C042B5EEF9E005758FA /* APIRestDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +290,13 @@
 				3A65BFED2B583CCC0095794A /* LaunchScreen.storyboard in Resources */,
 				3A65BFEA2B583CCC0095794A /* Assets.xcassets in Resources */,
 				3A65BFE52B583CBE0095794A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A851C032B5EEF9E005758FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +328,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3A851C012B5EEF9E005758FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A851C102B5EEFB6005758FA /* CommunesUnitTests.swift in Sources */,
+				3A851C082B5EEF9E005758FA /* APIRestDemoTests.swift in Sources */,
+				3A851C122B5EF04B005758FA /* CommunesTestsHelpers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A851C0A2B5EEF9E005758FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A65BFD92B583CBE0095794A /* APIRestDemo */;
+			targetProxy = 3A851C092B5EEF9E005758FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3A65BFE32B583CBE0095794A /* Main.storyboard */ = {
@@ -457,6 +549,42 @@
 			};
 			name = Release;
 		};
+		3A851C0C2B5EEF9E005758FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6SPUJN2479;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.adrianiraizos.APIRestDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APIRestDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/APIRestDemo";
+			};
+			name = Debug;
+		};
+		3A851C0D2B5EEF9E005758FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6SPUJN2479;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.adrianiraizos.APIRestDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APIRestDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/APIRestDemo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -474,6 +602,15 @@
 			buildConfigurations = (
 				3A65BFF22B583CCC0095794A /* Debug */,
 				3A65BFF32B583CCC0095794A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A851C0B2B5EEF9E005758FA /* Build configuration list for PBXNativeTarget "APIRestDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A851C0C2B5EEF9E005758FA /* Debug */,
+				3A851C0D2B5EEF9E005758FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

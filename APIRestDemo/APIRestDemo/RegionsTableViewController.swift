@@ -20,6 +20,7 @@ final class RegionsTableViewController: UITableViewController {
         //Botón de editar
         self.navigationItem.rightBarButtonItem = self.editButtonItem
        
+        modelLogic.fetchRegions()
         ///Actualiza la tableView` cuando ha descargado las *regions*
         NotificationCenter.default.addObserver(forName: .regions, object: nil, queue: .main) { _ in
             self.tableView.reloadData()

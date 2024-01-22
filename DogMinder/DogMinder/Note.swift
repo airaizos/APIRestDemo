@@ -139,7 +139,7 @@ extension ReminderType {
         case .simple: Color.orange
         case .expense: Color.indigo
         case .event: Color.teal
-        case .measure: Color.mint
+        case .measure: Color.pink
         }
     }
 }

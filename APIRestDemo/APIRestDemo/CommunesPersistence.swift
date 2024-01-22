@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 
-final class CommunesPersistence {
+final class CommunesPersistence:CommunesFetcher {
     static let shared = CommunesPersistence()
 							
     let session: URLSession
