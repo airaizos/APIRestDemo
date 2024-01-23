@@ -120,24 +120,6 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UUt-CA-Ney">
-                                <rect key="frame" x="16" y="628" width="160" height="160"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chuck Norris" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lnA-f6-92N">
-                                        <rect key="frame" x="8" y="8" width="144" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="HhX-s1-yqf">
-                                        <rect key="frame" x="0.0" y="37" width="160" height="123"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5y-PK-uPW">
                                 <rect key="frame" x="224" y="475" width="108" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -154,6 +136,15 @@
                                 <buttonConfiguration key="configuration" style="plain" image="france" imagePlacement="bottom" title="Communes"/>
                                 <connections>
                                     <action selector="gotoCommunes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eoy-Tp-tw4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gx7-df-V6a">
+                                <rect key="frame" x="37" y="666" width="119" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chucknorris" imagePlacement="bottom" title="ChuckNorris"/>
+                                <connections>
+                                    <action selector="goToChuckNorris:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DXF-pL-EGw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -197,6 +188,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chucknorris" width="83.333335876464844" height="50.666667938232422"/>
         <image name="france" width="83.333335876464844" height="44.333332061767578"/>
         <image name="numbers" width="83.333335876464844" height="83.333335876464844"/>
         <systemColor name="opaqueSeparatorColor">

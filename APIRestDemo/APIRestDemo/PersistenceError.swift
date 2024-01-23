@@ -8,5 +8,5 @@
 import Foundation
 
 enum PersistenceError: Error {
-    case status, noHTTP, server, json
+    case status, noHTTP, server, json(String?), general(String), data
 }

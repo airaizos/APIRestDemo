@@ -33,6 +33,12 @@
 		3A851C102B5EEFB6005758FA /* CommunesUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851C0F2B5EEFB6005758FA /* CommunesUnitTests.swift */; };
 		3A851C122B5EF04B005758FA /* CommunesTestsHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851C112B5EF04B005758FA /* CommunesTestsHelpers.swift */; };
 		3A8DB3422B5FF95900E7BDA3 /* CommunesStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8DB3402B5FF95900E7BDA3 /* CommunesStoryboard.storyboard */; };
+		3A8DB3442B60099600E7BDA3 /* ChuckNorrisStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8DB3432B60099600E7BDA3 /* ChuckNorrisStoryboard.storyboard */; };
+		3A8DB3462B600BCB00E7BDA3 /* ChuckNorrisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB3452B600BCB00E7BDA3 /* ChuckNorrisViewController.swift */; };
+		3A8DB3482B600BFC00E7BDA3 /* ChuckNorrisInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB3472B600BFC00E7BDA3 /* ChuckNorrisInterface.swift */; };
+		3A8DB34A2B600CEC00E7BDA3 /* ChuckNorrisPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB3492B600CEC00E7BDA3 /* ChuckNorrisPersistence.swift */; };
+		3A8DB34C2B600D0100E7BDA3 /* ChuckNorrisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB34B2B600D0100E7BDA3 /* ChuckNorrisModel.swift */; };
+		3A8DB34E2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB34D2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +82,12 @@
 		3A851C0F2B5EEFB6005758FA /* CommunesUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesUnitTests.swift; sourceTree = "<group>"; };
 		3A851C112B5EF04B005758FA /* CommunesTestsHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesTestsHelpers.swift; sourceTree = "<group>"; };
 		3A8DB3412B5FF95900E7BDA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CommunesStoryboard.storyboard; sourceTree = "<group>"; };
+		3A8DB3432B60099600E7BDA3 /* ChuckNorrisStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChuckNorrisStoryboard.storyboard; sourceTree = "<group>"; };
+		3A8DB3452B600BCB00E7BDA3 /* ChuckNorrisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisViewController.swift; sourceTree = "<group>"; };
+		3A8DB3472B600BFC00E7BDA3 /* ChuckNorrisInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisInterface.swift; sourceTree = "<group>"; };
+		3A8DB3492B600CEC00E7BDA3 /* ChuckNorrisPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisPersistence.swift; sourceTree = "<group>"; };
+		3A8DB34B2B600D0100E7BDA3 /* ChuckNorrisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisModel.swift; sourceTree = "<group>"; };
+		3A8DB34D2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisModelLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +228,12 @@
 		3A851C132B5EFE7E005758FA /* ChuckNorris */ = {
 			isa = PBXGroup;
 			children = (
+				3A8DB3432B60099600E7BDA3 /* ChuckNorrisStoryboard.storyboard */,
+				3A8DB3452B600BCB00E7BDA3 /* ChuckNorrisViewController.swift */,
+				3A8DB3472B600BFC00E7BDA3 /* ChuckNorrisInterface.swift */,
+				3A8DB3492B600CEC00E7BDA3 /* ChuckNorrisPersistence.swift */,
+				3A8DB34B2B600D0100E7BDA3 /* ChuckNorrisModel.swift */,
+				3A8DB34D2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift */,
 			);
 			name = ChuckNorris;
 			sourceTree = "<group>";
@@ -305,6 +323,7 @@
 				3A8DB3422B5FF95900E7BDA3 /* CommunesStoryboard.storyboard in Resources */,
 				3A65BFED2B583CCC0095794A /* LaunchScreen.storyboard in Resources */,
 				3A65BFEA2B583CCC0095794A /* Assets.xcassets in Resources */,
+				3A8DB3442B60099600E7BDA3 /* ChuckNorrisStoryboard.storyboard in Resources */,
 				3A65BFE52B583CBE0095794A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,18 +343,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A660DC32B5AE3F400E1BC69 /* PersistenceError.swift in Sources */,
+				3A8DB3482B600BFC00E7BDA3 /* ChuckNorrisInterface.swift in Sources */,
 				3A65BFFC2B5864EA0095794A /* NumberModel.swift in Sources */,
+				3A8DB34A2B600CEC00E7BDA3 /* ChuckNorrisPersistence.swift in Sources */,
 				3A65BFF92B5864860095794A /* NumbersInterface.swift in Sources */,
+				3A8DB34C2B600D0100E7BDA3 /* ChuckNorrisModel.swift in Sources */,
 				3A660DC52B5AE76000E1BC69 /* CommunesModeLogic.swift in Sources */,
 				3A3783B72B5AAE3300D2AFCD /* CommunesTableViewController.swift in Sources */,
 				3A3783B02B5AA71600D2AFCD /* CommunesInterface.swift in Sources */,
 				3A3783BB2B5AB51D00D2AFCD /* DepartementsTableViewController.swift in Sources */,
 				3A3783B92B5AB50F00D2AFCD /* RegionsTableViewController.swift in Sources */,
+				3A8DB3462B600BCB00E7BDA3 /* ChuckNorrisViewController.swift in Sources */,
 				3A65BFE22B583CBE0095794A /* ViewController.swift in Sources */,
 				3A65C0002B586BF10095794A /* NumbersModelLogic.swift in Sources */,
 				3A65BFE82B583CBE0095794A /* APIRestDemo.xcdatamodeld in Sources */,
 				3A65BFFE2B5869DB0095794A /* NumbersPersistence.swift in Sources */,
 				3A65BFDE2B583CBE0095794A /* AppDelegate.swift in Sources */,
+				3A8DB34E2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift in Sources */,
 				3A851C002B5ED4F6005758FA /* Helpers.swift in Sources */,
 				3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */,
 				3A65BFF62B58620D0095794A /* NumbersAPIViewController.swift in Sources */,

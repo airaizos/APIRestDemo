@@ -42,7 +42,7 @@ final class CommunesPersistence: CommunesFetcher {
                 if let error = error as? PersistenceError {
                     return error
                 } else {
-                    return PersistenceError.json
+                    return PersistenceError.json("error")
                 }
             }
             .receive(on: DispatchQueue.main)
