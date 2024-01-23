@@ -6,29 +6,16 @@
 //
 
 import SwiftUI
-
+import Combine
 
 final class CommunesModeLogic {
     static let shared = CommunesModeLogic()
     
     let persistence: CommunesFetcher
     
-    private var regions = [Region]() {
-        didSet {
-            NotificationCenter.default.post(name: .regions, object: nil)
-        }
-    }
-    
-    private var departements = [Departement]() {
-        didSet {
-            NotificationCenter.default.post(name: .regions, object: nil)
-        }
-    }
-    private var communes = [Commune]() {
-        didSet {
-            NotificationCenter.default.post(name: .regions, object: nil)
-        }
-    }
+    private var regions = [Region]() 
+    private var departements = [Departement]()
+    private var communes = [Commune]()
     
     init(persistence: CommunesFetcher = CommunesPersistence.shared) {
         self.persistence = persistence
@@ -112,6 +99,8 @@ final class CommunesModeLogic {
 
 protocol CommunesFetcher {
     var session: URLSession { get }
+    var subject: PassthroughSubject<String,Never> { get }
+    func valuesReceived()
     func getJSON<JSON:Decodable>(url: URL, type: JSON.Type, receiveValue: @escaping (JSON) -> ())
     
 }

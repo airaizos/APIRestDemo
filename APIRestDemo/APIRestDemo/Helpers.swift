@@ -7,6 +7,6 @@
 
 import Foundation
 
-extension Notification.Name {
-    static let regions = Notification.Name("REGIONS")
-}
+//extension Notification.Name {
+// //   static let regions = Notification.Name("REGIONS")
+//}

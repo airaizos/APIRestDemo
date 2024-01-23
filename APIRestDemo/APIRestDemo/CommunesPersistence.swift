@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 
-final class CommunesPersistence:CommunesFetcher {
+final class CommunesPersistence: CommunesFetcher {
     static let shared = CommunesPersistence()
 							
     let session: URLSession
@@ -18,6 +18,7 @@ final class CommunesPersistence:CommunesFetcher {
         self.session = session
     }
     var subscribers = Set<AnyCancellable>()
+    var subject = PassthroughSubject<String,Never>()
     
     func getJSON<JSON:Decodable>(url: URL, type: JSON.Type, receiveValue: @escaping (JSON) -> ()) {
         URLSession.shared
@@ -47,12 +48,17 @@ final class CommunesPersistence:CommunesFetcher {
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
-                case .finished: print(url.absoluteString)
+                case .finished: 
+                    self.valuesReceived()
+                    
+                    print(url.absoluteString)
                 case .failure(_): print("Error")
                 }
             }, receiveValue: receiveValue)
             .store(in: &subscribers)
     }
     
-   
+    func valuesReceived() {
+        subject.send("")
+    }
 }

@@ -14,8 +14,8 @@
             filePath = "APIRestDemo/CommunesModeLogic.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "fetchRegions()"
             landmarkType = "7">
             <Locations>
@@ -62,8 +62,8 @@
             filePath = "APIRestDemo/RegionsTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
             <Locations>
@@ -125,8 +125,8 @@
             filePath = "APIRestDemo/DepartementsTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
@@ -173,8 +173,8 @@
             filePath = "APIRestDemo/RegionsTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -189,10 +189,10 @@
             filePath = "APIRestDemo/CommunesModeLogic.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "CommunesModeLogic"
-            landmarkType = "3">
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "deleteCommuneFor(indexPath:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "BC1F02F6-295D-4B90-9642-9720E548E9DC - 6668dfcea32c0969"
@@ -238,6 +238,36 @@
                   startingLineNumber = "106"
                   endingLineNumber = "106"
                   offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "BC1F02F6-295D-4B90-9642-9720E548E9DC - 6668dfcea32c0a42"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "APIRestDemo.CommunesModeLogic.deleteCommuneFor(indexPath: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/CommunesModeLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "BC1F02F6-295D-4B90-9642-9720E548E9DC - 6668dfcea32c041d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "APIRestDemo.CommunesModeLogic.deleteCommuneFor(indexPath: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/CommunesModeLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "144">
                </Location>
             </Locations>
          </BreakpointContent>

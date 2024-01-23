@@ -13,6 +13,7 @@
 		3A3783B72B5AAE3300D2AFCD /* CommunesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B62B5AAE3300D2AFCD /* CommunesTableViewController.swift */; };
 		3A3783B92B5AB50F00D2AFCD /* RegionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B82B5AB50E00D2AFCD /* RegionsTableViewController.swift */; };
 		3A3783BB2B5AB51D00D2AFCD /* DepartementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783BA2B5AB51D00D2AFCD /* DepartementsTableViewController.swift */; };
+		3A588BC32B5FD88E00F20A0C /* NumbersStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A588BC12B5FD88E00F20A0C /* NumbersStoryboard.storyboard */; };
 		3A65BFDE2B583CBE0095794A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFDD2B583CBE0095794A /* AppDelegate.swift */; };
 		3A65BFE02B583CBE0095794A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFDF2B583CBE0095794A /* SceneDelegate.swift */; };
 		3A65BFE22B583CBE0095794A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFE12B583CBE0095794A /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		3A851C082B5EEF9E005758FA /* APIRestDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851C072B5EEF9E005758FA /* APIRestDemoTests.swift */; };
 		3A851C102B5EEFB6005758FA /* CommunesUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851C0F2B5EEFB6005758FA /* CommunesUnitTests.swift */; };
 		3A851C122B5EF04B005758FA /* CommunesTestsHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851C112B5EF04B005758FA /* CommunesTestsHelpers.swift */; };
+		3A8DB3422B5FF95900E7BDA3 /* CommunesStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8DB3402B5FF95900E7BDA3 /* CommunesStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 		3A3783B62B5AAE3300D2AFCD /* CommunesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesTableViewController.swift; sourceTree = "<group>"; };
 		3A3783B82B5AB50E00D2AFCD /* RegionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsTableViewController.swift; sourceTree = "<group>"; };
 		3A3783BA2B5AB51D00D2AFCD /* DepartementsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartementsTableViewController.swift; sourceTree = "<group>"; };
+		3A588BC22B5FD88E00F20A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = APIRestDemo/Base.lproj/NumbersStoryboard.storyboard; sourceTree = "<group>"; };
 		3A65BFDA2B583CBE0095794A /* APIRestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIRestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A65BFDD2B583CBE0095794A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A65BFDF2B583CBE0095794A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 		3A851C072B5EEF9E005758FA /* APIRestDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRestDemoTests.swift; sourceTree = "<group>"; };
 		3A851C0F2B5EEFB6005758FA /* CommunesUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesUnitTests.swift; sourceTree = "<group>"; };
 		3A851C112B5EF04B005758FA /* CommunesTestsHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesTestsHelpers.swift; sourceTree = "<group>"; };
+		3A8DB3412B5FF95900E7BDA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CommunesStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +99,12 @@
 		3A3783AE2B5AA64C00D2AFCD /* Communes */ = {
 			isa = PBXGroup;
 			children = (
-				3A660DC02B5AE3C000E1BC69 /* VC */,
-				3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */,
+				3A8DB3402B5FF95900E7BDA3 /* CommunesStoryboard.storyboard */,
 				3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */,
-				3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */,
 				3A660DC42B5AE76000E1BC69 /* CommunesModeLogic.swift */,
+				3A660DC02B5AE3C000E1BC69 /* ViewController */,
+				3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */,
+				3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */,
 				3A851BFF2B5ED4F6005758FA /* Helpers.swift */,
 			);
 			name = Communes;
@@ -143,6 +148,7 @@
 		3A65BFF42B5861820095794A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3A851C132B5EFE7E005758FA /* ChuckNorris */,
 				3A660DC12B5AE3E700E1BC69 /* Commons */,
 				3A3783AE2B5AA64C00D2AFCD /* Communes */,
 				3A65BFF72B58646D0095794A /* NumbersAPI */,
@@ -153,6 +159,7 @@
 		3A65BFF72B58646D0095794A /* NumbersAPI */ = {
 			isa = PBXGroup;
 			children = (
+				3A588BC12B5FD88E00F20A0C /* NumbersStoryboard.storyboard */,
 				3A65BFFA2B5864D50095794A /* Model */,
 				3A65BFF52B58620D0095794A /* NumbersAPIViewController.swift */,
 				3A65BFF82B5864860095794A /* NumbersInterface.swift */,
@@ -170,14 +177,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		3A660DC02B5AE3C000E1BC69 /* VC */ = {
+		3A660DC02B5AE3C000E1BC69 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				3A3783B82B5AB50E00D2AFCD /* RegionsTableViewController.swift */,
 				3A3783BA2B5AB51D00D2AFCD /* DepartementsTableViewController.swift */,
 				3A3783B62B5AAE3300D2AFCD /* CommunesTableViewController.swift */,
 			);
-			name = VC;
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		3A660DC12B5AE3E700E1BC69 /* Commons */ = {
@@ -204,6 +211,13 @@
 				3A851C112B5EF04B005758FA /* CommunesTestsHelpers.swift */,
 			);
 			path = Communes;
+			sourceTree = "<group>";
+		};
+		3A851C132B5EFE7E005758FA /* ChuckNorris */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ChuckNorris;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +301,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A588BC32B5FD88E00F20A0C /* NumbersStoryboard.storyboard in Resources */,
+				3A8DB3422B5FF95900E7BDA3 /* CommunesStoryboard.storyboard in Resources */,
 				3A65BFED2B583CCC0095794A /* LaunchScreen.storyboard in Resources */,
 				3A65BFEA2B583CCC0095794A /* Assets.xcassets in Resources */,
 				3A65BFE52B583CBE0095794A /* Main.storyboard in Resources */,
@@ -349,6 +365,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3A588BC12B5FD88E00F20A0C /* NumbersStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A588BC22B5FD88E00F20A0C /* Base */,
+			);
+			name = NumbersStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
 		3A65BFE32B583CBE0095794A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -363,6 +387,14 @@
 				3A65BFEC2B583CCC0095794A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3A8DB3402B5FF95900E7BDA3 /* CommunesStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A8DB3412B5FF95900E7BDA3 /* Base */,
+			);
+			name = CommunesStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
