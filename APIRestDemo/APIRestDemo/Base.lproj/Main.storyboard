@@ -152,9 +152,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="R92-z2-cxl"/>
-                    <connections>
-                        <outlet property="BattutaView" destination="8zn-SJ-6Iv" id="eCl-be-ekc"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

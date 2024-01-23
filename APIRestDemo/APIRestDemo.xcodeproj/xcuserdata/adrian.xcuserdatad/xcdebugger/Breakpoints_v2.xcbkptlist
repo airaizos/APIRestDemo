@@ -272,5 +272,53 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EA3CF1FD-18C6-4ADE-9745-1FAE1C146EBA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "APIRestDemo/ChuckNorrisPersistence.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "getFavorites()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EA3CF1FD-18C6-4ADE-9745-1FAE1C146EBA - 2f21e81c2d921751"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "APIRestDemo.ChuckNorrisPersistence.getFavorites() throws -&gt; Swift.Array&lt;APIRestDemo.ChuckNorrisModel&gt;"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/ChuckNorrisPersistence.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "248">
+               </Location>
+               <Location
+                  uuid = "EA3CF1FD-18C6-4ADE-9745-1FAE1C146EBA - 2f21e81c2d921751"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "APIRestDemo.ChuckNorrisPersistence.getFavorites() throws -&gt; Swift.Array&lt;APIRestDemo.ChuckNorrisModel&gt;"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/ChuckNorrisPersistence.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "424">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

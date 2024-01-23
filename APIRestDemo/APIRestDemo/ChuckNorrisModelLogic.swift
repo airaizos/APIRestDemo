@@ -14,12 +14,22 @@ final class ChuckNorrisModelLogic {
     
     init(persistence: ChuckNorrisPersistence = .shared) {
         self.persistence = persistence
+        loadFavorites()
     }
     
     var action: ((String) -> Void)?
+    var tableAction: ((String) -> Void)?
     private var joke: ChuckNorrisModel?
     
-    var favorites = [ChuckNorrisModel]()
+    private var favorites = [ChuckNorrisModel]() {
+        didSet {
+            do {
+                try persistence.saveFavorites(jokes: favorites)
+            } catch {
+                print("Error")
+            }
+        }
+    }
     
     func getJoke() {
         persistence.fetchJoke(url: .chuckNorrisURL, type: ChuckNorrisModel.self) { result in
@@ -33,7 +43,12 @@ final class ChuckNorrisModelLogic {
     }
     
     func saveJoke() {
-        
+        if let favorite = joke,
+           !favorites.contains(where: { $0.value == favorite.value })
+        {
+            favorites.insert(favorite, at: 0)
+            tableAction?("")
+        }
     }
     
     func getLabel() -> String {
@@ -41,7 +56,33 @@ final class ChuckNorrisModelLogic {
     }
     
     func getCategories() -> String {
-        joke?.categories.joined(separator: ",") ?? "No category"
+        joke?.categoriesView ?? "No category"
+    }
+ 
+    
+    
+    //TableView
+    func loadFavorites() {
+        do {
+            favorites = try persistence.getFavorites()
+        } catch {
+            print("Mostrar error")
+        }
     }
     
+    func getRowsCount() -> Int {
+        favorites.count
+    }
+    
+    func getJokeRow(at indexPath: IndexPath) -> ChuckNorrisModel {
+        favorites[indexPath.row]
+    }
+    
+    func deleteJoke(at indexPath: IndexPath) {
+        favorites.remove(at: indexPath.row)
+    }
+    
+    func moveJoke(from: IndexPath, to: IndexPath) {
+        favorites.swapAt(from.row, to.row)
+    }
 }

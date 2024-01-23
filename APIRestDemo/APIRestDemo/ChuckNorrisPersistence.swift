@@ -37,4 +37,17 @@ final class ChuckNorrisPersistence {
         }.resume()
     }
     
+    //Save to Documents Directory
+    func saveFavorites(jokes: [ChuckNorrisModel]) throws {
+        let data = try JSONEncoder().encode(jokes)
+        try data.write(to: .chuckNorrisFavorites, options: .atomic)
+    }
+    
+    
+    func getFavorites() throws -> [ChuckNorrisModel] {
+        print(URL.chuckNorrisFavorites.absoluteString)
+        let data = try Data(contentsOf: URL.chuckNorrisFavorites)
+        return try JSONDecoder().decode([ChuckNorrisModel].self, from: data)
+    }
+    
 }

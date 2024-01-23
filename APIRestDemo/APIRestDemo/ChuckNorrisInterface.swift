@@ -9,4 +9,7 @@ import Foundation
 
 extension URL {
     static let chuckNorrisURL = URL(string: "https://api.chucknorris.io/jokes/random")!
+    
+    static let chuckNorrisFavorites = URL.documentsDirectory.appending(path: "chuckNorris.json")
 }
+

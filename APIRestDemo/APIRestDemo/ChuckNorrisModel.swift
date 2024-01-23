@@ -13,3 +13,10 @@ struct ChuckNorrisModel: Codable {
     let value: String
 
 }
+
+extension ChuckNorrisModel {
+    var categoriesView: String {
+        categories.joined(separator: ",")
+    }
+    
+}
