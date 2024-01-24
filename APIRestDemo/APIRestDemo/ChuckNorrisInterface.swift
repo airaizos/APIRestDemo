@@ -13,3 +13,12 @@ extension URL {
     static let chuckNorrisFavorites = URL.documentsDirectory.appending(path: "chuckNorris.json")
 }
 
+protocol URLLocator {
+    var chuckNorrisURL: URL { get }
+    var chuckNorrisFavorites: URL { get }
+}
+
+struct URLProduction: URLLocator {
+    let chuckNorrisURL = URL(string: "https://api.chucknorris.io/jokes/random")!
+    let chuckNorrisFavorites = URL.documentsDirectory.appending(path: "chuckNorris.json")
+}

@@ -7,15 +7,6 @@
 
 import Foundation
 
-protocol URLLocator {
-    var chuckNorrisURL: URL { get }
-    var chuckNorrisFavorites: URL { get }
-}
-
-struct URLProduction: URLLocator {
-    let chuckNorrisURL = URL(string: "https://api.chucknorris.io/jokes/random")!
-    let chuckNorrisFavorites = URL.documentsDirectory.appending(path: "chuckNorris.json")
-}
 
 final class ChuckNorrisPersistence {
     static let shared = ChuckNorrisPersistence()

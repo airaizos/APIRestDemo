@@ -10,6 +10,13 @@
 		3A31F49B2B61143800A5F0D3 /* ChuckNorrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F49A2B61143800A5F0D3 /* ChuckNorrisTests.swift */; };
 		3A31F49D2B61151900A5F0D3 /* ChuckNorrisHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F49C2B61151900A5F0D3 /* ChuckNorrisHelpers.swift */; };
 		3A31F49F2B6148DD00A5F0D3 /* testJokes.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A31F49E2B6148DD00A5F0D3 /* testJokes.json */; };
+		3A31F4A22B614DAA00A5F0D3 /* DiceBearStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A31F4A12B614DAA00A5F0D3 /* DiceBearStoryboard.storyboard */; };
+		3A31F4A62B61514B00A5F0D3 /* DiceBearInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4A52B61514B00A5F0D3 /* DiceBearInterface.swift */; };
+		3A31F4A82B61558400A5F0D3 /* DiceBearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4A72B61558400A5F0D3 /* DiceBearViewController.swift */; };
+		3A31F4AA2B6155E000A5F0D3 /* DiceBearPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4A92B6155E000A5F0D3 /* DiceBearPersistence.swift */; };
+		3A31F4AC2B615F3B00A5F0D3 /* DiceBearModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4AB2B615F3B00A5F0D3 /* DiceBearModelLogic.swift */; };
+		3A31F4AE2B61619600A5F0D3 /* DiceBearViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4AD2B61619600A5F0D3 /* DiceBearViewLogic.swift */; };
+		3A31F4B02B616E8200A5F0D3 /* DiceBearModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4AF2B616E8200A5F0D3 /* DiceBearModel.swift */; };
 		3A3783B02B5AA71600D2AFCD /* CommunesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */; };
 		3A3783B22B5AA74100D2AFCD /* CommuneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */; };
 		3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */; };
@@ -59,6 +66,13 @@
 		3A31F49A2B61143800A5F0D3 /* ChuckNorrisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisTests.swift; sourceTree = "<group>"; };
 		3A31F49C2B61151900A5F0D3 /* ChuckNorrisHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisHelpers.swift; sourceTree = "<group>"; };
 		3A31F49E2B6148DD00A5F0D3 /* testJokes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testJokes.json; sourceTree = "<group>"; };
+		3A31F4A12B614DAA00A5F0D3 /* DiceBearStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiceBearStoryboard.storyboard; sourceTree = "<group>"; };
+		3A31F4A52B61514B00A5F0D3 /* DiceBearInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearInterface.swift; sourceTree = "<group>"; };
+		3A31F4A72B61558400A5F0D3 /* DiceBearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearViewController.swift; sourceTree = "<group>"; };
+		3A31F4A92B6155E000A5F0D3 /* DiceBearPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearPersistence.swift; sourceTree = "<group>"; };
+		3A31F4AB2B615F3B00A5F0D3 /* DiceBearModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearModelLogic.swift; sourceTree = "<group>"; };
+		3A31F4AD2B61619600A5F0D3 /* DiceBearViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearViewLogic.swift; sourceTree = "<group>"; };
+		3A31F4AF2B616E8200A5F0D3 /* DiceBearModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearModel.swift; sourceTree = "<group>"; };
 		3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesInterface.swift; sourceTree = "<group>"; };
 		3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuneModel.swift; sourceTree = "<group>"; };
 		3A3783B32B5AA8D100D2AFCD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -137,6 +151,20 @@
 			name = ChuckNorrisTests;
 			sourceTree = "<group>";
 		};
+		3A31F4A02B614CA400A5F0D3 /* DiceBear */ = {
+			isa = PBXGroup;
+			children = (
+				3A31F4A12B614DAA00A5F0D3 /* DiceBearStoryboard.storyboard */,
+				3A31F4A52B61514B00A5F0D3 /* DiceBearInterface.swift */,
+				3A31F4A72B61558400A5F0D3 /* DiceBearViewController.swift */,
+				3A31F4A92B6155E000A5F0D3 /* DiceBearPersistence.swift */,
+				3A31F4AB2B615F3B00A5F0D3 /* DiceBearModelLogic.swift */,
+				3A31F4AD2B61619600A5F0D3 /* DiceBearViewLogic.swift */,
+				3A31F4AF2B616E8200A5F0D3 /* DiceBearModel.swift */,
+			);
+			name = DiceBear;
+			sourceTree = "<group>";
+		};
 		3A3783AE2B5AA64C00D2AFCD /* Communes */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +218,7 @@
 		3A65BFF42B5861820095794A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3A31F4A02B614CA400A5F0D3 /* DiceBear */,
 				3A851C132B5EFE7E005758FA /* ChuckNorris */,
 				3A3783AE2B5AA64C00D2AFCD /* Communes */,
 				3A65BFF72B58646D0095794A /* NumbersAPI */,
@@ -353,6 +382,7 @@
 				3A65BFEA2B583CCC0095794A /* Assets.xcassets in Resources */,
 				3A8DB3442B60099600E7BDA3 /* ChuckNorrisStoryboard.storyboard in Resources */,
 				3A65BFE52B583CBE0095794A /* Main.storyboard in Resources */,
+				3A31F4A22B614DAA00A5F0D3 /* DiceBearStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,15 +404,20 @@
 				3A660DC32B5AE3F400E1BC69 /* PersistenceError.swift in Sources */,
 				3A8DB3482B600BFC00E7BDA3 /* ChuckNorrisInterface.swift in Sources */,
 				3A65BFFC2B5864EA0095794A /* NumberModel.swift in Sources */,
+				3A31F4AA2B6155E000A5F0D3 /* DiceBearPersistence.swift in Sources */,
 				3A8DB34A2B600CEC00E7BDA3 /* ChuckNorrisPersistence.swift in Sources */,
 				3A65BFF92B5864860095794A /* NumbersInterface.swift in Sources */,
+				3A31F4B02B616E8200A5F0D3 /* DiceBearModel.swift in Sources */,
 				3A8DB34C2B600D0100E7BDA3 /* ChuckNorrisModel.swift in Sources */,
 				3A660DC52B5AE76000E1BC69 /* CommunesModeLogic.swift in Sources */,
+				3A31F4AE2B61619600A5F0D3 /* DiceBearViewLogic.swift in Sources */,
+				3A31F4A82B61558400A5F0D3 /* DiceBearViewController.swift in Sources */,
 				3A3783B72B5AAE3300D2AFCD /* CommunesTableViewController.swift in Sources */,
 				3A3783B02B5AA71600D2AFCD /* CommunesInterface.swift in Sources */,
 				3A3783BB2B5AB51D00D2AFCD /* DepartementsTableViewController.swift in Sources */,
 				3A3783B92B5AB50F00D2AFCD /* RegionsTableViewController.swift in Sources */,
 				3A8DB3462B600BCB00E7BDA3 /* ChuckNorrisViewController.swift in Sources */,
+				3A31F4A62B61514B00A5F0D3 /* DiceBearInterface.swift in Sources */,
 				3A65BFE22B583CBE0095794A /* ViewController.swift in Sources */,
 				3A65C0002B586BF10095794A /* NumbersModelLogic.swift in Sources */,
 				3A65BFE82B583CBE0095794A /* APIRestDemo.xcdatamodeld in Sources */,
@@ -393,6 +428,7 @@
 				3AAC265E2B60201E007EED64 /* Extensions.swift in Sources */,
 				3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */,
 				3A65BFF62B58620D0095794A /* NumbersAPIViewController.swift in Sources */,
+				3A31F4AC2B615F3B00A5F0D3 /* DiceBearModelLogic.swift in Sources */,
 				3A3783B22B5AA74100D2AFCD /* CommuneModel.swift in Sources */,
 				3A65BFE02B583CBE0095794A /* SceneDelegate.swift in Sources */,
 			);

@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--NumbersAPI View Controller-->
+        <!--Numbers Facts-->
         <scene sceneID="mE3-5c-AfZ">
             <objects>
-                <viewController storyboardIdentifier="NumbersStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D5D-Bb-pBM" customClass="NumbersAPIViewController" customModule="APIRestDemo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NumbersStoryboard" title="Numbers Facts" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D5D-Bb-pBM" customClass="NumbersAPIViewController" customModule="APIRestDemo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F0I-xO-Oes">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
