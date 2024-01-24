@@ -154,15 +154,31 @@
 		3A31F4A02B614CA400A5F0D3 /* DiceBear */ = {
 			isa = PBXGroup;
 			children = (
-				3A31F4A12B614DAA00A5F0D3 /* DiceBearStoryboard.storyboard */,
-				3A31F4A52B61514B00A5F0D3 /* DiceBearInterface.swift */,
-				3A31F4A72B61558400A5F0D3 /* DiceBearViewController.swift */,
-				3A31F4A92B6155E000A5F0D3 /* DiceBearPersistence.swift */,
-				3A31F4AB2B615F3B00A5F0D3 /* DiceBearModelLogic.swift */,
-				3A31F4AD2B61619600A5F0D3 /* DiceBearViewLogic.swift */,
 				3A31F4AF2B616E8200A5F0D3 /* DiceBearModel.swift */,
+				3A31F4B22B61A20400A5F0D3 /* Helpers */,
+				3A31F4B12B61A1E400A5F0D3 /* Logic */,
+				3A31F4A12B614DAA00A5F0D3 /* DiceBearStoryboard.storyboard */,
+				3A31F4A72B61558400A5F0D3 /* DiceBearViewController.swift */,
 			);
 			name = DiceBear;
+			sourceTree = "<group>";
+		};
+		3A31F4B12B61A1E400A5F0D3 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				3A31F4AB2B615F3B00A5F0D3 /* DiceBearModelLogic.swift */,
+				3A31F4AD2B61619600A5F0D3 /* DiceBearViewLogic.swift */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		3A31F4B22B61A20400A5F0D3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3A31F4A92B6155E000A5F0D3 /* DiceBearPersistence.swift */,
+				3A31F4A52B61514B00A5F0D3 /* DiceBearInterface.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		3A3783AE2B5AA64C00D2AFCD /* Communes */ = {

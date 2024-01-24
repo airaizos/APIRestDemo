@@ -8,10 +8,18 @@
 import UIKit
 
 final class DiceBearViewController: UIViewController {
-
-    @IBOutlet weak var emojiImage: UIImageView!
+    //MARK: Outlets
     
+    @IBOutlet weak var emojiImage: UIImageView!
     @IBOutlet weak var emojiCollectionView: UICollectionView!
+    @IBOutlet weak var eyesPicker: UIPickerView!
+    @IBOutlet weak var mouthPicker: UIPickerView!
+    @IBAction func backgroundType(_ sender: UISegmentedControl) {
+        viewLogic.backgroundSelection(atIndex:sender.selectedSegmentIndex)
+    }
+    @IBOutlet weak var primaryColorPicker: UIColorWell!
+    @IBOutlet weak var secondaryColorPicker: UIColorWell!
+    
     
     let modelLogic = DiceBearModelLogic.shared
     let viewLogic = DiceBearViewLogic.shared
@@ -33,7 +41,7 @@ final class DiceBearViewController: UIViewController {
         getEmojiImage()
     }
     
-    
+    //MARK: IBActions
     @IBAction func refreshButton(_ sender: UIButton) {
         let model = DiceBearModel(funEmojiWithBackgroundColor: "CD5C5C,6C3483", backgroundType: .gradient, eyes: .love, mouth: .pissed)
         viewLogic.updateEmoji(params: model)
@@ -45,6 +53,12 @@ final class DiceBearViewController: UIViewController {
         getEmojiImage()
     }
     
+    @IBAction func getMyEmojiTapped(_ sender: UIButton) {
+        viewLogic.getMyEmoji()
+        getEmojiImage()
+    }
+    
+    //MARK: Métodos
     func getEmojiImage() {
         viewLogic.action = { [weak self] image in
             RunLoop.main.perform {
@@ -53,21 +67,7 @@ final class DiceBearViewController: UIViewController {
         }
     }
     
-
-    @IBOutlet weak var eyesPicker: UIPickerView!
-    
-    @IBOutlet weak var mouthPicker: UIPickerView!
-    
-    @IBAction func backgroundType(_ sender: UISegmentedControl) {
-        viewLogic.backgroundSelection(atIndex:sender.selectedSegmentIndex)
-    }
-    
-    
-    @IBOutlet weak var primaryColorPicker: UIColorWell!
-    
-    @IBOutlet weak var secondaryColorPicker: UIColorWell!
-    
-    
+    //MARK: Objc Métoodos
     @objc func primaryColorSelected(color: UIColorWell) {
         guard let color = color.selectedColor else { return }
         viewLogic.primaryColorSelection(color)
@@ -77,12 +77,6 @@ final class DiceBearViewController: UIViewController {
         guard let color = color.selectedColor else { return }
         viewLogic.secondaryColorSelection(color)
     }
-    
-    @IBAction func getMyEmojiTapped(_ sender: UIButton) {
-        viewLogic.getMyEmoji()
-        getEmojiImage()
-    }
-    
 }
 
 
@@ -91,11 +85,8 @@ extension DiceBearViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         switch pickerView {
         case eyesPicker: viewLogic.getEyesComponentsCount()
         case mouthPicker: viewLogic.getMouthComponentsCount()
-        
         default: 0
         }
-        
-        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -106,13 +97,8 @@ extension DiceBearViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         switch pickerView {
         case eyesPicker:  viewLogic.eyeSelection(atRow: row)
         case mouthPicker:  viewLogic.mouthSelection(atRow: row)
-       
         default: ()
         }
-        
-       
-        
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -121,14 +107,5 @@ extension DiceBearViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         case mouthPicker:  viewLogic.getMouthOptionLabel(atRow: row)
         default: ""
         }
-        
     }
-}
-
-
-extension DiceBearViewController: UIColorPickerViewControllerDelegate {
-    func colorPickerViewController(_ viewController: UIColorPickerViewController, didSelect color: UIColor, continuously: Bool) {
-        viewLogic.primaryColorSelection(color)
-    }
-    
 }
