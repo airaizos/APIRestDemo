@@ -14,7 +14,6 @@ final class ChuckNorrisModelLogic {
     
     init(persistence: ChuckNorrisPersistence = .shared) {
         self.persistence = persistence
-        loadFavorites()
     }
     
     var action: ((String) -> Void)?
@@ -25,6 +24,7 @@ final class ChuckNorrisModelLogic {
         didSet {
             do {
                 try persistence.saveFavorites(jokes: favorites)
+                tableAction?("")
             } catch {
                 print("Error")
             }
@@ -32,7 +32,7 @@ final class ChuckNorrisModelLogic {
     }
     
     func getJoke() {
-        persistence.fetchJoke(url: .chuckNorrisURL, type: ChuckNorrisModel.self) { result in
+        persistence.getJoke { result in
             switch result {
             case .success(let success):
                 self.joke = success
@@ -59,9 +59,7 @@ final class ChuckNorrisModelLogic {
         joke?.categoriesView ?? "No category"
     }
  
-    
-    
-    //TableView
+    //MARK: TableView
     func loadFavorites() {
         do {
             favorites = try persistence.getFavorites()

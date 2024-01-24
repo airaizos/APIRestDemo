@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A31F49B2B61143800A5F0D3 /* ChuckNorrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F49A2B61143800A5F0D3 /* ChuckNorrisTests.swift */; };
+		3A31F49D2B61151900A5F0D3 /* ChuckNorrisHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F49C2B61151900A5F0D3 /* ChuckNorrisHelpers.swift */; };
+		3A31F49F2B6148DD00A5F0D3 /* testJokes.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A31F49E2B6148DD00A5F0D3 /* testJokes.json */; };
 		3A3783B02B5AA71600D2AFCD /* CommunesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */; };
 		3A3783B22B5AA74100D2AFCD /* CommuneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */; };
 		3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */; };
@@ -53,6 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A31F49A2B61143800A5F0D3 /* ChuckNorrisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisTests.swift; sourceTree = "<group>"; };
+		3A31F49C2B61151900A5F0D3 /* ChuckNorrisHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisHelpers.swift; sourceTree = "<group>"; };
+		3A31F49E2B6148DD00A5F0D3 /* testJokes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = testJokes.json; sourceTree = "<group>"; };
 		3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesInterface.swift; sourceTree = "<group>"; };
 		3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuneModel.swift; sourceTree = "<group>"; };
 		3A3783B32B5AA8D100D2AFCD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -110,6 +116,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A31F4972B61128B00A5F0D3 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				3A8DB3472B600BFC00E7BDA3 /* ChuckNorrisInterface.swift */,
+				3A8DB3492B600CEC00E7BDA3 /* ChuckNorrisPersistence.swift */,
+				3A8DB34B2B600D0100E7BDA3 /* ChuckNorrisModel.swift */,
+				3A8DB34D2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		3A31F4992B61141D00A5F0D3 /* ChuckNorrisTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A31F49A2B61143800A5F0D3 /* ChuckNorrisTests.swift */,
+				3A31F49C2B61151900A5F0D3 /* ChuckNorrisHelpers.swift */,
+				3A31F49E2B6148DD00A5F0D3 /* testJokes.json */,
+			);
+			name = ChuckNorrisTests;
+			sourceTree = "<group>";
+		};
 		3A3783AE2B5AA64C00D2AFCD /* Communes */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				3A65BFF42B5861820095794A /* Controllers */,
+				3A660DC12B5AE3E700E1BC69 /* Commons */,
 				3A65BFDD2B583CBE0095794A /* AppDelegate.swift */,
 				3A65BFDF2B583CBE0095794A /* SceneDelegate.swift */,
 				3A65BFE12B583CBE0095794A /* ViewController.swift */,
@@ -163,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				3A851C132B5EFE7E005758FA /* ChuckNorris */,
-				3A660DC12B5AE3E700E1BC69 /* Commons */,
 				3A3783AE2B5AA64C00D2AFCD /* Communes */,
 				3A65BFF72B58646D0095794A /* NumbersAPI */,
 			);
@@ -213,6 +240,7 @@
 		3A851C062B5EEF9E005758FA /* APIRestDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				3A31F4992B61141D00A5F0D3 /* ChuckNorrisTests */,
 				3A851C0E2B5EEFA4005758FA /* Communes */,
 				3A851C072B5EEF9E005758FA /* APIRestDemoTests.swift */,
 			);
@@ -231,12 +259,9 @@
 		3A851C132B5EFE7E005758FA /* ChuckNorris */ = {
 			isa = PBXGroup;
 			children = (
+				3A31F4972B61128B00A5F0D3 /* Logic */,
 				3A8DB3432B60099600E7BDA3 /* ChuckNorrisStoryboard.storyboard */,
 				3A8DB3452B600BCB00E7BDA3 /* ChuckNorrisViewController.swift */,
-				3A8DB3472B600BFC00E7BDA3 /* ChuckNorrisInterface.swift */,
-				3A8DB3492B600CEC00E7BDA3 /* ChuckNorrisPersistence.swift */,
-				3A8DB34B2B600D0100E7BDA3 /* ChuckNorrisModel.swift */,
-				3A8DB34D2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift */,
 			);
 			name = ChuckNorris;
 			sourceTree = "<group>";
@@ -335,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A31F49F2B6148DD00A5F0D3 /* testJokes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +405,8 @@
 				3A851C102B5EEFB6005758FA /* CommunesUnitTests.swift in Sources */,
 				3A851C082B5EEF9E005758FA /* APIRestDemoTests.swift in Sources */,
 				3A851C122B5EF04B005758FA /* CommunesTestsHelpers.swift in Sources */,
+				3A31F49B2B61143800A5F0D3 /* ChuckNorrisTests.swift in Sources */,
+				3A31F49D2B61151900A5F0D3 /* ChuckNorrisHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

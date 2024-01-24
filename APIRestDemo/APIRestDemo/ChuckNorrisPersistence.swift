@@ -7,15 +7,37 @@
 
 import Foundation
 
+protocol URLLocator {
+    var chuckNorrisURL: URL { get }
+    var chuckNorrisFavorites: URL { get }
+}
+
+struct URLProduction: URLLocator {
+    let chuckNorrisURL = URL(string: "https://api.chucknorris.io/jokes/random")!
+    let chuckNorrisFavorites = URL.documentsDirectory.appending(path: "chuckNorris.json")
+}
+
 final class ChuckNorrisPersistence {
     static let shared = ChuckNorrisPersistence()
+    var urls: URLLocator
     
-    let session: URLSession
-    init(session: URLSession = .shared) {
-        self.session = session
+    var urlProtocol: URLProtocol.Type?
+    var session: URLSession {
+        if let urlProtocol {
+            let configuration = URLSessionConfiguration.ephemeral
+            configuration.protocolClasses = [urlProtocol]
+            return URLSession(configuration: configuration)
+        } else {
+            return URLSession.shared
+        }
     }
+    init(urlProtocol: URLProtocol.Type? = nil, urls: URLLocator = URLProduction()) {
+        self.urlProtocol = urlProtocol
+        self.urls = urls
+    }
+    
     ///#Patrón Callback
-    func fetchJoke<JSON:Codable>(url: URL, type: JSON.Type, callback: @escaping ((Result<JSON,PersistenceError>) -> Void)) {
+   private func fetchJson<JSON:Codable>(url: URL, type: JSON.Type, callback: @escaping ((Result<JSON,PersistenceError>) -> Void)) {
         
         session.dataTask(with: url) { data, response, error in
             guard error == nil else {
@@ -33,21 +55,26 @@ final class ChuckNorrisPersistence {
             } catch let error {
                 callback(.failure(.json(error.localizedDescription)))
             }
-                
+            
         }.resume()
+    }
+    
+    func getJoke(callback: @escaping ((Result<ChuckNorrisModel, PersistenceError>) -> Void)) {
+        fetchJson(url: .chuckNorrisURL, type: ChuckNorrisModel.self, callback: callback)
     }
     
     //Save to Documents Directory
     func saveFavorites(jokes: [ChuckNorrisModel]) throws {
         let data = try JSONEncoder().encode(jokes)
-        try data.write(to: .chuckNorrisFavorites, options: .atomic)
+        try data.write(to: urls.chuckNorrisFavorites, options: .atomic)
     }
     
     
     func getFavorites() throws -> [ChuckNorrisModel] {
-        print(URL.chuckNorrisFavorites.absoluteString)
-        let data = try Data(contentsOf: URL.chuckNorrisFavorites)
+        let data = try Data(contentsOf: urls.chuckNorrisFavorites)
         return try JSONDecoder().decode([ChuckNorrisModel].self, from: data)
     }
-    
 }
+
+
+

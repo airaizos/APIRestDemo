@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 @testable import APIRestDemo
 //protocol CommunesFetcher {
@@ -16,7 +17,18 @@ import Foundation
 
 
 final class CommunesPersistenceMock: CommunesFetcher {
-    var session: URLSession = .shared
+    var session: URLSession
+    
+    var subject: PassthroughSubject<String, Never>
+    
+    func valuesReceived() {
+       
+    }
+    
+    init(subject: PassthroughSubject<String, Never> = PassthroughSubject<String, Never>(), session: URLSession = .shared) {
+        self.subject = subject
+        self.session = session
+    }
     
     func getJSON<JSON>(url: URL, type: JSON.Type, receiveValue: @escaping (JSON) -> ()) where JSON : Decodable {
         switch url {
@@ -48,3 +60,9 @@ extension Commune {
         (0..<5).map { Commune(nom: "Nom \($0)", code: "Code\($0)\($0)", codeDepartement: "Departement", siren: "", codeEpci: "", codeRegion: "", codesPostaux: ["\($0)"], population: 50)}
     }
 }
+
+
+
+
+
+

@@ -20,14 +20,17 @@ final class ChuckNorrisViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        modelLogic.getJoke()
-        jokeReceived()
+       
         updateTableView()
         favoritesJokesTableView.delegate = self
         favoritesJokesTableView.dataSource = self
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        modelLogic.loadFavorites()
+        modelLogic.getJoke()
+        jokeReceived()
+    }
     
     @IBAction func getNewJoke(_ sender: UIButton) {
         modelLogic.getJoke()
