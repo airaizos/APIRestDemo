@@ -43,7 +43,7 @@ final class NumbersAPIViewController: UIViewController {
     func updateLabels() {
         numberLabel.text = modelLogic.number.numero
         binaryLabel.text = modelLogic.number.binario
-        romanLabel.text = modelLogic.number.romano
+        romanLabel.attributedText = modelLogic.number.romano
         palindromeLabel.text = modelLogic.number.palindromo
         primeLabel.text = modelLogic.number.primo
         triangularLabel.text = modelLogic.number.triangular

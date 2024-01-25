@@ -5,7 +5,8 @@
 //  Created by Adrian Iraizos Mendoza on 17/1/24.
 //
 
-import Foundation
+
+import UIKit
 
 struct Number: Codable {
     let contents: Nodo
@@ -78,51 +79,29 @@ struct Number: Codable {
     var binario: String {
         contents.nod.numbers.bases.binary.value
     }
-    var romano: String {
-       let cadena = contents.nod.numbers.numerals.roman.value
-        
-        var texto: String {
-            let patronInicial = #"<\/span>"#
-            let patron = "\(patronInicial)(.*?)"
+    
+    var romano: NSAttributedString? {
+        let cadena = contents.nod.numbers.numerals.roman.value
+        do {
+            let data = cadena.data(using: .utf8)!
+            let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+                .documentType: NSAttributedString.DocumentType.html,
+                .characterEncoding: String.Encoding.utf8.rawValue
+            ]
             
-            do {
-                let regex = try Regex(patron)
-                
-                if let firstMatch = try regex.firstMatch(in: cadena) {
-                    let matchRange = firstMatch.range
-                    
-                    
-                    return String(cadena[matchRange.upperBound...])
-                      
-                }
-            } catch {
-                return ""
-            }
-            return ""
-        }
-        
-        var prefijo: String {
-            let patronInicial = #"<span class='u'"#
-            let patronFinal = #"/span>"#
-            let patron = "\(patronInicial)(.*?)\(patronFinal)"
+            let attributedString = try NSMutableAttributedString(data: data, options: options, documentAttributes: nil)
             
-            do {
-                let regex = try Regex(patron)
-                
-                if let firstMatch = try regex.firstMatch(in: cadena) {
-                    let matchRange = firstMatch.range
-                       
-                    return String(cadena[matchRange].replacingOccurrences(of: patronInicial, with: "").replacingOccurrences(of: patronFinal, with: "").dropLast().dropFirst())
-                       
-                      
-                }
-            } catch {
-                return ""
-            }
-            return ""
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .right
+            attributedString.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedString.length))
+            let font = UIFont.systemFont(ofSize: 22)
+            attributedString.addAttribute(.font, value: font as Any, range: NSRange(location: 0, length: attributedString.length))
+            
+            return attributedString
+        } catch {
+            print("Error al convertir HTML a NSAttributedString: \(error)")
+            return nil
         }
-        
-        return prefijo + " " + texto
     }
     
     var palindromo: String {
