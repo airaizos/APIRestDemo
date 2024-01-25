@@ -15,9 +15,10 @@ Para la gestión de la asincronía se utiliza el patrón `callback` y `URLSessio
 Proporciona en formato json un chiste aleatorio relacionado el *legendario* Chuck Norris. 
 
 **Implementación**
-`Combine`  y `URLSession` para la conexión a la API 
-`NotificationCenter` para la notificación del cambio en de los valores en las propiedades. 
-Persistencia de datos con un archivo `JSON` que se guarda en carpeta de documentos de la app. 
+* `Combine`  y `URLSession` para la conexión a la API 
+* `NotificationCenter` para la notificación del cambio en de los valores en las propiedades. 
+* Persistencia de datos con un archivo `JSON` que se guarda en carpeta de documentos de la app.
+* `TableView` para los items persistidos
 *Unit Tests* del `ModelLogic` y un *Mock* de `URLSession` gracias a `URLPRotocol`
 
 ![](https://github.com/airaizos/APIRestDemo/blob/a0850dd88232d71d6475a907b9784b05dccbafdc/APIRestDemo/ChuckNorris.png)
@@ -25,16 +26,18 @@ Persistencia de datos con un archivo `JSON` que se guarda en carpeta de document
 Proporciona información sobre la división administrativa de regiones, departamentos y municipios en Francia. Datos por municipio como código postal, población. 
 
 **Implementación**
-`Combine`  y `URLSession` para la conexión a la API 
-`NotificationCenter` para la notificación del cambio en de los valores en las propiedades. 
-*Unit Tests* del `ModelLogic` con un *Mock* en la petición a red
+* `Combine`  y `URLSession` para la conexión a la API 
+* `NotificationCenter` para la notificación del cambio en de los valores en las propiedades. 
+* *Unit Tests* del `ModelLogic` con un *Mock* en la petición a red
+* `TableView` para los listados
 
 ### [Dice Bear (Fun Emoji)](https://www.dicebear.com/styles/fun-emoji/) 
 API que genera un avatar personalizable en formato SVG, PNG o JPG, con opciones como color de fondo, ojos, boca, tamaño, rotación, etc. 
 
 **Implementación**
-Hecho con el modelo de concurrencia `Async-await` 
-`NotificationCenter` para la notificación del cambio en de los valores en las propiedades. 
-Permite la persistencia de datos través de `CoreData`.
+* Hecho con el modelo de concurrencia `Async-await` 
+* `NotificationCenter` para la notificación del cambio en de los valores en las propiedades. 
+* Permite la persistencia de datos través de `CoreData`.
+* `CollectionView` para mostrar los elementos persistido
 
 ![](https://github.com/airaizos/APIRestDemo/blob/a0850dd88232d71d6475a907b9784b05dccbafdc/APIRestDemo/FunEmoji.png)
