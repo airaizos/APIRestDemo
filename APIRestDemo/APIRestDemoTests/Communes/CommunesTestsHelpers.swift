@@ -9,12 +9,6 @@ import Foundation
 import Combine
 
 @testable import APIRestDemo
-//protocol CommunesFetcher {
-//    var session: URLSession { get }
-//    func getJSON<JSON:Decodable>(url: URL, type: JSON.Type, receiveValue: @escaping (JSON) -> ())
-//
-//}
-
 
 final class CommunesPersistenceMock: CommunesFetcher {
     var session: URLSession
