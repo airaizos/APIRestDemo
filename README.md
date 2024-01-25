@@ -1,33 +1,36 @@
-# Dogminder
+APIs Públicas
+Repositorio 100% nativo en Swift en UIKIt en el que se realizan conexiones a diferentes API Rest. Para cada API he utilizado 3 diferentes patrones para manejar la asincronía:
 
-## Descripción:
+* Patrón `callback` 
+* Librería `Combine`
+* Modelo de concurrencia `Async-await` .
+  
+### [Math Tools API](https://math.tools/api/numbers/)
+Proporciona en formato json un número generado de manera aleatoria y su detalle como su equivalente en Binario, su version en Romano, Chino, si es primo, perfecto, triangular, etc.
 
-Dogminder es una aplicación de notas diseñada para propietarios de perros, facilitando la clasificación y filtrado de notas según su tipo.
+Para la gestión de la asincronía se utiliza el patrón `callback` y `URLSession` 
 
-## Tecnologías utilizadas:
+### [Chuck Norris Facts API](https://api.chucknorris.io)
+Proporciona en formato json un chiste aleatorio relacionado el *legendario* Chuck Norris. 
 
-Desarrollada en SwiftUI con una arquitectura MVVM . Implementa protocolos para los casos de uso (*UseCases*), permitiendo la abstracción en capas de la persistencia de datos, utilizando en este caso CoreData. La implementación incluye **Unit Test** del *ViewModel* para garantizar la correcta ejecución de las solicitudes, utilizando un `MockUseCase`, gracias a protocolos. También se han incorporado **Integration Tests** que, mediante el *UseCase*, inyectan una dependencia de la base de datos `CoreData` creada en memoria.
+**Implementación**
+`Combine`  y `URLSession` para la conexión a la API 
+`NotificationCenter` para la notificación del cambio en de los valores en las propiedades. 
+Persistencia de datos con un archivo `JSON` que se guarda en carpeta de documentos de la app. 
+*Unit Tests* del `ModelLogic` y un *Mock* de `URLSession` gracias a `URLPRotocol`
 
-## Esquema de UseCases para pruebas
+### [API Découpage administratif](https://geo.api.gouv.fr/decoupage-administratif)
+Proporciona información sobre la división administrativa de regiones, departamentos y municipios en Francia. Datos por municipio como código postal, población. 
 
-En la versión de producción, a través del `UseCaseContract` (Protocolos), se posibilita la **dependency injection** de la `NoteDataBase`. Esto permite cambiar dicha dependencia al realizar los **Integration Tests**.
+**Implementación**
+`Combine`  y `URLSession` para la conexión a la API 
+`NotificationCenter` para la notificación del cambio en de los valores en las propiedades. 
+*Unit Tests* del `ModelLogic` con un *Mock* en la petición a red
 
-El `MockUseCase` posibilita los **Unit Tests* del *ViewModel*, asegurando que las llamadas se realicen de manera correcta, se devuelvan los datos solicitados y se evalúen.
+### [Dice Bear (Fun Emoji)](https://www.dicebear.com/styles/fun-emoji/) 
+API que genera un avatar personalizable en formato SVG, PNG o JPG, con opciones como color de fondo, ojos, boca, tamaño, rotación, etc. 
 
-![](https://github.com/airaizos/DogMinder/blob/7b221039584a618ed5f82ac0e7d263b43119b96d/DogMinder/Testing.png)
-
-## UseCases
-
-Los *UseCases* están diseñados con una sola responsabilidad, divididos en:
-
-*CreateNote*: del tipo `NoteCreator`
-*FetchAllNotes*: del tipo `NoteFetcher`
-*UpdateNote*: del tipo `NoteUpdater`
-*RemoveNote*: del tipo `NoteRemover`
-
-Cada uno se inicializa con la dependencia del tipo `PersistenceProtocol` que inyecta la base de datos de **CoreData**.
-
-EL *ViewModel* se inicializa con todos los *UseCases* lo cual permite, gracias a los protocolos, intercambiar por dependencias de *Testing*.
-
-## ContentView
-La vista se compone de las vistas `ReminderTypeGridView` y `NoteListView` permitiendo su reutilización cuando sea necesario, mejorando así la legibilidad del código.
+**Implementación**
+Hecho con el modelo de concurrencia `Async-await` 
+`NotificationCenter` para la notificación del cambio en de los valores en las propiedades. 
+Permite la persistencia de datos través de `CoreData`.
