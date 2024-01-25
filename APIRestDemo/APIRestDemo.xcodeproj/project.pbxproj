@@ -207,6 +207,20 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
+		3A32F43C2B62CB4F006C6FE9 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				3A65BFDD2B583CBE0095794A /* AppDelegate.swift */,
+				3A65BFDF2B583CBE0095794A /* SceneDelegate.swift */,
+				3A65BFE12B583CBE0095794A /* ViewController.swift */,
+				3A65BFE32B583CBE0095794A /* Main.storyboard */,
+				3A65BFE92B583CCC0095794A /* Assets.xcassets */,
+				3A65BFEB2B583CCC0095794A /* LaunchScreen.storyboard */,
+				3A65BFEE2B583CCC0095794A /* Info.plist */,
+			);
+			name = System;
+			sourceTree = "<group>";
+		};
 		3A3783AE2B5AA64C00D2AFCD /* Communes */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,15 +256,9 @@
 		3A65BFDC2B583CBE0095794A /* APIRestDemo */ = {
 			isa = PBXGroup;
 			children = (
-				3A65BFF42B5861820095794A /* Controllers */,
+				3A32F43C2B62CB4F006C6FE9 /* System */,
 				3A660DC12B5AE3E700E1BC69 /* Commons */,
-				3A65BFDD2B583CBE0095794A /* AppDelegate.swift */,
-				3A65BFDF2B583CBE0095794A /* SceneDelegate.swift */,
-				3A65BFE12B583CBE0095794A /* ViewController.swift */,
-				3A65BFE32B583CBE0095794A /* Main.storyboard */,
-				3A65BFE92B583CCC0095794A /* Assets.xcassets */,
-				3A65BFEB2B583CCC0095794A /* LaunchScreen.storyboard */,
-				3A65BFEE2B583CCC0095794A /* Info.plist */,
+				3A65BFF42B5861820095794A /* Controllers */,
 				3A3783B32B5AA8D100D2AFCD /* MyPlayground.playground */,
 			);
 			path = APIRestDemo;
