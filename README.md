@@ -20,6 +20,7 @@ Proporciona en formato json un chiste aleatorio relacionado el *legendario* Chuc
 Persistencia de datos con un archivo `JSON` que se guarda en carpeta de documentos de la app. 
 *Unit Tests* del `ModelLogic` y un *Mock* de `URLSession` gracias a `URLPRotocol`
 
+![](https://github.com/airaizos/APIRestDemo/blob/a0850dd88232d71d6475a907b9784b05dccbafdc/APIRestDemo/ChuckNorris.png)
 ### [API Découpage administratif](https://geo.api.gouv.fr/decoupage-administratif)
 Proporciona información sobre la división administrativa de regiones, departamentos y municipios en Francia. Datos por municipio como código postal, población. 
 
@@ -35,3 +36,5 @@ API que genera un avatar personalizable en formato SVG, PNG o JPG, con opciones 
 Hecho con el modelo de concurrencia `Async-await` 
 `NotificationCenter` para la notificación del cambio en de los valores en las propiedades. 
 Permite la persistencia de datos través de `CoreData`.
+
+![](https://github.com/airaizos/APIRestDemo/blob/a0850dd88232d71d6475a907b9784b05dccbafdc/APIRestDemo/FunEmoji.png)
