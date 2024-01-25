@@ -19,6 +19,10 @@
 		3A31F4B02B616E8200A5F0D3 /* DiceBearModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4AF2B616E8200A5F0D3 /* DiceBearModel.swift */; };
 		3A32F4302B629F30006C6FE9 /* DiceBearCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32F42F2B629F30006C6FE9 /* DiceBearCollectionViewCell.swift */; };
 		3A32F4322B62AAE6006C6FE9 /* DiceBearExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32F4312B62AAE6006C6FE9 /* DiceBearExtensions.swift */; };
+		3A32F4352B62BA0C006C6FE9 /* APIRestDemoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32F4342B62BA0C006C6FE9 /* APIRestDemoContainer.swift */; };
+		3A32F4372B62BB5E006C6FE9 /* DataBaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32F4362B62BB5E006C6FE9 /* DataBaseError.swift */; };
+		3A32F4392B62BB8C006C6FE9 /* APIRestDemoDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32F4382B62BB8C006C6FE9 /* APIRestDemoDataBase.swift */; };
+		3A32F43B2B62BCBF006C6FE9 /* EmojiEntityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32F43A2B62BCBF006C6FE9 /* EmojiEntityExtensions.swift */; };
 		3A3783B02B5AA71600D2AFCD /* CommunesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */; };
 		3A3783B22B5AA74100D2AFCD /* CommuneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */; };
 		3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */; };
@@ -30,7 +34,7 @@
 		3A65BFE02B583CBE0095794A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFDF2B583CBE0095794A /* SceneDelegate.swift */; };
 		3A65BFE22B583CBE0095794A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFE12B583CBE0095794A /* ViewController.swift */; };
 		3A65BFE52B583CBE0095794A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A65BFE32B583CBE0095794A /* Main.storyboard */; };
-		3A65BFE82B583CBE0095794A /* APIRestDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFE62B583CBE0095794A /* APIRestDemo.xcdatamodeld */; };
+		3A65BFE82B583CBE0095794A /* APIRestDemoDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFE62B583CBE0095794A /* APIRestDemoDataModel.xcdatamodeld */; };
 		3A65BFEA2B583CCC0095794A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A65BFE92B583CCC0095794A /* Assets.xcassets */; };
 		3A65BFED2B583CCC0095794A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A65BFEB2B583CCC0095794A /* LaunchScreen.storyboard */; };
 		3A65BFF62B58620D0095794A /* NumbersAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFF52B58620D0095794A /* NumbersAPIViewController.swift */; };
@@ -77,6 +81,10 @@
 		3A31F4AF2B616E8200A5F0D3 /* DiceBearModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearModel.swift; sourceTree = "<group>"; };
 		3A32F42F2B629F30006C6FE9 /* DiceBearCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A32F4312B62AAE6006C6FE9 /* DiceBearExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearExtensions.swift; sourceTree = "<group>"; };
+		3A32F4342B62BA0C006C6FE9 /* APIRestDemoContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRestDemoContainer.swift; sourceTree = "<group>"; };
+		3A32F4362B62BB5E006C6FE9 /* DataBaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseError.swift; sourceTree = "<group>"; };
+		3A32F4382B62BB8C006C6FE9 /* APIRestDemoDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRestDemoDataBase.swift; sourceTree = "<group>"; };
+		3A32F43A2B62BCBF006C6FE9 /* EmojiEntityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiEntityExtensions.swift; sourceTree = "<group>"; };
 		3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesInterface.swift; sourceTree = "<group>"; };
 		3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuneModel.swift; sourceTree = "<group>"; };
 		3A3783B32B5AA8D100D2AFCD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -183,8 +191,20 @@
 				3A31F4A92B6155E000A5F0D3 /* DiceBearPersistence.swift */,
 				3A31F4A52B61514B00A5F0D3 /* DiceBearInterface.swift */,
 				3A32F4312B62AAE6006C6FE9 /* DiceBearExtensions.swift */,
+				3A32F43A2B62BCBF006C6FE9 /* EmojiEntityExtensions.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		3A32F4332B62B9A5006C6FE9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3A65BFE62B583CBE0095794A /* APIRestDemoDataModel.xcdatamodeld */,
+				3A32F4342B62BA0C006C6FE9 /* APIRestDemoContainer.swift */,
+				3A32F4362B62BB5E006C6FE9 /* DataBaseError.swift */,
+				3A32F4382B62BB8C006C6FE9 /* APIRestDemoDataBase.swift */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		3A3783AE2B5AA64C00D2AFCD /* Communes */ = {
@@ -231,7 +251,6 @@
 				3A65BFE92B583CCC0095794A /* Assets.xcassets */,
 				3A65BFEB2B583CCC0095794A /* LaunchScreen.storyboard */,
 				3A65BFEE2B583CCC0095794A /* Info.plist */,
-				3A65BFE62B583CBE0095794A /* APIRestDemo.xcdatamodeld */,
 				3A3783B32B5AA8D100D2AFCD /* MyPlayground.playground */,
 			);
 			path = APIRestDemo;
@@ -282,6 +301,7 @@
 		3A660DC12B5AE3E700E1BC69 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				3A32F4332B62B9A5006C6FE9 /* CoreData */,
 				3A660DC22B5AE3F400E1BC69 /* PersistenceError.swift */,
 				3AAC265D2B60201E007EED64 /* Extensions.swift */,
 			);
@@ -434,8 +454,11 @@
 				3A660DC52B5AE76000E1BC69 /* CommunesModeLogic.swift in Sources */,
 				3A31F4AE2B61619600A5F0D3 /* DiceBearViewLogic.swift in Sources */,
 				3A31F4A82B61558400A5F0D3 /* DiceBearViewController.swift in Sources */,
+				3A32F4392B62BB8C006C6FE9 /* APIRestDemoDataBase.swift in Sources */,
 				3A3783B72B5AAE3300D2AFCD /* CommunesTableViewController.swift in Sources */,
 				3A3783B02B5AA71600D2AFCD /* CommunesInterface.swift in Sources */,
+				3A32F4352B62BA0C006C6FE9 /* APIRestDemoContainer.swift in Sources */,
+				3A32F43B2B62BCBF006C6FE9 /* EmojiEntityExtensions.swift in Sources */,
 				3A3783BB2B5AB51D00D2AFCD /* DepartementsTableViewController.swift in Sources */,
 				3A3783B92B5AB50F00D2AFCD /* RegionsTableViewController.swift in Sources */,
 				3A8DB3462B600BCB00E7BDA3 /* ChuckNorrisViewController.swift in Sources */,
@@ -443,7 +466,7 @@
 				3A65BFE22B583CBE0095794A /* ViewController.swift in Sources */,
 				3A32F4322B62AAE6006C6FE9 /* DiceBearExtensions.swift in Sources */,
 				3A65C0002B586BF10095794A /* NumbersModelLogic.swift in Sources */,
-				3A65BFE82B583CBE0095794A /* APIRestDemo.xcdatamodeld in Sources */,
+				3A65BFE82B583CBE0095794A /* APIRestDemoDataModel.xcdatamodeld in Sources */,
 				3A65BFFE2B5869DB0095794A /* NumbersPersistence.swift in Sources */,
 				3A65BFDE2B583CBE0095794A /* AppDelegate.swift in Sources */,
 				3A8DB34E2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift in Sources */,
@@ -453,6 +476,7 @@
 				3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */,
 				3A65BFF62B58620D0095794A /* NumbersAPIViewController.swift in Sources */,
 				3A31F4AC2B615F3B00A5F0D3 /* DiceBearModelLogic.swift in Sources */,
+				3A32F4372B62BB5E006C6FE9 /* DataBaseError.swift in Sources */,
 				3A3783B22B5AA74100D2AFCD /* CommuneModel.swift in Sources */,
 				3A65BFE02B583CBE0095794A /* SceneDelegate.swift in Sources */,
 			);
@@ -766,13 +790,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		3A65BFE62B583CBE0095794A /* APIRestDemo.xcdatamodeld */ = {
+		3A65BFE62B583CBE0095794A /* APIRestDemoDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				3A65BFE72B583CBE0095794A /* APIRestDemo.xcdatamodel */,
 			);
 			currentVersion = 3A65BFE72B583CBE0095794A /* APIRestDemo.xcdatamodel */;
-			path = APIRestDemo.xcdatamodeld;
+			path = APIRestDemoDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

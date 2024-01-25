@@ -322,8 +322,8 @@
             filePath = "APIRestDemo/DiceBearModelLogic.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "getEmoji()"
             landmarkType = "7">
             <Actions>
@@ -425,6 +425,66 @@
                   endingLineNumber = "26"
                   offsetFromSymbolStart = "32">
                </Location>
+               <Location
+                  uuid = "92DC8745-7326-428B-8557-B9C48C641340 - b58ffbf48587384"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for APIRestDemo.DiceBearModelLogic.getEmoji() async throws -&gt; __C.UIImage"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/DiceBearModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "92DC8745-7326-428B-8557-B9C48C641340 - 80c397983f24455f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for APIRestDemo.DiceBearModelLogic.getEmoji() async throws -&gt; __C.UIImage"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/DiceBearModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "92DC8745-7326-428B-8557-B9C48C641340 - f36a67271a0177ba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for APIRestDemo.DiceBearModelLogic.getEmoji() async throws -&gt; __C.UIImage"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/DiceBearModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "92DC8745-7326-428B-8557-B9C48C641340 - 1c93149333d5f5bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for APIRestDemo.DiceBearModelLogic.getEmoji() async throws -&gt; __C.UIImage"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/DiceBearModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "32">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -438,8 +498,8 @@
             filePath = "APIRestDemo/DiceBearModelLogic.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "refreshEmoji(params:)"
             landmarkType = "7">
             <Actions>
@@ -541,6 +601,66 @@
                   endingLineNumber = "30"
                   offsetFromSymbolStart = "40">
                </Location>
+               <Location
+                  uuid = "35631399-9220-43D5-8606-9E29EB7D8EF0 - 73f49a67f2e01c4d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for APIRestDemo.DiceBearModelLogic.refreshEmoji(params: APIRestDemo.DiceBearModel) async throws -&gt; __C.UIImage"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/DiceBearModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "35631399-9220-43D5-8606-9E29EB7D8EF0 - 65156f6787fb2552"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for APIRestDemo.DiceBearModelLogic.refreshEmoji(params: APIRestDemo.DiceBearModel) async throws -&gt; __C.UIImage"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/DiceBearModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "35631399-9220-43D5-8606-9E29EB7D8EF0 - 6a0efea5bc11404b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for APIRestDemo.DiceBearModelLogic.refreshEmoji(params: APIRestDemo.DiceBearModel) async throws -&gt; __C.UIImage"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/DiceBearModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "35631399-9220-43D5-8606-9E29EB7D8EF0 - 1eba3345412a2648"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for APIRestDemo.DiceBearModelLogic.refreshEmoji(params: APIRestDemo.DiceBearModel) async throws -&gt; __C.UIImage"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/DiceBearModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "40">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -554,8 +674,8 @@
             filePath = "APIRestDemo/DiceBearModelLogic.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "getRandomEmoji()"
             landmarkType = "7">
             <Actions>
@@ -642,53 +762,65 @@
                   endingLineNumber = "35"
                   offsetFromSymbolStart = "40">
                </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "988C7FBD-4360-45C1-BE15-79F40E3CE57B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "APIRestDemo/DiceBearModelLogic.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "addFavorite(avatar:)"
-            landmarkType = "7">
-            <Locations>
                <Location
-                  uuid = "988C7FBD-4360-45C1-BE15-79F40E3CE57B - c25993c15b4b53b4"
+                  uuid = "27074438-FB23-4CB1-BA94-C3558D787DF8 - e02d966a43bbd2f8"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (APIRestDemo.DiceBearAvatarModel) -&gt; Swift.Bool in APIRestDemo.DiceBearModelLogic.getAvatarFrom(Foundation.IndexPath) -&gt; Swift.Optional&lt;APIRestDemo.DiceBearAvatarModel&gt;"
+                  symbolName = "(1) suspend resume partial function for APIRestDemo.DiceBearModelLogic.getRandomEmoji() async throws -&gt; __C.UIImage"
                   moduleName = "APIRestDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/DiceBearModelLogic.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "124">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "208">
                </Location>
                <Location
-                  uuid = "988C7FBD-4360-45C1-BE15-79F40E3CE57B - 3221589b777f6bd3"
+                  uuid = "27074438-FB23-4CB1-BA94-C3558D787DF8 - 8059658726ed24e9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "APIRestDemo.DiceBearModelLogic.addFavorite(avatar: APIRestDemo.DiceBearAvatarModel) -&gt; ()"
+                  symbolName = "(2) await resume partial function for APIRestDemo.DiceBearModelLogic.getRandomEmoji() async throws -&gt; __C.UIImage"
                   moduleName = "APIRestDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/DiceBearModelLogic.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "116">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "27074438-FB23-4CB1-BA94-C3558D787DF8 - ebd161031ded16fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for APIRestDemo.DiceBearModelLogic.getRandomEmoji() async throws -&gt; __C.UIImage"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/DiceBearModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "27074438-FB23-4CB1-BA94-C3558D787DF8 - 96074a77ba09f4fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for APIRestDemo.DiceBearModelLogic.getRandomEmoji() async throws -&gt; __C.UIImage"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/DiceBearModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "40">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -51,7 +51,7 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="avatar" destination="W6x-iP-Y4r" id="OpV-oU-uDr"/>
+                                            <outlet property="emojiImage" destination="W6x-iP-Y4r" id="OpV-oU-uDr"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

@@ -9,14 +9,14 @@ import UIKit
 
 final class DiceBearCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var emojiImage: UIImageView!
     
     override func awakeFromNib() {
-        avatar.layer.cornerRadius = 10
+        emojiImage.layer.cornerRadius = 10
     }
     
     //Limpia la instancia de la cell
     override func prepareForReuse() {
-        avatar.image = nil
+        emojiImage.image = nil
     }
 }

@@ -69,7 +69,7 @@ final class DiceBearViewController: UIViewController {
     @IBAction func addFavoritesTapped(_ sender: UIButton) {
         guard let image = emojiImage.image else { return  }
         
-        viewLogic.addFavoriteAvatar(image: image)
+        viewLogic.addFavoriteEmoji(image: image)
     }
     
     //MARK: Objc Métodos
@@ -129,7 +129,7 @@ extension DiceBearViewController: UICollectionViewDelegate,UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emojiCell", for: indexPath) as? DiceBearCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.avatar.image = viewLogic.getAvatarFrom(indexPath)
+        cell.emojiImage.image = viewLogic.getEmojiFrom(indexPath)
         return cell
     }
     

@@ -11,15 +11,19 @@ final class DiceBearModelLogic {
     static let shared = DiceBearModelLogic()
     
     let persistence: DiceBearPersistence
+    var emojiDataBase: APIRestDemoDataBase
     
-    private var favoriteAvatars = [DiceBearAvatarModel]() {
+    private var favoriteEmojis = [DiceBearEmojiModel]() {
         didSet {
             NotificationCenter.default.post(name: .favoritesChange, object: nil)
+
         }
     }
     
-    init(persistence: DiceBearPersistence = .shared) {
+    init(persistence: DiceBearPersistence = .shared, emojiDataBase: APIRestDemoDataBase = .shared) {
         self.persistence = persistence
+        self.emojiDataBase = emojiDataBase
+        loadFavoritesEmojis()
     }
     
     func getEmoji() async throws -> UIImage {
@@ -37,19 +41,32 @@ final class DiceBearModelLogic {
     
     //MARK: Favorites
     func getFavoritesCount() -> Int {
-        favoriteAvatars.count
+        favoriteEmojis.count
     }
     
-    func addFavorite(avatar: DiceBearAvatarModel) {
-        favoriteAvatars.insert(avatar, at: 0)
+    func addFavorite(emoji: DiceBearEmojiModel) throws {
+        favoriteEmojis.insert(emoji, at: 0)
+        try emojiDataBase.insert(emoji: emoji)
+        
     }
     
-    func getAvatarFrom(_ indexPath: IndexPath) -> UIImage? {
-        let id = favoriteAvatars[indexPath.row].id
-        let avatar = favoriteAvatars.first { avatar in
-            avatar.id == id
+    func getEmojiFrom(_ indexPath: IndexPath) -> UIImage? {
+        let id = favoriteEmojis[indexPath.row].id
+        let emoji = favoriteEmojis.first { emoji in
+            emoji.id == id
         }
-        return avatar?.image
+        return emoji?.image
     }
+    
+    //MARK: DataBase
+    func loadFavoritesEmojis() {
+        do {
+            let savedEmojis = try emojiDataBase.fetchEmojis()
+            favoriteEmojis = savedEmojis
+        } catch {
+            favoriteEmojis = []
+        }
+    }
+    
     
 }

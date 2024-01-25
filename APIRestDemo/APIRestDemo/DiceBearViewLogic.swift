@@ -108,13 +108,16 @@ final class DiceBearViewLogic {
     }
     
     
-    func addFavoriteAvatar(image: UIImage) {
+    func addFavoriteEmoji(image: UIImage) {
         let details = [backgroundTypeSelection.rawValue,primaryColorSelection.toHexString,secondaryColorSelection.toHexString,eyeSelection.rawValue,mouthSelection.rawValue].joined(separator: ",")
         
-        let favorite = DiceBearAvatarModel(image: image, details: details)
+        let favorite = DiceBearEmojiModel(image: image, details: details)
         
-        modelLogic.addFavorite(avatar: favorite)
-        
+        do {
+            try modelLogic.addFavorite(emoji: favorite)
+        } catch {
+            print("Show error")
+        }
     }
     
     
@@ -124,7 +127,7 @@ final class DiceBearViewLogic {
         modelLogic.getFavoritesCount()
     }
     
-    func getAvatarFrom(_ indexPath: IndexPath) -> UIImage? {
-        modelLogic.getAvatarFrom(indexPath)
+    func getEmojiFrom(_ indexPath: IndexPath) -> UIImage? {
+        modelLogic.getEmojiFrom(indexPath)
     }
 }
