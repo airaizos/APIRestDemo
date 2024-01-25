@@ -12,6 +12,12 @@ final class DiceBearModelLogic {
     
     let persistence: DiceBearPersistence
     
+    private var favoriteAvatars = [DiceBearAvatarModel]() {
+        didSet {
+            NotificationCenter.default.post(name: .favoritesChange, object: nil)
+        }
+    }
+    
     init(persistence: DiceBearPersistence = .shared) {
         self.persistence = persistence
     }
@@ -27,6 +33,23 @@ final class DiceBearModelLogic {
     func getRandomEmoji() async throws -> UIImage {
         let randomModel = DiceBearModel.randomModel()
         return try await persistence.getEmojiWithOptions(randomModel)
+    }
+    
+    //MARK: Favorites
+    func getFavoritesCount() -> Int {
+        favoriteAvatars.count
+    }
+    
+    func addFavorite(avatar: DiceBearAvatarModel) {
+        favoriteAvatars.insert(avatar, at: 0)
+    }
+    
+    func getAvatarFrom(_ indexPath: IndexPath) -> UIImage? {
+        let id = favoriteAvatars[indexPath.row].id
+        let avatar = favoriteAvatars.first { avatar in
+            avatar.id == id
+        }
+        return avatar?.image
     }
     
 }

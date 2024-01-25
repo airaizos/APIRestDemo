@@ -5,7 +5,7 @@
 //  Created by Adrian Iraizos Mendoza on 24/1/24.
 //
 
-import Foundation
+import UIKit
 
 struct DiceBearModel {
     
@@ -97,4 +97,11 @@ extension DiceBearModel {
                       mouth: mouth)
     }
     
+}
+
+
+struct DiceBearAvatarModel {
+    let id = UUID()
+    let image: UIImage
+    let details: String
 }

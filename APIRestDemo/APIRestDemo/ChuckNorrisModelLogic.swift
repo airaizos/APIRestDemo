@@ -18,6 +18,7 @@ final class ChuckNorrisModelLogic {
     
     var action: ((String) -> Void)?
     var tableAction: ((String) -> Void)?
+    
     private var joke: ChuckNorrisModel?
     
     private var favorites = [ChuckNorrisModel]() {

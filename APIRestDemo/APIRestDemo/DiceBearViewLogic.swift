@@ -12,9 +12,7 @@ final class DiceBearViewLogic {
     static let shared = DiceBearViewLogic()
     
     let modelLogic = DiceBearModelLogic.shared
-    
-    var action: ((UIImage) -> Void)?
-    
+
     private(set) var backgroundTypeOptions = DiceBearModel.BackgroundType.allCases
     
     private(set) var eyesOptions = DiceBearModel.EyesType.allCases
@@ -32,7 +30,7 @@ final class DiceBearViewLogic {
     func getEmoji() {
         Task {
             let emoji = try await self.modelLogic.persistence.getFunEmoji()
-            self.action?(emoji)
+            NotificationCenter.default.post(name: .emojiChange, object: emoji)
         }
     }
     
@@ -40,7 +38,7 @@ final class DiceBearViewLogic {
         Task {
             let emoji = try await
             self.modelLogic.persistence.getEmojiWithOptions(model)
-            self.action?(emoji)
+            NotificationCenter.default.post(name: .emojiChange, object: emoji)
         }
     }
     
@@ -48,7 +46,8 @@ final class DiceBearViewLogic {
         Task {
             let emoji = try await
             self.modelLogic.getRandomEmoji()
-            self.action?(emoji)
+          //  self.action?(emoji)
+            NotificationCenter.default.post(name: .emojiChange, object: emoji)
         }
     }
     
@@ -95,7 +94,6 @@ final class DiceBearViewLogic {
     }
     
     func getMyEmoji() {
-
         let model = DiceBearModel(
             funEmojiWithBackgroundColor: backgroundTypeSelection == .gradient ? "\(primaryColorSelection.toHexString),\(secondaryColorSelection.toHexString)"
              : primaryColorSelection.toHexString,
@@ -105,7 +103,28 @@ final class DiceBearViewLogic {
         Task {
             let emoji = try await
             self.modelLogic.refreshEmoji(params: model)
-            self.action?(emoji)
+            NotificationCenter.default.post(name: .emojiChange, object: emoji)
         }
+    }
+    
+    
+    func addFavoriteAvatar(image: UIImage) {
+        let details = [backgroundTypeSelection.rawValue,primaryColorSelection.toHexString,secondaryColorSelection.toHexString,eyeSelection.rawValue,mouthSelection.rawValue].joined(separator: ",")
+        
+        let favorite = DiceBearAvatarModel(image: image, details: details)
+        
+        modelLogic.addFavorite(avatar: favorite)
+        
+    }
+    
+    
+    //MARK: CollectionView
+
+    func getFavoritesCount() -> Int {
+        modelLogic.getFavoritesCount()
+    }
+    
+    func getAvatarFrom(_ indexPath: IndexPath) -> UIImage? {
+        modelLogic.getAvatarFrom(indexPath)
     }
 }

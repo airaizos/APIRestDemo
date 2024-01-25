@@ -17,6 +17,8 @@
 		3A31F4AC2B615F3B00A5F0D3 /* DiceBearModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4AB2B615F3B00A5F0D3 /* DiceBearModelLogic.swift */; };
 		3A31F4AE2B61619600A5F0D3 /* DiceBearViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4AD2B61619600A5F0D3 /* DiceBearViewLogic.swift */; };
 		3A31F4B02B616E8200A5F0D3 /* DiceBearModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4AF2B616E8200A5F0D3 /* DiceBearModel.swift */; };
+		3A32F4302B629F30006C6FE9 /* DiceBearCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32F42F2B629F30006C6FE9 /* DiceBearCollectionViewCell.swift */; };
+		3A32F4322B62AAE6006C6FE9 /* DiceBearExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32F4312B62AAE6006C6FE9 /* DiceBearExtensions.swift */; };
 		3A3783B02B5AA71600D2AFCD /* CommunesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */; };
 		3A3783B22B5AA74100D2AFCD /* CommuneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */; };
 		3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */; };
@@ -73,6 +75,8 @@
 		3A31F4AB2B615F3B00A5F0D3 /* DiceBearModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearModelLogic.swift; sourceTree = "<group>"; };
 		3A31F4AD2B61619600A5F0D3 /* DiceBearViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearViewLogic.swift; sourceTree = "<group>"; };
 		3A31F4AF2B616E8200A5F0D3 /* DiceBearModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearModel.swift; sourceTree = "<group>"; };
+		3A32F42F2B629F30006C6FE9 /* DiceBearCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearCollectionViewCell.swift; sourceTree = "<group>"; };
+		3A32F4312B62AAE6006C6FE9 /* DiceBearExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearExtensions.swift; sourceTree = "<group>"; };
 		3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesInterface.swift; sourceTree = "<group>"; };
 		3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuneModel.swift; sourceTree = "<group>"; };
 		3A3783B32B5AA8D100D2AFCD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -159,6 +163,7 @@
 				3A31F4B12B61A1E400A5F0D3 /* Logic */,
 				3A31F4A12B614DAA00A5F0D3 /* DiceBearStoryboard.storyboard */,
 				3A31F4A72B61558400A5F0D3 /* DiceBearViewController.swift */,
+				3A32F42F2B629F30006C6FE9 /* DiceBearCollectionViewCell.swift */,
 			);
 			name = DiceBear;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			children = (
 				3A31F4A92B6155E000A5F0D3 /* DiceBearPersistence.swift */,
 				3A31F4A52B61514B00A5F0D3 /* DiceBearInterface.swift */,
+				3A32F4312B62AAE6006C6FE9 /* DiceBearExtensions.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -435,11 +441,13 @@
 				3A8DB3462B600BCB00E7BDA3 /* ChuckNorrisViewController.swift in Sources */,
 				3A31F4A62B61514B00A5F0D3 /* DiceBearInterface.swift in Sources */,
 				3A65BFE22B583CBE0095794A /* ViewController.swift in Sources */,
+				3A32F4322B62AAE6006C6FE9 /* DiceBearExtensions.swift in Sources */,
 				3A65C0002B586BF10095794A /* NumbersModelLogic.swift in Sources */,
 				3A65BFE82B583CBE0095794A /* APIRestDemo.xcdatamodeld in Sources */,
 				3A65BFFE2B5869DB0095794A /* NumbersPersistence.swift in Sources */,
 				3A65BFDE2B583CBE0095794A /* AppDelegate.swift in Sources */,
 				3A8DB34E2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift in Sources */,
+				3A32F4302B629F30006C6FE9 /* DiceBearCollectionViewCell.swift in Sources */,
 				3A851C002B5ED4F6005758FA /* Helpers.swift in Sources */,
 				3AAC265E2B60201E007EED64 /* Extensions.swift in Sources */,
 				3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */,

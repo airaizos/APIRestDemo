@@ -34,40 +34,45 @@ final class DiceBearViewController: UIViewController {
         primaryColorPicker.addTarget(self, action: #selector(primaryColorSelected), for: .valueChanged)
         
         secondaryColorPicker.addTarget(self, action: #selector(secondaryColorSelected), for: .valueChanged)
+        
+        emojiCollectionView.delegate = self
+        emojiCollectionView.dataSource = self
+        
+        NotificationCenter.default.addObserver(forName: .favoritesChange, object: nil, queue: .main) { _ in
+            self.emojiCollectionView.reloadData()
+        }
+        
+        NotificationCenter.default.addObserver(forName: .emojiChange, object: emojiImage.image, queue: .main) { notification in
+            let image = notification.object as? UIImage
+                self.emojiImage.image = image
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         viewLogic.randomEmoji()
-        getEmojiImage()
     }
     
     //MARK: IBActions
     @IBAction func refreshButton(_ sender: UIButton) {
         let model = DiceBearModel(funEmojiWithBackgroundColor: "CD5C5C,6C3483", backgroundType: .gradient, eyes: .love, mouth: .pissed)
         viewLogic.updateEmoji(params: model)
-        getEmojiImage()
     }
     
     @IBAction func randomEmoji(_ sender: UIButton) {
         viewLogic.randomEmoji()
-        getEmojiImage()
     }
     
     @IBAction func getMyEmojiTapped(_ sender: UIButton) {
         viewLogic.getMyEmoji()
-        getEmojiImage()
     }
     
-    //MARK: Métodos
-    func getEmojiImage() {
-        viewLogic.action = { [weak self] image in
-            RunLoop.main.perform {
-                self?.emojiImage.image = image
-            }
-        }
+    @IBAction func addFavoritesTapped(_ sender: UIButton) {
+        guard let image = emojiImage.image else { return  }
+        
+        viewLogic.addFavoriteAvatar(image: image)
     }
     
-    //MARK: Objc Métoodos
+    //MARK: Objc Métodos
     @objc func primaryColorSelected(color: UIColorWell) {
         guard let color = color.selectedColor else { return }
         viewLogic.primaryColorSelection(color)
@@ -76,6 +81,11 @@ final class DiceBearViewController: UIViewController {
     @objc func secondaryColorSelected(color: UIColorWell) {
         guard let color = color.selectedColor else { return }
         viewLogic.secondaryColorSelection(color)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .favoritesChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .emojiChange, object: emojiImage)
     }
 }
 
@@ -108,4 +118,21 @@ extension DiceBearViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         default: ""
         }
     }
+}
+
+
+extension DiceBearViewController: UICollectionViewDelegate,UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewLogic.getFavoritesCount()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emojiCell", for: indexPath) as? DiceBearCollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.avatar.image = viewLogic.getAvatarFrom(indexPath)
+        return cell
+    }
+    
+    
+    
 }
