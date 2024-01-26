@@ -27,31 +27,9 @@ final class ChuckNorrisPersistence {
         self.urls = urls
     }
     
-    ///#Patrón Callback
-   private func fetchJson<JSON:Codable>(url: URL, type: JSON.Type, callback: @escaping ((Result<JSON,PersistenceError>) -> Void)) {
-        
-        session.dataTask(with: url) { data, response, error in
-            guard error == nil else {
-                return callback(.failure(.general("error General")))
-            }
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                return callback(.failure(.status))
-            }
-            guard let data = data else {
-                return callback(.failure(.data))
-            }
-            do {
-                let result = try JSONDecoder().decode(JSON.self, from: data)
-                callback(.success(result))
-            } catch let error {
-                callback(.failure(.json(error.localizedDescription)))
-            }
-            
-        }.resume()
-    }
     
     func getJoke(callback: @escaping ((Result<ChuckNorrisModel, PersistenceError>) -> Void)) {
-        fetchJson(url: .chuckNorrisURL, type: ChuckNorrisModel.self, callback: callback)
+        fetchJson(url: .chuckNorrisURL, type: ChuckNorrisModel.self, session: session, callback: callback)
     }
     
     //Save to Documents Directory

@@ -26,32 +26,10 @@ final class DiceBearPersistence {
         self.urls = urls
     }
     
-    ///#Async-Await
-    func dataRequest(from url: URL) async throws -> (Data, URLResponse) {
-        do {
-            return try await session.data(from: url)
-        } catch {
-           throw PersistenceError.general("")
-        }
-            
-    }
-    
    
-    func fetchImage(url: URL) async throws -> UIImage {
-       let (data,response) = try await dataRequest(from: url)
-        guard let response = response as? HTTPURLResponse else { throw PersistenceError.noHTTP }
-        
-        guard response.statusCode == 200 else { throw PersistenceError.status }
-
-        if let image = UIImage(data: data) {
-            return image
-        } else {
-            throw PersistenceError.data
-        }
-    }
     
     func getFunEmoji() async throws -> UIImage {
-        try await fetchImage(url: DiceBearModel.funEmoji.url)
+        try await fetchImage(url: DiceBearModel.funEmoji.url, session: session)
     }
     
     func getEmojiWithOptions(_ model: DiceBearModel) async throws -> UIImage {
@@ -59,7 +37,7 @@ final class DiceBearPersistence {
             funEmojiWithBackgroundColor: model.backgroundColor,
             backgroundType: model.backgroundType,
             eyes: model.eyes,
-            mouth: model.mouth).url)
+            mouth: model.mouth).url, session: session)
 
     }
     
