@@ -61,3 +61,8 @@ var BATAK: String {
         return ""
     }
 }
+
+extension Notification.Name {
+    static let countries = Notification.Name("COUNTRIES")
+    static let flag = Notification.Name("FLAG")
+}

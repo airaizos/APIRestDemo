@@ -77,7 +77,9 @@ extension ChuckNorrisViewController: UITableViewDelegate, UITableViewDataSource 
         var content = UIListContentConfiguration.subtitleCell()
         
         content.text = joke.value
-        content.secondaryText = joke.categoriesView
+     
+            content.secondaryText = joke.categoriesView
+        
         cell.contentConfiguration = content
         
         return cell

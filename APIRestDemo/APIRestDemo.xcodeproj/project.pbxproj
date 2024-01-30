@@ -26,7 +26,7 @@
 		3A32F4372B62BB5E006C6FE9 /* DataBaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32F4362B62BB5E006C6FE9 /* DataBaseError.swift */; };
 		3A32F4392B62BB8C006C6FE9 /* APIRestDemoDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32F4382B62BB8C006C6FE9 /* APIRestDemoDataBase.swift */; };
 		3A32F43B2B62BCBF006C6FE9 /* EmojiEntityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32F43A2B62BCBF006C6FE9 /* EmojiEntityExtensions.swift */; };
-		3A32F43F2B62EFB5006C6FE9 /* BattutaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A32F43E2B62EFB5006C6FE9 /* BattutaStoryboard.storyboard */; };
+		3A32F43F2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A32F43E2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard */; };
 		3A3783B02B5AA71600D2AFCD /* CommunesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */; };
 		3A3783B22B5AA74100D2AFCD /* CommuneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */; };
 		3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */; };
@@ -64,6 +64,8 @@
 		3A8DB34C2B600D0100E7BDA3 /* ChuckNorrisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB34B2B600D0100E7BDA3 /* ChuckNorrisModel.swift */; };
 		3A8DB34E2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DB34D2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift */; };
 		3AAC265E2B60201E007EED64 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAC265D2B60201E007EED64 /* Extensions.swift */; };
+		3AFB519F2B693A5F00B42C4E /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB519E2B693A5F00B42C4E /* CountriesViewController.swift */; };
+		3AFB51A12B693CFD00B42C4E /* CountryModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB51A02B693CFD00B42C4E /* CountryModelLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +98,7 @@
 		3A32F4362B62BB5E006C6FE9 /* DataBaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseError.swift; sourceTree = "<group>"; };
 		3A32F4382B62BB8C006C6FE9 /* APIRestDemoDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRestDemoDataBase.swift; sourceTree = "<group>"; };
 		3A32F43A2B62BCBF006C6FE9 /* EmojiEntityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiEntityExtensions.swift; sourceTree = "<group>"; };
-		3A32F43E2B62EFB5006C6FE9 /* BattutaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BattutaStoryboard.storyboard; sourceTree = "<group>"; };
+		3A32F43E2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CountriesStoryboard.storyboard; sourceTree = "<group>"; };
 		3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesInterface.swift; sourceTree = "<group>"; };
 		3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuneModel.swift; sourceTree = "<group>"; };
 		3A3783B32B5AA8D100D2AFCD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -138,6 +140,8 @@
 		3A8DB34B2B600D0100E7BDA3 /* ChuckNorrisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisModel.swift; sourceTree = "<group>"; };
 		3A8DB34D2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisModelLogic.swift; sourceTree = "<group>"; };
 		3AAC265D2B60201E007EED64 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3AFB519E2B693A5F00B42C4E /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
+		3AFB51A02B693CFD00B42C4E /* CountryModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModelLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,8 +257,10 @@
 			children = (
 				3A56D8452B64413F00A948BD /* CountriesNetwork.swift */,
 				3A56D8432B64349500A948BD /* CountriesInterface.swift */,
+				3AFB51A02B693CFD00B42C4E /* CountryModelLogic.swift */,
 				3A1123212B6410D30021EC56 /* Models */,
-				3A32F43E2B62EFB5006C6FE9 /* BattutaStoryboard.storyboard */,
+				3A32F43E2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard */,
+				3AFB519E2B693A5F00B42C4E /* CountriesViewController.swift */,
 			);
 			name = Countries;
 			sourceTree = "<group>";
@@ -467,7 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A588BC32B5FD88E00F20A0C /* NumbersStoryboard.storyboard in Resources */,
-				3A32F43F2B62EFB5006C6FE9 /* BattutaStoryboard.storyboard in Resources */,
+				3A32F43F2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard in Resources */,
 				3A8DB3422B5FF95900E7BDA3 /* CommunesStoryboard.storyboard in Resources */,
 				3A65BFED2B583CCC0095794A /* LaunchScreen.storyboard in Resources */,
 				3A65BFEA2B583CCC0095794A /* Assets.xcassets in Resources */,
@@ -519,6 +525,7 @@
 				3A65C0002B586BF10095794A /* NumbersModelLogic.swift in Sources */,
 				3A65BFE82B583CBE0095794A /* APIRestDemoDataModel.xcdatamodeld in Sources */,
 				3A65BFFE2B5869DB0095794A /* NumbersPersistence.swift in Sources */,
+				3AFB519F2B693A5F00B42C4E /* CountriesViewController.swift in Sources */,
 				3A65BFDE2B583CBE0095794A /* AppDelegate.swift in Sources */,
 				3A8DB34E2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift in Sources */,
 				3A32F4302B629F30006C6FE9 /* DiceBearCollectionViewCell.swift in Sources */,
@@ -529,6 +536,7 @@
 				3A65BFF62B58620D0095794A /* NumbersAPIViewController.swift in Sources */,
 				3A1123232B6410EA0021EC56 /* BattutaCountryModel.swift in Sources */,
 				3A31F4AC2B615F3B00A5F0D3 /* DiceBearModelLogic.swift in Sources */,
+				3AFB51A12B693CFD00B42C4E /* CountryModelLogic.swift in Sources */,
 				3A32F4372B62BB5E006C6FE9 /* DataBaseError.swift in Sources */,
 				3A1123272B6411020021EC56 /* BattutaCityModel.swift in Sources */,
 				3A1123252B6410F30021EC56 /* BattutaRegionModel.swift in Sources */,

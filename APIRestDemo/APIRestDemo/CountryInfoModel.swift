@@ -5,7 +5,7 @@
 //  Created by Adrian Iraizos Mendoza on 26/1/24.
 //
 
-import Foundation
+import UIKit
 
 struct CountryInfoModel: Codable {
     let name: String                    //France
@@ -22,4 +22,7 @@ struct CountryInfoModel: Codable {
     let coatOfArms: String              //"https://mainfacts.com/media/images/coats_of_arms/fr.svg"
     let population: Int                 //67391582
     let timezones: [String]             //[UTC-10:00,UTC-09:30... ]
+    
 }
+
+

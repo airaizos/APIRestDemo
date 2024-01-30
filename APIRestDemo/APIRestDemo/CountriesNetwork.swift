@@ -25,7 +25,7 @@ final class CountriesNetwork {
         }
     }
     
-    ///Cambia la funcion fetchImage con patrón Callback a AsyncAwait
+    ///Cambia la función fetchImage con patrón Callback a AsyncAwait
     private func getImageAsync(url: URL) async throws -> UIImage {
         try await withCheckedThrowingContinuation { continuation in
             fetchImage(url: url,session: session) { result in

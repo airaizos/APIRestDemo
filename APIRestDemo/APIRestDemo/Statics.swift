@@ -34,7 +34,7 @@ func fetchImage(url:URL, session: URLSession, callback: @escaping ((Result<UIIma
     session.dataTask(with: url) { data, response, error in
         guard let data, let res = response as? HTTPURLResponse else {
             if let error {
-                return callback(.failure(.general("error General")))
+                return callback(.failure(.general("error General \(error)")))
             }
             return
         }

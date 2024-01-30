@@ -46,7 +46,6 @@ final class DiceBearViewLogic {
         Task {
             let emoji = try await
             self.modelLogic.getRandomEmoji()
-          //  self.action?(emoji)
             NotificationCenter.default.post(name: .emojiChange, object: emoji)
         }
     }
@@ -115,8 +114,8 @@ final class DiceBearViewLogic {
         
         do {
             try modelLogic.addFavorite(emoji: favorite)
-        } catch {
-            print("Show error")
+        } catch let error {
+            print("Error en pantalla: \(error)")
         }
     }
     
