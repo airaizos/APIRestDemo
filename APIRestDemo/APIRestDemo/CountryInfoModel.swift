@@ -25,4 +25,26 @@ struct CountryInfoModel: Codable {
     
 }
 
-
+extension CountryInfoModel {
+    var capitalLabel:String {
+        capital.joined(separator: ",")
+    }
+    
+    var areaLabel:String {
+        "\(area)"
+    }
+    var populationLabel:String {
+        "\(population)"
+    }
+    
+    var bordersLabel:String{
+        borders.joined(separator: ",")
+    }
+    var tldLabel:String {
+        tld.joined(separator: ",")
+    }
+    var timeZonesLabel:String{
+        timezones.joined(separator: ",")
+    }
+    
+}

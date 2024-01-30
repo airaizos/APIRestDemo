@@ -35,7 +35,12 @@ final class CountriesNetwork {
     }
     
     func getCountriesInfo(url: URL) async throws -> [CountryInfoModel] {
-       try await getJSONAsync(url: url, type: [CountryInfoModel].self)
+        let url = Bundle.main.url(forResource: "countries", withExtension: "json")!
+        let data = try Data(contentsOf: url)
+        
+        return try JSONDecoder().decode([CountryInfoModel].self, from: data)
+        
+       //try await getJSONAsync(url: url, type: [CountryInfoModel].self)
     }
     
     func getFlagIcon(ccaCode:String) async throws -> UIImage {

@@ -14,19 +14,29 @@ final class CountryModelLogic {
     
     init(network: CountriesNetwork = .shared) {
         self.network = network
-        Task {
+        Task{
             countries = await getCountriesInfo()
+            
             NotificationCenter.default.post(name: .countries, object: nil)
         }
     }
     
-    private var selectedCountry: CountryInfoModel?
+    
+    private var selectedCountry: CountryInfoModel? {
+        didSet  {
+            NotificationCenter.default.post(name: .selectedCountry, object: selectedCountry)
+        }
+    }
+    private var selectedFlag: UIImage? {
+        didSet {
+            NotificationCenter.default.post(name: .selectedFlag, object: selectedFlag)
+        }
+    }
     
     private var countries = [CountryInfoModel]()
     
     private var countryFlag = [String:UIImage]() {
         didSet {
-            print("\(countryFlag.count) Count Icons")
             NotificationCenter.default.post(name: .flag, object: nil)
         }
     }
@@ -42,6 +52,28 @@ final class CountryModelLogic {
         }
     }
     
+    func countryNameDict() {
+        countries.forEach { countryFlag[$0.name] = nil }
+    }
+    
+    func getFlag(at indexPath: IndexPath) async {
+        let cca2 = countries[indexPath.row].cca2
+        do {
+            selectedFlag = try await network.getFlagImage(ccaCode: cca2)
+        } catch {
+            
+        }
+    }
+    
+    func didSelectCountry(at indexPath: IndexPath) {
+        selectedCountry = countries[indexPath.row]
+        Task {
+            if let country = selectedCountry {
+                selectedFlag = try await network.getFlagImage(ccaCode: country.cca2)
+            }
+        }
+    }
+    
     //MARK: TableView
     var countriesCount: Int {
         countries.count
@@ -51,27 +83,34 @@ final class CountryModelLogic {
         countries[indexPath.row]
     }
     
+    var countriesPendIcons = [CountryInfoModel]()
     
     func getCountryIcon(_ indexPath: IndexPath) -> UIImage {
-        if let icon = countryFlag[countries[indexPath.row].name] {
+        let country = countries[indexPath.row]
+        let countryName = country.name
+        if let icon = countryFlag[countryName] {
             return icon
         } else {
+            Task { @MainActor in
+                let icon = await downloadIcon(for: country)
+                countryFlag[countryName] = icon
+            }
             return UIImage(named: "clock")!
         }
     }
     
-    func downloadCountryIcon(_ indexPath: IndexPath) async {
-        if countryFlag[countries[indexPath.row].name] != nil {
-            return
-        } else {
-            do {
-                let ccaCode = countries[indexPath.row].cca2
-                let icon = try await network.getFlagIcon(ccaCode: ccaCode)
-                countryFlag[countries[indexPath.row].name] = icon
-            } catch {
-                print("Error en pantalla: \(error)")
-             
-            }
+    func downloadIcon(for country: CountryInfoModel) async -> UIImage {
+        do {
+            return try await network.getFlagIcon(ccaCode: country.cca2)
+        } catch {
+            print("Error en pantalla: \(error)")
+            return UIImage(named: "clock")!
         }
     }
+    
+    func rowSelected(at indexPath: IndexPath) {
+        selectedCountry = countries[indexPath.row]
+    }
+    
+
 }
