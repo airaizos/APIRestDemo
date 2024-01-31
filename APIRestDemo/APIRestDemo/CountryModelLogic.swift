@@ -49,7 +49,7 @@ final class CountryModelLogic {
     }
     
     
-  
+    
     
     //MARK: Countries
     func getCountriesInfo() async -> [CountryInfoModel] {
@@ -129,12 +129,12 @@ final class CountryModelLogic {
     }
     
     func getRegionsCount() -> Int {
-         regions.count
-     }
-     
-     func getCitiesCount() -> Int {
-         cities.count
-     }
+        regions.count
+    }
+    
+    func getCitiesCount() -> Int {
+        cities.count
+    }
     
     func getRegionRow(at indexPath: IndexPath) -> BattutaRegionModel {
         regions[indexPath.row]
@@ -149,7 +149,7 @@ final class CountryModelLogic {
         do {
             self.regions = try await network.getRegions(ccaCode: country.cca2)
         } catch {
-          return
+            return
         }
     }
     
@@ -169,8 +169,11 @@ final class CountryModelLogic {
         }
     }
     
-    func didSelectCity(at indexPath: IndexPath) {
-       let city = cities[indexPath.row]
-        //mostrar con las coordenadas en el mapa
+    func didSelectCity(at indexPath: IndexPath) -> BattutaCityModel {
+        cities[indexPath.row]
+    }
+    
+    func detailVCDisappear() {
+        cities = []
     }
 }

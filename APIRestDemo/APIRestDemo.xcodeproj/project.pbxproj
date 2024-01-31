@@ -785,6 +785,7 @@
 				DEVELOPMENT_TEAM = 6SPUJN2479;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APIRestDemo/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Podemos usar to localizacion para conocer a que distancia estas del punto seleccionado?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -816,6 +817,7 @@
 				DEVELOPMENT_TEAM = 6SPUJN2479;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APIRestDemo/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Podemos usar to localizacion para conocer a que distancia estas del punto seleccionado?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

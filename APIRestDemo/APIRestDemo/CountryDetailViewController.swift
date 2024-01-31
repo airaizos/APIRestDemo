@@ -12,8 +12,9 @@ final class CountryDetailViewController: UIViewController {
     
     let modelLogic: CountryModelLogic
     let viewLogic: CountryDetailViewLogic
+    let locationManager = CLLocationManager()
     
-    @IBOutlet weak var countryNameLabel: UILabel!
+    @IBOutlet weak var distanceFrom: UILabel!
     @IBOutlet weak var countryFlagImage: UIImageView!
     @IBOutlet weak var regionsTableView: UITableView!
     @IBOutlet weak var citiesTableView: UITableView!
@@ -36,7 +37,7 @@ final class CountryDetailViewController: UIViewController {
         regionsTableView.delegate = self
         citiesTableView.delegate = self
         citiesTableView.dataSource = self
-        
+     
         if let country = modelLogic.getSelectedCountry() {
             self.navigationItem.title = country.name
             updateLabels(for: country)
@@ -45,10 +46,10 @@ final class CountryDetailViewController: UIViewController {
             }
         }
         addObservers()
+        setLocationManager()
     }
     
     func updateLabels(for country: CountryInfoModel) {
-        countryNameLabel.text = country.name
         countryFlagImage.image = modelLogic.getSelectedCountryFlag()
     }
     
@@ -61,9 +62,17 @@ final class CountryDetailViewController: UIViewController {
         }
     }
     
+    func setLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self, name: .regions, object: nil)
         NotificationCenter.default.removeObserver(self, name: .cities, object: nil)
+        modelLogic.detailVCDisappear()
     }
 }
 
@@ -80,19 +89,14 @@ extension CountryDetailViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var identifier = "countryRegionCell"
         var name = ""
-       
+        var labels = (identifier:"",name:"")
         switch tableView {
-        case regionsTableView:
-            let labels = viewLogic.getCellForRegion(at: indexPath)
-            identifier = labels.identifier
-            name = labels.name
-       
-        case citiesTableView: 
-            let labels = viewLogic.getCellForCity(at: indexPath)
-            identifier = labels.identifier
-            name = labels.name
+        case regionsTableView: labels = viewLogic.getCellForRegion(at: indexPath)
+        case citiesTableView:  labels = viewLogic.getCellForCity(at: indexPath)
         default: break
         }
+        identifier = labels.identifier
+        name = labels.name
         
         var content = UIListContentConfiguration.subtitleCell()
         content.text = name
@@ -100,20 +104,40 @@ extension CountryDetailViewController: UITableViewDelegate, UITableViewDataSourc
         cell.contentConfiguration = content
         
         return cell
-        
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         switch tableView {
         case regionsTableView:  modelLogic.didSelectRegion(at: indexPath)
-            
-        case citiesTableView: modelLogic.didSelectCity(at: indexPath)
+        case citiesTableView: 
+            let city = modelLogic.didSelectCity(at: indexPath)
+            renderMap(city: city)
         default: break
             
         }
-       
+    }
+}
+
+//MARK: MapKit
+
+extension CountryDetailViewController: CLLocationManagerDelegate {
+    func renderMap(city: BattutaCityModel) {
+        guard let cityLocation = getLocation(from: city) else { return }
+        
+        
+        let coordenates = CLLocationCoordinate2D(latitude: cityLocation.coordinate.latitude, longitude: cityLocation.coordinate.longitude)
+        let region = MKCoordinateRegion(center: coordenates, latitudinalMeters: 10000, longitudinalMeters: 10000)
+        map.setRegion(region, animated: true)
+        
     }
     
+    func getLocation(from city: BattutaCityModel) -> CLLocation? {
+        guard let latitude = Double(city.latitude), let longitude = Double(city.longitude) else { return nil }
+        let locationCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        
+        let location = CLLocation(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude)
+        
+        return location
+    }
     
 }
