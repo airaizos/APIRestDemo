@@ -7,7 +7,7 @@
 
 import UIKit
 
-///#Patrón Callback
+///#Patrón Callback JSON Genérico
 func fetchJson<JSON:Codable>(url: URL, type: JSON.Type, session: URLSession, callback: @escaping ((Result<JSON,PersistenceError>) -> Void)) {
      
      session.dataTask(with: url) { data, response, error in
@@ -29,7 +29,7 @@ func fetchJson<JSON:Codable>(url: URL, type: JSON.Type, session: URLSession, cal
          
      }.resume()
  }
-
+///#Patrón Callback Image
 func fetchImage(url:URL, session: URLSession, callback: @escaping ((Result<UIImage,PersistenceError>) -> Void)) {
     session.dataTask(with: url) { data, response, error in
         guard let data, let res = response as? HTTPURLResponse else {
@@ -70,5 +70,25 @@ func fetchImage(url: URL, session: URLSession) async throws -> UIImage {
         return image
     } else {
         throw PersistenceError.data
+    }
+}
+
+func getJSONAsAw<JSON:Codable>(url:URL, type:JSON.Type) async throws -> JSON {
+    do {
+        let (data, response) = try await URLSession.shared.data(from: url)
+        guard let response = response as? HTTPURLResponse else { throw PersistenceError.noHTTP }
+        if response.statusCode == 200 {
+            do {
+                return try JSONDecoder().decode(JSON.self, from: data)
+            } catch {
+                throw PersistenceError.json(error.localizedDescription)
+            }
+        } else {
+            throw PersistenceError.status
+        }
+    } catch let error as PersistenceError {
+        throw error
+    } catch {
+        throw PersistenceError.general(error.localizedDescription)
     }
 }

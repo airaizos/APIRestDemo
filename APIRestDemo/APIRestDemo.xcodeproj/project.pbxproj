@@ -52,6 +52,9 @@
 		3A65C0002B586BF10095794A /* NumbersModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFFF2B586BF10095794A /* NumbersModelLogic.swift */; };
 		3A660DC32B5AE3F400E1BC69 /* PersistenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A660DC22B5AE3F400E1BC69 /* PersistenceError.swift */; };
 		3A660DC52B5AE76000E1BC69 /* CommunesModeLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A660DC42B5AE76000E1BC69 /* CommunesModeLogic.swift */; };
+		3A6A341E2B6AC1C4005ADBE9 /* MarvelResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A341D2B6AC1C4005ADBE9 /* MarvelResultsModel.swift */; };
+		3A6A34202B6AC39F005ADBE9 /* MarvelCharactersInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A341F2B6AC39F005ADBE9 /* MarvelCharactersInterface.swift */; };
+		3A6A34222B6ACA4D005ADBE9 /* MarvelCharactersNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A34212B6ACA4D005ADBE9 /* MarvelCharactersNetwork.swift */; };
 		3A851C002B5ED4F6005758FA /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851BFF2B5ED4F6005758FA /* Helpers.swift */; };
 		3A851C082B5EEF9E005758FA /* APIRestDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851C072B5EEF9E005758FA /* APIRestDemoTests.swift */; };
 		3A851C102B5EEFB6005758FA /* CommunesUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851C0F2B5EEFB6005758FA /* CommunesUnitTests.swift */; };
@@ -131,6 +134,9 @@
 		3A65BFFF2B586BF10095794A /* NumbersModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersModelLogic.swift; sourceTree = "<group>"; };
 		3A660DC22B5AE3F400E1BC69 /* PersistenceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceError.swift; sourceTree = "<group>"; };
 		3A660DC42B5AE76000E1BC69 /* CommunesModeLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesModeLogic.swift; sourceTree = "<group>"; };
+		3A6A341D2B6AC1C4005ADBE9 /* MarvelResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelResultsModel.swift; sourceTree = "<group>"; };
+		3A6A341F2B6AC39F005ADBE9 /* MarvelCharactersInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharactersInterface.swift; sourceTree = "<group>"; };
+		3A6A34212B6ACA4D005ADBE9 /* MarvelCharactersNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharactersNetwork.swift; sourceTree = "<group>"; };
 		3A851BFF2B5ED4F6005758FA /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		3A851C052B5EEF9E005758FA /* APIRestDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIRestDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A851C072B5EEF9E005758FA /* APIRestDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRestDemoTests.swift; sourceTree = "<group>"; };
@@ -318,6 +324,7 @@
 		3A65BFF42B5861820095794A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3A6A341C2B6AC1B2005ADBE9 /* MarvelCharacters */,
 				3A32F43D2B62E9CF006C6FE9 /* Countries */,
 				3A31F4A02B614CA400A5F0D3 /* DiceBear */,
 				3A851C132B5EFE7E005758FA /* ChuckNorris */,
@@ -367,6 +374,16 @@
 				3A56D8472B6441CA00A948BD /* Statics.swift */,
 			);
 			name = Commons;
+			sourceTree = "<group>";
+		};
+		3A6A341C2B6AC1B2005ADBE9 /* MarvelCharacters */ = {
+			isa = PBXGroup;
+			children = (
+				3A6A341D2B6AC1C4005ADBE9 /* MarvelResultsModel.swift */,
+				3A6A341F2B6AC39F005ADBE9 /* MarvelCharactersInterface.swift */,
+				3A6A34212B6ACA4D005ADBE9 /* MarvelCharactersNetwork.swift */,
+			);
+			name = MarvelCharacters;
 			sourceTree = "<group>";
 		};
 		3A851C062B5EEF9E005758FA /* APIRestDemoTests */ = {
@@ -546,6 +563,7 @@
 			files = (
 				3A660DC32B5AE3F400E1BC69 /* PersistenceError.swift in Sources */,
 				3A56D8442B64349500A948BD /* CountriesInterface.swift in Sources */,
+				3A6A34202B6AC39F005ADBE9 /* MarvelCharactersInterface.swift in Sources */,
 				3A8DB3482B600BFC00E7BDA3 /* ChuckNorrisInterface.swift in Sources */,
 				3A65BFFC2B5864EA0095794A /* NumberModel.swift in Sources */,
 				3A31F4AA2B6155E000A5F0D3 /* DiceBearPersistence.swift in Sources */,
@@ -555,6 +573,7 @@
 				3A8DB34C2B600D0100E7BDA3 /* ChuckNorrisModel.swift in Sources */,
 				3A660DC52B5AE76000E1BC69 /* CommunesModeLogic.swift in Sources */,
 				3A31F4AE2B61619600A5F0D3 /* DiceBearViewLogic.swift in Sources */,
+				3A6A34222B6ACA4D005ADBE9 /* MarvelCharactersNetwork.swift in Sources */,
 				3A56D8422B64270D00A948BD /* CountryInfoModel.swift in Sources */,
 				3A31F4A82B61558400A5F0D3 /* DiceBearViewController.swift in Sources */,
 				3A32F4392B62BB8C006C6FE9 /* APIRestDemoDataBase.swift in Sources */,
@@ -573,6 +592,7 @@
 				3A65BFE82B583CBE0095794A /* APIRestDemoDataModel.xcdatamodeld in Sources */,
 				3A65BFFE2B5869DB0095794A /* NumbersPersistence.swift in Sources */,
 				3AFB519F2B693A5F00B42C4E /* CountriesViewController.swift in Sources */,
+				3A6A341E2B6AC1C4005ADBE9 /* MarvelResultsModel.swift in Sources */,
 				3A65BFDE2B583CBE0095794A /* AppDelegate.swift in Sources */,
 				3A8DB34E2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift in Sources */,
 				3A32F4302B629F30006C6FE9 /* DiceBearCollectionViewCell.swift in Sources */,
