@@ -34,9 +34,9 @@ final class NumbersAPIViewController: UIViewController {
     }
     
     func addObserver() {
-        NotificationCenter.default.addObserver(forName: .number, object: nil, queue: .main) { notification in
+        NotificationCenter.default.addObserver(forName: .number, object: nil, queue: .main) { [weak self] notification in
             guard let _ = notification.object as? Number else { return }
-            self.updateLabels()
+            self?.updateLabels()
         }
     }
     

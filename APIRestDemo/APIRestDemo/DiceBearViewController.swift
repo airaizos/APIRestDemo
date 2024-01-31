@@ -38,13 +38,13 @@ final class DiceBearViewController: UIViewController {
         emojiCollectionView.delegate = self
         emojiCollectionView.dataSource = self
         
-        NotificationCenter.default.addObserver(forName: .favoritesChange, object: nil, queue: .main) { _ in
-            self.emojiCollectionView.reloadData()
+        NotificationCenter.default.addObserver(forName: .favoritesChange, object: nil, queue: .main) { [weak self] _ in
+            self?.emojiCollectionView.reloadData()
         }
         
-        NotificationCenter.default.addObserver(forName: .emojiChange, object: emojiImage.image, queue: .main) { notification in
+        NotificationCenter.default.addObserver(forName: .emojiChange, object: emojiImage.image, queue: .main) { [weak self] notification in
             let image = notification.object as? UIImage
-                self.emojiImage.image = image
+                self?.emojiImage.image = image
         }
     }
     

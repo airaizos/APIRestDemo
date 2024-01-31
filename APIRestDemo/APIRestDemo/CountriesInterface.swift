@@ -37,7 +37,7 @@ extension URL {
         let first = components.first?.prefix(3) 
         let last = components.last?.prefix(3)
         
-        let code = first ?? last ?? region.prefix(3)
+        let code = last ?? first ?? region.prefix(3)
         let hint = code.count < 3  ? "123" : code
         
         return URL(string: "http://battuta.medunes.net/api/city/\(ccaCode.lowercased())/search/?region=\(hint)&key=\(BATAK)")!

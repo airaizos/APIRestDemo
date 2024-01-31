@@ -14,6 +14,8 @@ final class CountryDetailViewController: UIViewController {
     let viewLogic: CountryDetailViewLogic
     let locationManager = CLLocationManager()
     
+    private var userLocation: CLLocation?
+    
     @IBOutlet weak var distanceFrom: UILabel!
     @IBOutlet weak var countryFlagImage: UIImageView!
     @IBOutlet weak var regionsTableView: UITableView!
@@ -28,7 +30,7 @@ final class CountryDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       setupView()
+        setupView()
     }
     
     //MARK: ViewDidLoad
@@ -37,16 +39,17 @@ final class CountryDetailViewController: UIViewController {
         regionsTableView.delegate = self
         citiesTableView.delegate = self
         citiesTableView.dataSource = self
-     
+        
         if let country = modelLogic.getSelectedCountry() {
             self.navigationItem.title = country.name
             updateLabels(for: country)
             Task {
-               await modelLogic.getRegionsForCountry(country)
+                await modelLogic.getRegionsForCountry(country)
             }
         }
         addObservers()
         setLocationManager()
+
     }
     
     func updateLabels(for country: CountryInfoModel) {
@@ -54,11 +57,11 @@ final class CountryDetailViewController: UIViewController {
     }
     
     func addObservers() {
-        NotificationCenter.default.addObserver(forName: .regions, object: nil, queue: .main) { _ in
-            self.regionsTableView.reloadData()
+        NotificationCenter.default.addObserver(forName: .regions, object: nil, queue: .main) { [weak self] _ in
+            self?.regionsTableView.reloadData()
         }
-        NotificationCenter.default.addObserver(forName: .cities, object: nil, queue: .main) { _ in
-            self.citiesTableView.reloadData()
+        NotificationCenter.default.addObserver(forName: .cities, object: nil, queue: .main) { [weak self] _ in
+            self?.citiesTableView.reloadData()
         }
     }
     
@@ -72,7 +75,6 @@ final class CountryDetailViewController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self, name: .regions, object: nil)
         NotificationCenter.default.removeObserver(self, name: .cities, object: nil)
-        modelLogic.detailVCDisappear()
     }
 }
 
@@ -105,11 +107,11 @@ extension CountryDetailViewController: UITableViewDelegate, UITableViewDataSourc
         
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch tableView {
         case regionsTableView:  modelLogic.didSelectRegion(at: indexPath)
-        case citiesTableView: 
+        case citiesTableView:
             let city = modelLogic.didSelectCity(at: indexPath)
             renderMap(city: city)
         default: break
@@ -129,6 +131,10 @@ extension CountryDetailViewController: CLLocationManagerDelegate {
         let region = MKCoordinateRegion(center: coordenates, latitudinalMeters: 10000, longitudinalMeters: 10000)
         map.setRegion(region, animated: true)
         
+        if let userLocation {
+            let distance = Int(getDistanceFromCity(location: userLocation, city: city) / 1000)
+            distanceFrom.text = "You're \(distance.formatted(.number.rounded())) kilometers from \(city.city)"
+        }
     }
     
     func getLocation(from city: BattutaCityModel) -> CLLocation? {
@@ -140,4 +146,23 @@ extension CountryDetailViewController: CLLocationManagerDelegate {
         return location
     }
     
+    func getUserLocation(location:CLLocation) -> CLLocation {
+        let coordinates = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let location = CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
+        return location
+    }
+    
+    func getDistanceFromCity(location: CLLocation, city: BattutaCityModel) -> CLLocationDistance {
+        guard let cityLocation = getLocation(from: city) else { return 0 }
+        let userLocation = getUserLocation(location: location)
+        let distance = cityLocation.distance(from: userLocation)
+        return distance
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            manager.stopUpdatingLocation()
+            userLocation = location
+        }
+    }
 }

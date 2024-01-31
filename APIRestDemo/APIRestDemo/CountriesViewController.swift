@@ -33,20 +33,20 @@ final class CountriesViewController: UIViewController {
         countriesTableView.delegate = self
         countriesTableView.dataSource = self
         
-        NotificationCenter.default.addObserver(forName: .countries, object: nil, queue: .main) { _ in
-            self.countriesTableView.reloadData()
+        NotificationCenter.default.addObserver(forName: .countries, object: nil, queue: .main) { [weak self] _ in
+            self?.countriesTableView.reloadData()
         }
-        NotificationCenter.default.addObserver(forName: .flag, object: nil, queue: .main) { _ in
-            self.countriesTableView.reloadData()
+        NotificationCenter.default.addObserver(forName: .flag, object: nil, queue: .main) { [weak self] _ in
+            self?.countriesTableView.reloadData()
         }
-        NotificationCenter.default.addObserver(forName: .selectedCountry, object: nil, queue: .main) { notification in
+        NotificationCenter.default.addObserver(forName: .selectedCountry, object: nil, queue: .main) { [weak self] notification in
             if let country = notification.object as? CountryInfoModel {
-                self.updateCountryLabel(country)
+                self?.updateCountryLabel(country)
             }
         }
-        NotificationCenter.default.addObserver(forName: .selectedFlag, object: nil, queue: .main) { notification in
+        NotificationCenter.default.addObserver(forName: .selectedFlag, object: nil, queue: .main) { [weak self] notification in
             if let flag = notification.object as? UIImage {
-                self.updateFlagLabel(flag)
+                self?.updateFlagLabel(flag)
             }
         }
     }
@@ -102,9 +102,8 @@ extension CountriesViewController: UITableViewDelegate, UITableViewDataSource {
         let viewControllerName = "CountryDetailStoryboard"
         let storyboard = UIStoryboard(name: viewControllerName, bundle: nil)
         if let detailViewController = storyboard.instantiateViewController(withIdentifier: viewControllerName) as? CountryDetailViewController {
-            //   let country = modelLogic.getCountryRow(at: indexPath)
             modelLogic.rowSelected(at: indexPath)
-            
+            modelLogic.prepareDetailViewController(for: indexPath)
             self.navigationController?.pushViewController(detailViewController, animated: true)
         }
     }

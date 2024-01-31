@@ -48,9 +48,6 @@ final class CountryModelLogic {
         }
     }
     
-    
-    
-    
     //MARK: Countries
     func getCountriesInfo() async -> [CountryInfoModel] {
         do {
@@ -173,7 +170,10 @@ final class CountryModelLogic {
         cities[indexPath.row]
     }
     
-    func detailVCDisappear() {
+    func prepareDetailViewController(for indexPath: IndexPath) {
+        Task {
+            await getFlag(at: indexPath)
+        }
         cities = []
     }
 }
