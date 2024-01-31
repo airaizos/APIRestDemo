@@ -25,6 +25,11 @@ final class CountriesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+        
+    }
+    
+    func setupView() {
         countriesTableView.delegate = self
         countriesTableView.dataSource = self
         
@@ -44,28 +49,7 @@ final class CountriesViewController: UIViewController {
                 self.updateFlagLabel(flag)
             }
         }
-   
     }
-    
-    
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
-                
-    }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard segue.identifier == "segueToDepartements",
-//              let detail = segue.destination as? DepartementsTableViewController,
-//              let cell = sender as? UITableViewCell,
-//              let cellIndexPath = tableView.indexPath(for: cell)
-//        else { return }
-//        
-//        let region = modelLogic.getRegionRow(indexPath: cellIndexPath)
-//        detail.selectedRegion = region
-//    }
-//    
     
     //MARK: Methods
     func updateCountryLabel(_ country: CountryInfoModel) {
@@ -113,18 +97,15 @@ extension CountriesViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    func tableView(_ tableView: UITableView,     accessoryButtonTappedForRowWith indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
         let viewControllerName = "CountryDetailStoryboard"
         let storyboard = UIStoryboard(name: viewControllerName, bundle: nil)
         if let detailViewController = storyboard.instantiateViewController(withIdentifier: viewControllerName) as? CountryDetailViewController {
-            
-            let country = modelLogic.getCountryRow(at: indexPath)
-            detailViewController.selectedCountry = country
+            //   let country = modelLogic.getCountryRow(at: indexPath)
+            modelLogic.rowSelected(at: indexPath)
             
             self.navigationController?.pushViewController(detailViewController, animated: true)
-            
-          
         }
     }
     

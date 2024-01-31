@@ -69,6 +69,8 @@
 		3AFB51A42B69602E00B42C4E /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AFB51A32B69602E00B42C4E /* countries.json */; };
 		3AFB51A62B6981F200B42C4E /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB51A52B6981F200B42C4E /* CountryDetailViewController.swift */; };
 		3AFB51A82B69828B00B42C4E /* CountryDetailModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB51A72B69828B00B42C4E /* CountryDetailModelLogic.swift */; };
+		3AFB51AC2B698AE900B42C4E /* CountryDetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AFB51AB2B698AE900B42C4E /* CountryDetailStoryboard.storyboard */; };
+		3AFB51B12B698E6F00B42C4E /* CountryDetailViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB51B02B698E6F00B42C4E /* CountryDetailViewLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +150,8 @@
 		3AFB51A32B69602E00B42C4E /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		3AFB51A52B6981F200B42C4E /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
 		3AFB51A72B69828B00B42C4E /* CountryDetailModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailModelLogic.swift; sourceTree = "<group>"; };
+		3AFB51AB2B698AE900B42C4E /* CountryDetailStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CountryDetailStoryboard.storyboard; sourceTree = "<group>"; };
+		3AFB51B02B698E6F00B42C4E /* CountryDetailViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,15 +265,11 @@
 		3A32F43D2B62E9CF006C6FE9 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
+				3AFB51AD2B698B8100B42C4E /* ViewControllers */,
 				3AFB51A22B69601C00B42C4E /* Helpers */,
 				3A56D8452B64413F00A948BD /* CountriesNetwork.swift */,
 				3A56D8432B64349500A948BD /* CountriesInterface.swift */,
-				3AFB51A02B693CFD00B42C4E /* CountryModelLogic.swift */,
 				3A1123212B6410D30021EC56 /* Models */,
-				3A32F43E2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard */,
-				3AFB519E2B693A5F00B42C4E /* CountriesViewController.swift */,
-				3AFB51A52B6981F200B42C4E /* CountryDetailViewController.swift */,
-				3AFB51A72B69828B00B42C4E /* CountryDetailModelLogic.swift */,
 			);
 			name = Countries;
 			sourceTree = "<group>";
@@ -408,6 +408,36 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		3AFB51AD2B698B8100B42C4E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3AFB51A02B693CFD00B42C4E /* CountryModelLogic.swift */,
+				3AFB51AF2B698BA800B42C4E /* Detail */,
+				3AFB51AE2B698B9400B42C4E /* Countries */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3AFB51AE2B698B9400B42C4E /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				3A32F43E2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard */,
+				3AFB519E2B693A5F00B42C4E /* CountriesViewController.swift */,
+			);
+			name = Countries;
+			sourceTree = "<group>";
+		};
+		3AFB51AF2B698BA800B42C4E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				3AFB51A72B69828B00B42C4E /* CountryDetailModelLogic.swift */,
+				3AFB51AB2B698AE900B42C4E /* CountryDetailStoryboard.storyboard */,
+				3AFB51A52B6981F200B42C4E /* CountryDetailViewController.swift */,
+				3AFB51B02B698E6F00B42C4E /* CountryDetailViewLogic.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -492,6 +522,7 @@
 				3A588BC32B5FD88E00F20A0C /* NumbersStoryboard.storyboard in Resources */,
 				3A32F43F2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard in Resources */,
 				3A8DB3422B5FF95900E7BDA3 /* CommunesStoryboard.storyboard in Resources */,
+				3AFB51AC2B698AE900B42C4E /* CountryDetailStoryboard.storyboard in Resources */,
 				3AFB51A42B69602E00B42C4E /* countries.json in Resources */,
 				3A65BFED2B583CCC0095794A /* LaunchScreen.storyboard in Resources */,
 				3A65BFEA2B583CCC0095794A /* Assets.xcassets in Resources */,
@@ -539,6 +570,7 @@
 				3A8DB3462B600BCB00E7BDA3 /* ChuckNorrisViewController.swift in Sources */,
 				3A31F4A62B61514B00A5F0D3 /* DiceBearInterface.swift in Sources */,
 				3A65BFE22B583CBE0095794A /* ViewController.swift in Sources */,
+				3AFB51B12B698E6F00B42C4E /* CountryDetailViewLogic.swift in Sources */,
 				3A32F4322B62AAE6006C6FE9 /* DiceBearExtensions.swift in Sources */,
 				3A65C0002B586BF10095794A /* NumbersModelLogic.swift in Sources */,
 				3A65BFE82B583CBE0095794A /* APIRestDemoDataModel.xcdatamodeld in Sources */,

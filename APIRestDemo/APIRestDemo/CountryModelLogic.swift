@@ -16,11 +16,26 @@ final class CountryModelLogic {
         self.network = network
         Task{
             countries = await getCountriesInfo()
-            
             NotificationCenter.default.post(name: .countries, object: nil)
         }
     }
     
+    private var countries = [CountryInfoModel]()
+    private var regions = [BattutaRegionModel]() {
+        didSet {
+            NotificationCenter.default.post(name: .regions, object: nil)
+        }
+    }
+    private var cities = [BattutaCityModel]() {
+        didSet {
+            NotificationCenter.default.post(name: .cities, object: nil)
+        }
+    }
+    private var countryFlag = [String:UIImage]() {
+        didSet {
+            NotificationCenter.default.post(name: .flag, object: nil)
+        }
+    }
     
     private var selectedCountry: CountryInfoModel? {
         didSet  {
@@ -33,22 +48,16 @@ final class CountryModelLogic {
         }
     }
     
-    private var countries = [CountryInfoModel]()
     
-    private var countryFlag = [String:UIImage]() {
-        didSet {
-            NotificationCenter.default.post(name: .flag, object: nil)
-        }
-    }
+  
     
+    //MARK: Countries
     func getCountriesInfo() async -> [CountryInfoModel] {
         do {
             return try await network.getCountriesInfo(url: .countries)
-            
         } catch let error {
             print("Error en pantalla: \(error)")
             return []
-            
         }
     }
     
@@ -83,8 +92,6 @@ final class CountryModelLogic {
         countries[indexPath.row]
     }
     
-    var countriesPendIcons = [CountryInfoModel]()
-    
     func getCountryIcon(_ indexPath: IndexPath) -> UIImage {
         let country = countries[indexPath.row]
         let countryName = country.name
@@ -112,5 +119,58 @@ final class CountryModelLogic {
         selectedCountry = countries[indexPath.row]
     }
     
-
+    //MARK: Detail
+    
+    func getSelectedCountry() -> CountryInfoModel? {
+        selectedCountry
+    }
+    func getSelectedCountryFlag() -> UIImage? {
+        selectedFlag
+    }
+    
+    func getRegionsCount() -> Int {
+         regions.count
+     }
+     
+     func getCitiesCount() -> Int {
+         cities.count
+     }
+    
+    func getRegionRow(at indexPath: IndexPath) -> BattutaRegionModel {
+        regions[indexPath.row]
+    }
+    
+    func getCityRow(at indexPath: IndexPath) -> BattutaCityModel {
+        cities[indexPath.row]
+    }
+    
+    func getRegionsForCountry(_ country: CountryInfoModel?) async  {
+        guard let country else { return }
+        do {
+            self.regions = try await network.getRegions(ccaCode: country.cca2)
+        } catch {
+          return
+        }
+    }
+    
+    func getCitiesFor(ccaCode:String, region: String) async throws -> [BattutaCityModel] {
+        try await network.getCities(ccaCode: ccaCode, region: region)
+    }
+    
+    func didSelectRegion(at indexPath: IndexPath) {
+        guard let country = selectedCountry else { return }
+        Task {
+            do {
+                let region = regions[indexPath.row].region
+                cities = try await getCitiesFor(ccaCode: country.cca2, region: region)
+            } catch {
+                print("Error pantalla")
+            }
+        }
+    }
+    
+    func didSelectCity(at indexPath: IndexPath) {
+       let city = cities[indexPath.row]
+        //mostrar con las coordenadas en el mapa
+    }
 }

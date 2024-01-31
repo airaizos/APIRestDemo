@@ -766,8 +766,8 @@
             filePath = "APIRestDemo/CountryModelLogic.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "getCountryIcon(_:)"
             landmarkType = "7">
             <Locations>
@@ -822,62 +822,107 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3EBF6E64-E53E-4E3D-842D-2DF84D71974C"
+            uuid = "96D7A515-9910-461F-906F-1D9844D329B6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "APIRestDemo/CountriesViewController.swift"
+            filePath = "APIRestDemo/CountryDetailModelLogic.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "tableView(_:accessoryButtonTappedForRowWith:)"
-            landmarkType = "7">
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "CountryDetailModelLogic"
+            landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "3EBF6E64-E53E-4E3D-842D-2DF84D71974C - b0b76a38a854b49c"
+                  uuid = "96D7A515-9910-461F-906F-1D9844D329B6 - 80399a16abf4cd4e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "APIRestDemo.CountriesViewController.tableView(_: __C.UITableView, accessoryButtonTappedForRowWith: Foundation.IndexPath) -&gt; ()"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in APIRestDemo.CountryDetailModelLogic.init(network: APIRestDemo.CountriesNetwork, country: Swift.Optional&lt;APIRestDemo.CountryInfoModel&gt;) -&gt; APIRestDemo.CountryDetailModelLogic"
                   moduleName = "APIRestDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/CountriesViewController.swift"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/CountryDetailModelLogic.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "120"
-                  endingLineNumber = "120"
-                  offsetFromSymbolStart = "68">
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "92">
                </Location>
                <Location
-                  uuid = "3EBF6E64-E53E-4E3D-842D-2DF84D71974C - b0b76a38a854b4fb"
+                  uuid = "96D7A515-9910-461F-906F-1D9844D329B6 - c8064ad3400b3236"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "APIRestDemo.CountriesViewController.tableView(_: __C.UITableView, accessoryButtonTappedForRowWith: Foundation.IndexPath) -&gt; ()"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async throws -&gt; () in APIRestDemo.CountryDetailModelLogic.init(network: APIRestDemo.CountriesNetwork, country: Swift.Optional&lt;APIRestDemo.CountryInfoModel&gt;) -&gt; APIRestDemo.CountryDetailModelLogic"
                   moduleName = "APIRestDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/CountriesViewController.swift"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/CountryDetailModelLogic.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "148">
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "40">
                </Location>
                <Location
-                  uuid = "3EBF6E64-E53E-4E3D-842D-2DF84D71974C - b0b76a38a854b4fb"
+                  uuid = "96D7A515-9910-461F-906F-1D9844D329B6 - 3da6f8d4f0113120"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "APIRestDemo.CountriesViewController.tableView(_: __C.UITableView, accessoryButtonTappedForRowWith: Foundation.IndexPath) -&gt; ()"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in APIRestDemo.CountryDetailModelLogic.init(network: APIRestDemo.CountriesNetwork, country: Swift.Optional&lt;APIRestDemo.CountryInfoModel&gt;) -&gt; APIRestDemo.CountryDetailModelLogic"
                   moduleName = "APIRestDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/CountriesViewController.swift"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/CountryDetailModelLogic.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "200">
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "96D7A515-9910-461F-906F-1D9844D329B6 - 60de4e4beae3e729"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in APIRestDemo.CountryDetailModelLogic.init(network: APIRestDemo.CountriesNetwork, country: Swift.Optional&lt;APIRestDemo.CountryInfoModel&gt;) -&gt; APIRestDemo.CountryDetailModelLogic"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/CountryDetailModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "96D7A515-9910-461F-906F-1D9844D329B6 - 872efb830b15d192"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "APIRestDemo.CountryDetailModelLogic.init(network: APIRestDemo.CountriesNetwork, country: Swift.Optional&lt;APIRestDemo.CountryInfoModel&gt;) -&gt; APIRestDemo.CountryDetailModelLogic"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/CountryDetailModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "268">
+               </Location>
+               <Location
+                  uuid = "96D7A515-9910-461F-906F-1D9844D329B6 - 872efb830b15d192"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "APIRestDemo.CountryDetailModelLogic.init(network: APIRestDemo.CountriesNetwork, country: Swift.Optional&lt;APIRestDemo.CountryInfoModel&gt;) -&gt; APIRestDemo.CountryDetailModelLogic"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/CountryDetailModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "316">
                </Location>
             </Locations>
          </BreakpointContent>

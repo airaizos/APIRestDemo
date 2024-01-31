@@ -51,4 +51,14 @@ final class CountriesNetwork {
         try await fetchImage(url: .flagImage(for: ccaCode), session: session)
     }
     
+    // Detail
+    
+    func getRegions(ccaCode:String) async throws -> [BattutaRegionModel] {
+        try await getJSONAsync(url: .regions(for: ccaCode), type: [BattutaRegionModel].self)
+        
+    }
+    
+    func getCities(ccaCode: String, region: String) async throws -> [BattutaCityModel] {
+        try await getJSONAsync(url: .cities(for: ccaCode, region: region), type: [BattutaCityModel].self)
+    }
 }

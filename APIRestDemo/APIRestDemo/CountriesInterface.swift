@@ -53,7 +53,7 @@ struct TK: Codable {
 }
 
 var BATAK: String {
-    if let data = try? Data.init(contentsOf: .TK),
+    if let data = try? Data(contentsOf: .TK),
        let keys = try? JSONDecoder().decode([TK].self, from: data),
        let value = keys.first(where: { $0.name == "BATTK" } )?.value {
         return value
@@ -67,4 +67,6 @@ extension Notification.Name {
     static let flag = Notification.Name("FLAG")
     static let selectedCountry = Notification.Name("COUNTRY")
     static let selectedFlag = Notification.Name("FLAG")
+    static let regions = Notification.Name("REGIONS")
+    static let cities = Notification.Name("CITIES")
 }
