@@ -17,11 +17,11 @@ extension URL {
         let ak = URLQueryItem(name: "apikey", value: mrvl.1)
         let hs = URLQueryItem(name: "hs", value: mrvl.2)
         
-        return baseURL.appending(queryItems: [ts,ak,hs])
+        return baseURL.appending(queryItems: [offset,ts,ak,hs])
     }
     
     static func characterThumbnail(_ thumbnail: ThumbnailURL) -> URL {
-        URL(string: "\(thumbnail.path)\(thumbnail.extension)") ?? URL(string: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg")!
+        URL(string: "\(thumbnail.path)\(thumbnail.imageExtension)") ?? URL(string: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg")!
     }
     
     static let MRVL = URL.documentsDirectory.appending(path: "MV.json")

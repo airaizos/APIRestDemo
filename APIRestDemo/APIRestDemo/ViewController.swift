@@ -17,6 +17,9 @@ final class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     
+    @IBAction func goToMarvelCharacters(_ sender: UIButton) {
+    
+    }
     @IBAction func goToCountries(_ sender: UIButton) {
         goTo(viewControllerName: "CountriesStoryboard")
     }

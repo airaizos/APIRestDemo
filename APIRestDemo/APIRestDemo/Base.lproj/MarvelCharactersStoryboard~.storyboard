@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -75,7 +76,7 @@
                                 <buttonConfiguration key="configuration" style="plain" image="marvel" imagePlacement="bottom" title="Marvel"/>
                                 <connections>
                                     <action selector="goToMarvelCharacters:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Lc-Kg-Esa"/>
-                                    <segue destination="Mvp-pH-yzL" kind="show" id="1OU-T7-DGk"/>
+                                    <segue destination="U3R-z0-w9q" kind="show" id="1OU-T7-DGk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -87,6 +88,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1046.5648854961833" y="310.56338028169017"/>
+        </scene>
+        <!--Characters-->
+        <scene sceneID="ili-xY-Ehu">
+            <objects>
+                <collectionViewController id="U3R-z0-w9q" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="VUB-7L-cmW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6sf-eu-dki">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="marvelCharactersCell" id="NWY-9F-1e5">
+                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IGr-Xl-Yrr">
+                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="U3R-z0-w9q" id="JDZ-YA-0bL"/>
+                            <outlet property="delegate" destination="U3R-z0-w9q" id="rRW-fR-PUn"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Characters" id="uD1-jM-iFe">
+                        <barButtonItem key="rightBarButtonItem" title="Favorites" image="star" catalog="system" id="M1c-xg-nUA">
+                            <connections>
+                                <segue destination="yy9-3f-qw2" kind="presentation" id="sgz-Cd-u8u"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wVH-rA-1OT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1937" y="309"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="niE-g7-aNa">
+            <objects>
+                <collectionViewController id="yy9-3f-qw2" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="P8q-hD-ESD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xlH-pk-LLf">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="favoritesCell" id="CUD-Aw-lkZ">
+                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tby-DW-WLe">
+                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="yy9-3f-qw2" id="wnc-rS-yxh"/>
+                            <outlet property="delegate" destination="yy9-3f-qw2" id="bQR-o2-Msh"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TOh-sD-hhH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2734" y="308"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="POw-TS-LM2">
@@ -114,16 +190,6 @@
             </objects>
             <point key="canvasLocation" x="954" y="712"/>
         </scene>
-        <!--MarvelCharactersStoryboard-->
-        <scene sceneID="RGd-HY-BTS">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MarvelCharactersStoryboard" id="Mvp-pH-yzL" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="oQa-Ha-JG2"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CQm-sR-XAi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1937" y="309"/>
-        </scene>
     </scenes>
     <resources>
         <image name="chucknorris" width="83.333335876464844" height="50.666667938232422"/>
@@ -132,6 +198,7 @@
         <image name="france" width="83.333335876464844" height="44.333332061767578"/>
         <image name="marvel" width="83.333335876464844" height="47"/>
         <image name="numbers" width="83.333335876464844" height="83.333335876464844"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
