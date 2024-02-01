@@ -23,13 +23,30 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="marvelCharactersCell" id="NWY-9F-1e5">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="marvelCharacterCell" id="NWY-9F-1e5" customClass="MarvelCharacterCollectionViewCell" customModule="APIRestDemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IGr-Xl-Yrr">
                                     <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u2f-9j-wXQ">
+                                            <rect key="frame" x="0.0" y="-8" width="128" height="116"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="r0t-m4-5Ll">
+                                            <rect key="frame" x="0.0" y="107" width="128" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="r0t-m4-5Ll" id="1wl-XW-beR"/>
+                                    <outlet property="thumbnail" destination="u2f-9j-wXQ" id="DcJ-1M-lUF"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -47,7 +64,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wVH-rA-1OT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1937" y="309"/>
+            <point key="canvasLocation" x="1936.6412213740457" y="308.45070422535213"/>
         </scene>
         <!--Marvel Favorites Collection View Controller-->
         <scene sceneID="niE-g7-aNa">
@@ -85,7 +102,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

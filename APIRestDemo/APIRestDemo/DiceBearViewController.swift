@@ -26,6 +26,16 @@ final class DiceBearViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+        addObservers()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewLogic.randomEmoji()
+    }
+    
+    func setupView() {
         eyesPicker.delegate = self
         eyesPicker.dataSource = self
         mouthPicker.delegate = self
@@ -37,20 +47,19 @@ final class DiceBearViewController: UIViewController {
         
         emojiCollectionView.delegate = self
         emojiCollectionView.dataSource = self
-        
+    }
+    
+    func addObservers() {
         NotificationCenter.default.addObserver(forName: .favoritesChange, object: nil, queue: .main) { [weak self] _ in
             self?.emojiCollectionView.reloadData()
         }
         
         NotificationCenter.default.addObserver(forName: .emojiChange, object: emojiImage.image, queue: .main) { [weak self] notification in
             let image = notification.object as? UIImage
-                self?.emojiImage.image = image
+            self?.emojiImage.image = image
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        viewLogic.randomEmoji()
-    }
     
     //MARK: IBActions
     @IBAction func refreshButton(_ sender: UIButton) {

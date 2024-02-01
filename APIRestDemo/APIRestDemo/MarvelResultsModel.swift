@@ -40,10 +40,16 @@ struct ThumbnailURL: Codable {
 
 
 
-struct MarvelCellCharacter:Identifiable {
+struct MarvelCellCharacter:Identifiable,Hashable {
     let uuid: UUID
     let id: Int
     let name: String
     let thumbnail: UIImage
+    
+}
+
+
+extension MarvelCellCharacter {
+    static let sample = MarvelCellCharacter(uuid: UUID(), id: 1009351, name: "hulk", thumbnail: UIImage(named: "hulk")!)
     
 }

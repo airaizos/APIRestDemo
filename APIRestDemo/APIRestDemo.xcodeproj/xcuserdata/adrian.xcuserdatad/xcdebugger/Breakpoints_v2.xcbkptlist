@@ -927,5 +927,328 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E94C3E79-4365-47D9-A020-AD97E4ABAE58"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "APIRestDemo/MarvelCharactersModelLogic.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "addCharacters()"
+            landmarkType = "7">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po cellCharacter.count">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+            <Locations>
+               <Location
+                  uuid = "E94C3E79-4365-47D9-A020-AD97E4ABAE58 - 3b96eb29dba8c07a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for APIRestDemo.MarvelCharactersModelLogic.addCharacters() async -&gt; ()"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/MarvelCharactersModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "E94C3E79-4365-47D9-A020-AD97E4ABAE58 - 9dab24efe025a27b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for APIRestDemo.MarvelCharactersModelLogic.addCharacters() async -&gt; ()"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/MarvelCharactersModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "E94C3E79-4365-47D9-A020-AD97E4ABAE58 - f7cc6195e6d20c78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for APIRestDemo.MarvelCharactersModelLogic.addCharacters() async -&gt; ()"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/MarvelCharactersModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "E94C3E79-4365-47D9-A020-AD97E4ABAE58 - 3b96eb29dba8c07a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for APIRestDemo.MarvelCharactersModelLogic.addCharacters() async -&gt; ()"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/MarvelCharactersModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6A3DD862-401D-492A-80E9-8B00BA270FF1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            filePath = "APIRestDemo/MarvelCharactersModelLogic.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "addCharacters()"
+            landmarkType = "7">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po fetchedCharacters.map(\.name)">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+            <Locations>
+               <Location
+                  uuid = "6A3DD862-401D-492A-80E9-8B00BA270FF1 - 3b96eb29dba8cf99"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for APIRestDemo.MarvelCharactersModelLogic.addCharacters() async -&gt; ()"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/MarvelCharactersModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "6A3DD862-401D-492A-80E9-8B00BA270FF1 - 6f5152bdd0878b9f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for APIRestDemo.MarvelCharactersModelLogic.addCharacters() async -&gt; ()"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/MarvelCharactersModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "6A3DD862-401D-492A-80E9-8B00BA270FF1 - 42b59cc9d4f0a4b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for APIRestDemo.MarvelCharactersModelLogic.addCharacters() async -&gt; ()"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/MarvelCharactersModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "6A3DD862-401D-492A-80E9-8B00BA270FF1 - 3b96eb29dba8cf99"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for APIRestDemo.MarvelCharactersModelLogic.addCharacters() async -&gt; ()"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/MarvelCharactersModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "6A3DD862-401D-492A-80E9-8B00BA270FF1 - f7cc6195e6d2039b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for APIRestDemo.MarvelCharactersModelLogic.addCharacters() async -&gt; ()"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/MarvelCharactersModelLogic.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "854D3548-027F-4DEA-AC44-5F31AE9DBA88"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "APIRestDemo/MarvelCharactersNetwork.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "getImages(from:)"
+            landmarkType = "7">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po result.count">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8FD06823-7640-43A9-98AB-FFA8909F34F0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "APIRestDemo/MarvelCharactersCollectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "MarvelCharactersCollectionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "8FD06823-7640-43A9-98AB-FFA8909F34F0 - f6033a0cc1d2d249"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UICollectionView, Foundation.IndexPath, APIRestDemo.MarvelCellCharacter) -&gt; Swift.Optional&lt;__C.UICollectionViewCell&gt; in closure #1 () -&gt; UIKit.UICollectionViewDiffableDataSource&lt;Swift.Int, APIRestDemo.MarvelCellCharacter&gt; in APIRestDemo.MarvelCharactersCollectionViewController.dataSource.getter : UIKit.UICollectionViewDiffableDataSource&lt;Swift.Int, APIRestDemo.MarvelCellCharacter&gt;"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/MarvelCharactersCollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "8FD06823-7640-43A9-98AB-FFA8909F34F0 - f6033a0cc1d2d249"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UICollectionView, Foundation.IndexPath, APIRestDemo.MarvelCellCharacter) -&gt; Swift.Optional&lt;__C.UICollectionViewCell&gt; in closure #1 () -&gt; UIKit.UICollectionViewDiffableDataSource&lt;Swift.Int, APIRestDemo.MarvelCellCharacter&gt; in APIRestDemo.MarvelCharactersCollectionViewController.dataSource.getter : UIKit.UICollectionViewDiffableDataSource&lt;Swift.Int, APIRestDemo.MarvelCellCharacter&gt;"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/MarvelCharactersCollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "308">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47E38943-29FB-4A15-BB13-AD10594533EC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "APIRestDemo/MarvelCharacterCellView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54BC4CDA-C395-4DC7-86F6-0A58C5613390"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "APIRestDemo/MarvelCharactersCollectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "MarvelCharactersCollectionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "54BC4CDA-C395-4DC7-86F6-0A58C5613390 - f6033a0cc1d2d173"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UICollectionView, Foundation.IndexPath, APIRestDemo.MarvelCellCharacter) -&gt; Swift.Optional&lt;__C.UICollectionViewCell&gt; in closure #1 () -&gt; UIKit.UICollectionViewDiffableDataSource&lt;Swift.Int, APIRestDemo.MarvelCellCharacter&gt; in APIRestDemo.MarvelCharactersCollectionViewController.dataSource.getter : UIKit.UICollectionViewDiffableDataSource&lt;Swift.Int, APIRestDemo.MarvelCellCharacter&gt;"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/MarvelCharactersCollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "504">
+               </Location>
+               <Location
+                  uuid = "54BC4CDA-C395-4DC7-86F6-0A58C5613390 - f6033a0cc1d2d173"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UICollectionView, Foundation.IndexPath, APIRestDemo.MarvelCellCharacter) -&gt; Swift.Optional&lt;__C.UICollectionViewCell&gt; in closure #1 () -&gt; UIKit.UICollectionViewDiffableDataSource&lt;Swift.Int, APIRestDemo.MarvelCellCharacter&gt; in APIRestDemo.MarvelCharactersCollectionViewController.dataSource.getter : UIKit.UICollectionViewDiffableDataSource&lt;Swift.Int, APIRestDemo.MarvelCellCharacter&gt;"
+                  moduleName = "APIRestDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrian/MundoDev/Repositorios/APIRestDemo/APIRestDemo/MarvelCharactersCollectionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "612">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

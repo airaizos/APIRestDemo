@@ -5,26 +5,53 @@
 //  Created by Adrian Iraizos Mendoza on 31/1/24.
 //
 
-import UIKit
-
-private let reuseIdentifier = "Cell"
+import SwiftUI
 
 final class MarvelCharactersCollectionViewController: UICollectionViewController {
 
     let modelLogic = MarvelCharactersModelLogic.shared
     
+    lazy var dataSource: UICollectionViewDiffableDataSource<Int,MarvelCellCharacter> = {
+        UICollectionViewDiffableDataSource<Int,MarvelCellCharacter>(collectionView: collectionView) { [self] collectionView, indexPath, character in
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "marvelCharacterCell", for: indexPath) as? MarvelCharacterCollectionViewCell else { return UICollectionViewCell() }
+            cell.nameLabel.text = character.name
+            Task {
+                cell.thumbnail.image = await character.thumbnail.byPreparingForDisplay()
+            }
+
+            return cell
+        }
+        
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+     
+        collectionView.dataSource = dataSource
+        
+        dataSource.apply(modelLogic.snapshot,animatingDifferences: true)
+        
+        NotificationCenter.default.addObserver(forName: .marvelCharacters, object: nil, queue: .main) { [self] _ in
+            self.collectionView.collectionViewLayout.invalidateLayout()
+            self.collectionView.reloadData()
+            self.dataSource.apply(self.modelLogic.snapshot, animatingDifferences: true)
+            
+        }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        Task {
+            await modelLogic.addCharacters()
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .marvelCharacters, object: nil)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -36,25 +63,13 @@ final class MarvelCharactersCollectionViewController: UICollectionViewController
     */
 
     // MARK: UICollectionViewDataSource
+//
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
-        return cell
-    }
 
     // MARK: UICollectionViewDelegate
 
@@ -87,4 +102,9 @@ final class MarvelCharactersCollectionViewController: UICollectionViewController
     }
     */
 
+}
+
+
+extension Notification.Name {
+    static let marvelCharacters = Notification.Name("MRVLCHAR")
 }
