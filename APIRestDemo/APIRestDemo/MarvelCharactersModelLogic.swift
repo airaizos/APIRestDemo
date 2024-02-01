@@ -43,7 +43,10 @@ final class MarvelCharactersModelLogic {
     func addCharacters() async {
      let offset = Int.random(in: 0..<1565)
         do {
-            let fetchedCharacters = try await network.getCharacters(offset: offset)
+            let fetchedCharacters = try await network.getCharacters(offset: offset).filter { item in
+                item.thumbnailURL.path.hasSuffix("image_not_available") ? false : true
+                
+            }
             let cellCharacter = try await network.getImages(from: fetchedCharacters)
             characters.insert(contentsOf: cellCharacter, at: 0)
         } catch {

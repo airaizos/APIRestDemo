@@ -13,12 +13,11 @@ final class MarvelCharactersCollectionViewController: UICollectionViewController
     
     lazy var dataSource: UICollectionViewDiffableDataSource<Int,MarvelCellCharacter> = {
         UICollectionViewDiffableDataSource<Int,MarvelCellCharacter>(collectionView: collectionView) { [self] collectionView, indexPath, character in
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "marvelCharacterCell", for: indexPath) as? MarvelCharacterCollectionViewCell else { return UICollectionViewCell() }
-            cell.nameLabel.text = character.name
-            Task {
-                cell.thumbnail.image = await character.thumbnail.byPreparingForDisplay()
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "marvelCharacterCell", for: indexPath)
+            
+            cell.contentConfiguration = UIHostingConfiguration {
+                MarvelCharacterCellView(character: character)
             }
-
             return cell
         }
         
@@ -33,11 +32,13 @@ final class MarvelCharactersCollectionViewController: UICollectionViewController
         
         dataSource.apply(modelLogic.snapshot,animatingDifferences: true)
         
-        NotificationCenter.default.addObserver(forName: .marvelCharacters, object: nil, queue: .main) { [self] _ in
-            self.collectionView.collectionViewLayout.invalidateLayout()
-            self.collectionView.reloadData()
-            self.dataSource.apply(self.modelLogic.snapshot, animatingDifferences: true)
-            
+        NotificationCenter.default.addObserver(forName: .marvelCharacters, object: nil, queue: .main) { [weak self] _ in
+            self?.collectionView.collectionViewLayout.invalidateLayout()
+            self?.collectionView.reloadData()
+            if let snapshot = self?.modelLogic.snapshot {
+                
+                self?.dataSource.apply(snapshot, animatingDifferences: true)
+            }
         }
     }
 

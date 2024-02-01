@@ -23,7 +23,11 @@ final class MarvelCharactersNetwork {
     }
     
     func getImage(from character: MarvelCharacter) async throws -> UIImage {
-        try await fetchImage(url: .characterThumbnail(character.thumbnailURL), session: session)
+        guard !character.thumbnailURL.path.hasSuffix("image_not_available") else { return UIImage(named: "notAvailable")! }
+        
+        return try await fetchImage(url: .characterThumbnail(character.thumbnailURL), session: session)
+            .byPreparingThumbnail(ofSize: CGSize(width: 300, height: 300))
+        ?? UIImage(named: "notAvailable")!
     }
     
     

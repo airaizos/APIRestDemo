@@ -8,16 +8,13 @@
 import UIKit
 
 final class MarvelCharacterCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet weak var thumbnail: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+
     
     override func awakeFromNib() {
       
     }
 
     override func prepareForReuse() {
-        thumbnail.image = nil
-        nameLabel.text = nil
+ 
     }
 }

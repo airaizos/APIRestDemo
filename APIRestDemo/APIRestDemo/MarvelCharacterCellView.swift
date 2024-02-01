@@ -14,6 +14,7 @@ struct MarvelCharacterCellView: View {
         VStack {
                 Image(uiImage: character.thumbnail)
                 .clipShape(.rect(cornerRadius: 8))
+                .scaledToFill()
                 Text(character.name.uppercased())
                     .font(.headline.bold())
             }
