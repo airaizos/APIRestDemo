@@ -27,7 +27,6 @@
 		3A32F4392B62BB8C006C6FE9 /* APIRestDemoDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32F4382B62BB8C006C6FE9 /* APIRestDemoDataBase.swift */; };
 		3A32F43B2B62BCBF006C6FE9 /* EmojiEntityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32F43A2B62BCBF006C6FE9 /* EmojiEntityExtensions.swift */; };
 		3A32F43F2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A32F43E2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard */; };
-		3A36FCD22B6BD860001D3233 /* MarvelCharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A36FCD12B6BD860001D3233 /* MarvelCharacterCollectionViewCell.swift */; };
 		3A3783B02B5AA71600D2AFCD /* CommunesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */; };
 		3A3783B22B5AA74100D2AFCD /* CommuneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */; };
 		3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */; };
@@ -112,7 +111,6 @@
 		3A32F4382B62BB8C006C6FE9 /* APIRestDemoDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRestDemoDataBase.swift; sourceTree = "<group>"; };
 		3A32F43A2B62BCBF006C6FE9 /* EmojiEntityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiEntityExtensions.swift; sourceTree = "<group>"; };
 		3A32F43E2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CountriesStoryboard.storyboard; sourceTree = "<group>"; };
-		3A36FCD12B6BD860001D3233 /* MarvelCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesInterface.swift; sourceTree = "<group>"; };
 		3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuneModel.swift; sourceTree = "<group>"; };
 		3A3783B32B5AA8D100D2AFCD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -399,7 +397,6 @@
 				3AEB66B62B6AD736002390AE /* MarvelFavoritesCollectionViewController.swift */,
 				3A7DA5022B6ADB9400D1A63C /* MarvelCharactersModelLogic.swift */,
 				3A7DA5042B6ADDB900D1A63C /* MarvelCharacterCellView.swift */,
-				3A36FCD12B6BD860001D3233 /* MarvelCharacterCollectionViewCell.swift */,
 			);
 			name = MarvelCharacters;
 			sourceTree = "<group>";
@@ -617,7 +614,6 @@
 				3A32F4302B629F30006C6FE9 /* DiceBearCollectionViewCell.swift in Sources */,
 				3A851C002B5ED4F6005758FA /* Helpers.swift in Sources */,
 				3AFB51A62B6981F200B42C4E /* CountryDetailViewController.swift in Sources */,
-				3A36FCD22B6BD860001D3233 /* MarvelCharacterCollectionViewCell.swift in Sources */,
 				3AAC265E2B60201E007EED64 /* Extensions.swift in Sources */,
 				3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */,
 				3A56D8462B64413F00A948BD /* CountriesNetwork.swift in Sources */,

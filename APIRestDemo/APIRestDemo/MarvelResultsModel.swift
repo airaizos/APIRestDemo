@@ -46,10 +46,10 @@ struct MarvelCellCharacter:Identifiable,Hashable {
     let name: String
     let thumbnail: UIImage
     
+    var favorite: Bool = false
 }
 
-
 extension MarvelCellCharacter {
-    static let sample = MarvelCellCharacter(uuid: UUID(), id: 1009351, name: "hulk", thumbnail: UIImage(named: "hulk")!)
+    static let sample = MarvelCellCharacter(uuid: UUID(), id: 1009351, name: "hulk", thumbnail: UIImage(named: "hulk")!,favorite: true)
     
 }

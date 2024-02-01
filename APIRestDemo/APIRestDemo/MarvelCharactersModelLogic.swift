@@ -16,28 +16,18 @@ final class MarvelCharactersModelLogic {
         self.network = network
     }
     
+    //MARK: Characters CollectionView
     private var characters = [MarvelCellCharacter]() {
         didSet {
             NotificationCenter.default.post(name: .marvelCharacters, object: nil)
         }
-       
     }
-      
+    
     var snapshot: NSDiffableDataSourceSnapshot<Int,MarvelCellCharacter> {
-        var snapshot = NSDiffableDataSourceSnapshot<Int,MarvelCellCharacter>()
-        
+        var snapshot = NSDiffableDataSourceSnapshot<Int,MarvelCellCharacter>() 
         snapshot.appendSections([0])
         snapshot.appendItems(characters,toSection: 0)
         return snapshot
-    }
-    
-    //MARK: CollectionView
-    func getCharactersCount() -> Int {
-        characters.count
-    }
-    
-    func getCharacterFrom(indexPath: IndexPath) -> MarvelCellCharacter {
-        characters[indexPath.row]
     }
     
     func addCharacters() async {
@@ -45,14 +35,40 @@ final class MarvelCharactersModelLogic {
         do {
             let fetchedCharacters = try await network.getCharacters(offset: offset).filter { item in
                 item.thumbnailURL.path.hasSuffix("image_not_available") ? false : true
-                
             }
             let cellCharacter = try await network.getImages(from: fetchedCharacters)
             characters.insert(contentsOf: cellCharacter, at: 0)
         } catch {
             print("Error en pantalla addCharacters")
         }
+    }
+    
+    func toggleFavorite(_ marvelCharacter: MarvelCellCharacter) {
+        guard var selected = characters.first(where: { $0.id == marvelCharacter.id }), let index = characters.firstIndex(of: selected) else { return }
+        selected.favorite.toggle()
+        if favorites.contains(selected) {
+            favorites.removeAll(where: {$0.id == selected.id })
+            characters[index].favorite = false
+        } else {
+            favorites.append(selected)
+            characters[index].favorite = true
+        }
         
+    }
+    
+    
+    //MARK: Favorites CollectionView
+    private var favorites = [MarvelCellCharacter]() {
+        didSet {
+            NotificationCenter.default.post(name: .marvelFavoritesChar, object:  nil)
+        }
+    }
+    
+    var favoritesSnapshot: NSDiffableDataSourceSnapshot<Int,MarvelCellCharacter> {
+        var snapshot = NSDiffableDataSourceSnapshot<Int,MarvelCellCharacter>()
+        snapshot.appendSections([0])
+        snapshot.appendItems(favorites,toSection: 0)
+        return snapshot
     }
     
 }
