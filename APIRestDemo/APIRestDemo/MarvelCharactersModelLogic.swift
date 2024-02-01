@@ -37,7 +37,7 @@ final class MarvelCharactersModelLogic {
                 item.thumbnailURL.path.hasSuffix("image_not_available") ? false : true
             }
             let cellCharacter = try await network.getImages(from: fetchedCharacters)
-            characters.insert(contentsOf: cellCharacter, at: 0)
+            characters.append(contentsOf: cellCharacter)
         } catch {
             print("Error en pantalla addCharacters")
         }

@@ -70,11 +70,8 @@ final class MarvelCharactersCollectionViewController: UICollectionViewController
                 activityIndicator.stopAnimating()
             }
         }
-             
     }
-    
-    
-    
+
     deinit {
         NotificationCenter.default.removeObserver(self, name: .marvelCharacters, object: nil)
     }
