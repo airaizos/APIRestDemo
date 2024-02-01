@@ -11,6 +11,7 @@ final class MarvelCharactersCollectionViewController: UICollectionViewController
 
     let modelLogic = MarvelCharactersModelLogic.shared
     
+    
     lazy var dataSource: UICollectionViewDiffableDataSource<Int,MarvelCellCharacter> = {
         UICollectionViewDiffableDataSource<Int,MarvelCellCharacter>(collectionView: collectionView) { [self] collectionView, indexPath, character in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "marvelCharacterCell", for: indexPath)
@@ -22,10 +23,15 @@ final class MarvelCharactersCollectionViewController: UICollectionViewController
         }
     }()
     
+
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        activityIndicator.startAnimating()
+    
         collectionView.dataSource = dataSource
         
         dataSource.apply(modelLogic.snapshot,animatingDifferences: true)
@@ -36,6 +42,7 @@ final class MarvelCharactersCollectionViewController: UICollectionViewController
             if let snapshot = self?.modelLogic.snapshot {
                 
                 self?.dataSource.apply(snapshot, animatingDifferences: true)
+                self?.activityIndicator.stopAnimating()
             }
         }
     }
@@ -48,8 +55,25 @@ final class MarvelCharactersCollectionViewController: UICollectionViewController
     override func viewWillAppear(_ animated: Bool) {
         Task {
             await modelLogic.addCharacters()
+         
         }
     }
+    
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        if maximumOffset - currentOffset <= 50 {
+            activityIndicator.startAnimating()
+            Task {
+                await modelLogic.addCharacters()
+                activityIndicator.stopAnimating()
+            }
+        }
+             
+    }
+    
+    
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: .marvelCharacters, object: nil)

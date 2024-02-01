@@ -1223,10 +1223,10 @@
             filePath = "APIRestDemo/MarvelCharactersCollectionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "MarvelCharactersCollectionViewController"
-            landmarkType = "3">
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "dataSource"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "8FD06823-7640-43A9-98AB-FFA8909F34F0 - f6033a0cc1d2d249"
@@ -1271,10 +1271,10 @@
             filePath = "APIRestDemo/MarvelCharactersCollectionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "MarvelCharactersCollectionViewController"
-            landmarkType = "3">
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "dataSource"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "54BC4CDA-C395-4DC7-86F6-0A58C5613390 - f6033a0cc1d2d173"
