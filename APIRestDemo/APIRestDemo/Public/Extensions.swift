@@ -22,10 +22,7 @@ extension UIViewController {
         viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true)
     }
-    
 }
-
-
 
 var randomHexColor: String {
     let red = CGFloat.random(in: 0...1)
@@ -89,5 +86,4 @@ extension UIColor {
             alpha: 1
         )
     }
-    
 }

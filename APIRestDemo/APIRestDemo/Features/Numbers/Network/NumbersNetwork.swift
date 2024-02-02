@@ -8,9 +8,9 @@
 import Foundation
 import Combine
 
-final class NumbersPersistence {
+final class NumbersNetwork {
     
-    static let shared = NumbersPersistence()
+    static let shared = NumbersNetwork()
     
     let session: URLSession
     

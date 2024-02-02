@@ -30,6 +30,7 @@ func fetchJson<JSON:Codable>(url: URL, type: JSON.Type, session: URLSession, cal
          
      }.resume()
  }
+
 ///#Patrón Callback Image
 func fetchImage(url:URL, session: URLSession, callback: @escaping ((Result<UIImage,PersistenceError>) -> Void)) {
     session.dataTask(with: url) { data, response, error in

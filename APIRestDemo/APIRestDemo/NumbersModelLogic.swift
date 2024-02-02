@@ -10,16 +10,16 @@ import Foundation
 final class NumbersModelLogic {
     static let shared = NumbersModelLogic()
     
-    let persistence: NumbersPersistence
+    let network: NumbersNetwork
     
-    init(persistence: NumbersPersistence = .shared) {
-        self.persistence = persistence
+    init(network: NumbersNetwork = .shared) {
+        self.network = network
     }
 
     var number: Number = .empty 
     
     func getNumber() {
-        persistence.getNumberOfTheDay { num in
+        network.getNumberOfTheDay { num in
             self.number = num
             NotificationCenter.default.post(name: .number, object: self.number)
         }

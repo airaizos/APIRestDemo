@@ -48,7 +48,7 @@
 		3A65BFF62B58620D0095794A /* NumbersAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFF52B58620D0095794A /* NumbersAPIViewController.swift */; };
 		3A65BFF92B5864860095794A /* NumbersInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFF82B5864860095794A /* NumbersInterface.swift */; };
 		3A65BFFC2B5864EA0095794A /* NumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFFB2B5864EA0095794A /* NumberModel.swift */; };
-		3A65BFFE2B5869DB0095794A /* NumbersPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFFD2B5869DB0095794A /* NumbersPersistence.swift */; };
+		3A65BFFE2B5869DB0095794A /* NumbersNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFFD2B5869DB0095794A /* NumbersNetwork.swift */; };
 		3A65C0002B586BF10095794A /* NumbersModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65BFFF2B586BF10095794A /* NumbersModelLogic.swift */; };
 		3A660DC32B5AE3F400E1BC69 /* PersistenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A660DC22B5AE3F400E1BC69 /* PersistenceError.swift */; };
 		3A660DC52B5AE76000E1BC69 /* CommunesModeLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A660DC42B5AE76000E1BC69 /* CommunesModeLogic.swift */; };
@@ -135,7 +135,7 @@
 		3A65BFF52B58620D0095794A /* NumbersAPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersAPIViewController.swift; sourceTree = "<group>"; };
 		3A65BFF82B5864860095794A /* NumbersInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersInterface.swift; sourceTree = "<group>"; };
 		3A65BFFB2B5864EA0095794A /* NumberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberModel.swift; sourceTree = "<group>"; };
-		3A65BFFD2B5869DB0095794A /* NumbersPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersPersistence.swift; sourceTree = "<group>"; };
+		3A65BFFD2B5869DB0095794A /* NumbersNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersNetwork.swift; sourceTree = "<group>"; };
 		3A65BFFF2B586BF10095794A /* NumbersModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersModelLogic.swift; sourceTree = "<group>"; };
 		3A660DC22B5AE3F400E1BC69 /* PersistenceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceError.swift; sourceTree = "<group>"; };
 		3A660DC42B5AE76000E1BC69 /* CommunesModeLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesModeLogic.swift; sourceTree = "<group>"; };
@@ -260,6 +260,7 @@
 				3A32F4382B62BB8C006C6FE9 /* APIRestDemoDataBase.swift */,
 			);
 			name = CoreData;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		3A32F43C2B62CB4F006C6FE9 /* System */ = {
@@ -302,6 +303,61 @@
 			name = Communes;
 			sourceTree = "<group>";
 		};
+		3A3E41DF2B6D2E6B001F158F /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				3A32F4332B62B9A5006C6FE9 /* CoreData */,
+				3A660DC22B5AE3F400E1BC69 /* PersistenceError.swift */,
+				3AAC265D2B60201E007EED64 /* Extensions.swift */,
+				3A56D8472B6441CA00A948BD /* Statics.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		3A3E41E12B6D2ED2001F158F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				3A3E41E22B6D2EE6001F158F /* Numbers */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		3A3E41E22B6D2EE6001F158F /* Numbers */ = {
+			isa = PBXGroup;
+			children = (
+				3A65BFFA2B5864D50095794A /* Model */,
+				3A3E41E42B6D3080001F158F /* View */,
+				3A3E41E52B6D308B001F158F /* Controller */,
+				3A3E41E32B6D3013001F158F /* Network */,
+			);
+			path = Numbers;
+			sourceTree = "<group>";
+		};
+		3A3E41E32B6D3013001F158F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3A65BFFD2B5869DB0095794A /* NumbersNetwork.swift */,
+				3A65BFF82B5864860095794A /* NumbersInterface.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3A3E41E42B6D3080001F158F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A588BC12B5FD88E00F20A0C /* NumbersStoryboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A3E41E52B6D308B001F158F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A65BFF52B58620D0095794A /* NumbersAPIViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		3A65BFD12B583CBE0095794A = {
 			isa = PBXGroup;
 			children = (
@@ -323,8 +379,10 @@
 		3A65BFDC2B583CBE0095794A /* APIRestDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3A3E41E12B6D2ED2001F158F /* Features */,
+				3A3E41DF2B6D2E6B001F158F /* Public */,
 				3A32F43C2B62CB4F006C6FE9 /* System */,
-				3A660DC12B5AE3E700E1BC69 /* Commons */,
+				3A660DC12B5AE3E700E1BC69 /* Public */,
 				3A65BFF42B5861820095794A /* Controllers */,
 				3A3783B32B5AA8D100D2AFCD /* MyPlayground.playground */,
 			);
@@ -347,10 +405,6 @@
 		3A65BFF72B58646D0095794A /* NumbersAPI */ = {
 			isa = PBXGroup;
 			children = (
-				3A588BC12B5FD88E00F20A0C /* NumbersStoryboard.storyboard */,
-				3A65BFFA2B5864D50095794A /* Model */,
-				3A65BFF52B58620D0095794A /* NumbersAPIViewController.swift */,
-				3A65BFF82B5864860095794A /* NumbersInterface.swift */,
 			);
 			name = NumbersAPI;
 			sourceTree = "<group>";
@@ -359,10 +413,10 @@
 			isa = PBXGroup;
 			children = (
 				3A65BFFB2B5864EA0095794A /* NumberModel.swift */,
-				3A65BFFD2B5869DB0095794A /* NumbersPersistence.swift */,
 				3A65BFFF2B586BF10095794A /* NumbersModelLogic.swift */,
 			);
 			name = Model;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		3A660DC02B5AE3C000E1BC69 /* ViewController */ = {
@@ -375,15 +429,11 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
-		3A660DC12B5AE3E700E1BC69 /* Commons */ = {
+		3A660DC12B5AE3E700E1BC69 /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				3A32F4332B62B9A5006C6FE9 /* CoreData */,
-				3A660DC22B5AE3F400E1BC69 /* PersistenceError.swift */,
-				3AAC265D2B60201E007EED64 /* Extensions.swift */,
-				3A56D8472B6441CA00A948BD /* Statics.swift */,
 			);
-			name = Commons;
+			name = Public;
 			sourceTree = "<group>";
 		};
 		3A6A341C2B6AC1B2005ADBE9 /* MarvelCharacters */ = {
@@ -606,7 +656,7 @@
 				3A32F4322B62AAE6006C6FE9 /* DiceBearExtensions.swift in Sources */,
 				3A65C0002B586BF10095794A /* NumbersModelLogic.swift in Sources */,
 				3A65BFE82B583CBE0095794A /* APIRestDemoDataModel.xcdatamodeld in Sources */,
-				3A65BFFE2B5869DB0095794A /* NumbersPersistence.swift in Sources */,
+				3A65BFFE2B5869DB0095794A /* NumbersNetwork.swift in Sources */,
 				3AFB519F2B693A5F00B42C4E /* CountriesViewController.swift in Sources */,
 				3A6A341E2B6AC1C4005ADBE9 /* MarvelResultsModel.swift in Sources */,
 				3A65BFDE2B583CBE0095794A /* AppDelegate.swift in Sources */,

@@ -246,9 +246,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="R92-z2-cxl"/>
-                    <connections>
-                        <outlet property="marvelButton" destination="TH0-PC-R2y" id="vxT-ql-7eU"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -270,7 +267,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNK-Ja-pQp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="119.84732824427481" y="310.56338028169017"/>
+            <point key="canvasLocation" x="-253" y="311"/>
         </scene>
         <!--CommunesStoryboard-->
         <scene sceneID="hko-TR-XHh">
@@ -288,7 +285,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQm-sR-XAi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1937" y="309"/>
+            <point key="canvasLocation" x="339" y="274"/>
         </scene>
     </scenes>
     <resources>
