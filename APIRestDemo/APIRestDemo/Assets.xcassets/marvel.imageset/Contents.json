@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "marvel.jpeg",
+      "filename" : "marvel-2.jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "marvel@2x.jpeg",
+      "filename" : "marvel@2x-2.jpeg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "marvel@3x.jpeg",
+      "filename" : "marvel@3x-2.jpeg",
       "idiom" : "universal",
       "scale" : "3x"
     }

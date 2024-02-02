@@ -12,11 +12,8 @@ final class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
     }
-    
-    
+   
     @IBAction func goToMarvelCharacters(_ sender: UIButton) {
     
     }
