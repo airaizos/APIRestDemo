@@ -151,7 +151,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.8730427623" green="0.86283451320000004" blue="0.72633868459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="countriesTableView" destination="z2A-yx-4QT" id="6dG-g9-d2W"/>

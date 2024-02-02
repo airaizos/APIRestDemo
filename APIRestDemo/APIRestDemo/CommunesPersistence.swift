@@ -17,9 +17,10 @@ final class CommunesPersistence: CommunesFetcher {
     init(session: URLSession = .shared) {
         self.session = session
     }
-    var subscribers = Set<AnyCancellable>()
-    var subject = PassthroughSubject<String,Never>()
     
+    var subject = PassthroughSubject<String,Never>()
+    var subscribers = Set<AnyCancellable>()
+
     func getJSON<JSON:Decodable>(url: URL, type: JSON.Type, receiveValue: @escaping (JSON) -> ()) {
         URLSession.shared
             .dataTaskPublisher(for: url)

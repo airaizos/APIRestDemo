@@ -162,7 +162,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KjX-kF-iD0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.8730427623" green="0.86283451320000004" blue="0.72633868459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

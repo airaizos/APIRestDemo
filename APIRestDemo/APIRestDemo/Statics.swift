@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: Patrón Callback
 ///#Patrón Callback JSON Genérico
 func fetchJson<JSON:Codable>(url: URL, type: JSON.Type, session: URLSession, callback: @escaping ((Result<JSON,PersistenceError>) -> Void)) {
      
@@ -48,7 +49,7 @@ func fetchImage(url:URL, session: URLSession, callback: @escaping ((Result<UIIma
     }.resume()
 }
 
-
+//MARK: Async-Await
 ///#Async-Await
 func dataRequest(from url: URL, session: URLSession) async throws -> (Data, URLResponse) {
     do {
@@ -56,7 +57,6 @@ func dataRequest(from url: URL, session: URLSession) async throws -> (Data, URLR
     } catch {
        throw PersistenceError.general("")
     }
-        
 }
 
 
@@ -92,3 +92,8 @@ func getJSONAsAw<JSON:Codable>(url:URL, type:JSON.Type) async throws -> JSON {
         throw PersistenceError.general(error.localizedDescription)
     }
 }
+
+//MARK: Combine
+///#Combine
+///Ver **CommunesPersistence**
+///Ver **NumbersPersistence**

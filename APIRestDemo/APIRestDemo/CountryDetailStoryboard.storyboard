@@ -97,7 +97,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8vQ-sW-p4E"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.57582402229999996" green="0.59535199400000005" blue="0.48875463009999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="EnL-Tm-M3c"/>
                     <connections>
