@@ -31,7 +31,7 @@ final class MarvelCharactersNetwork {
     }
     
     
-    //Descarga las imagenes y devuelve struct para Cell
+    ///Crea las tareas para la creación de cada MarvelCellCharacter, para lanzarlo después de manera concurrente
     func getImages(from characters:[MarvelCharacter]) async throws -> [MarvelCellCharacter] {
         return try await withThrowingTaskGroup(of: MarvelCellCharacter.self, returning: [MarvelCellCharacter].self) { group in
             for character in characters {

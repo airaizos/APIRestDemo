@@ -29,7 +29,7 @@
 		3A32F43F2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A32F43E2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard */; };
 		3A3783B02B5AA71600D2AFCD /* CommunesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */; };
 		3A3783B22B5AA74100D2AFCD /* CommuneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */; };
-		3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */; };
+		3A3783B52B5AA94800D2AFCD /* CommunesNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B42B5AA94800D2AFCD /* CommunesNetwork.swift */; };
 		3A3783B72B5AAE3300D2AFCD /* CommunesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B62B5AAE3300D2AFCD /* CommunesTableViewController.swift */; };
 		3A3783B92B5AB50F00D2AFCD /* RegionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B82B5AB50E00D2AFCD /* RegionsTableViewController.swift */; };
 		3A3783BB2B5AB51D00D2AFCD /* DepartementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783BA2B5AB51D00D2AFCD /* DepartementsTableViewController.swift */; };
@@ -75,7 +75,6 @@
 		3AEB66B72B6AD736002390AE /* MarvelFavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEB66B62B6AD736002390AE /* MarvelFavoritesCollectionViewController.swift */; };
 		3AFB519F2B693A5F00B42C4E /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB519E2B693A5F00B42C4E /* CountriesViewController.swift */; };
 		3AFB51A12B693CFD00B42C4E /* CountryModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB51A02B693CFD00B42C4E /* CountryModelLogic.swift */; };
-		3AFB51A42B69602E00B42C4E /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AFB51A32B69602E00B42C4E /* countries.json */; };
 		3AFB51A62B6981F200B42C4E /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB51A52B6981F200B42C4E /* CountryDetailViewController.swift */; };
 		3AFB51AC2B698AE900B42C4E /* CountryDetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AFB51AB2B698AE900B42C4E /* CountryDetailStoryboard.storyboard */; };
 		3AFB51B12B698E6F00B42C4E /* CountryDetailViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB51B02B698E6F00B42C4E /* CountryDetailViewLogic.swift */; };
@@ -114,7 +113,7 @@
 		3A32F43E2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CountriesStoryboard.storyboard; sourceTree = "<group>"; };
 		3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesInterface.swift; sourceTree = "<group>"; };
 		3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuneModel.swift; sourceTree = "<group>"; };
-		3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesPersistence.swift; sourceTree = "<group>"; };
+		3A3783B42B5AA94800D2AFCD /* CommunesNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesNetwork.swift; sourceTree = "<group>"; };
 		3A3783B62B5AAE3300D2AFCD /* CommunesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesTableViewController.swift; sourceTree = "<group>"; };
 		3A3783B82B5AB50E00D2AFCD /* RegionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsTableViewController.swift; sourceTree = "<group>"; };
 		3A3783BA2B5AB51D00D2AFCD /* DepartementsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartementsTableViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +162,6 @@
 		3AEB66B62B6AD736002390AE /* MarvelFavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelFavoritesCollectionViewController.swift; sourceTree = "<group>"; };
 		3AFB519E2B693A5F00B42C4E /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		3AFB51A02B693CFD00B42C4E /* CountryModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModelLogic.swift; sourceTree = "<group>"; };
-		3AFB51A32B69602E00B42C4E /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		3AFB51A52B6981F200B42C4E /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
 		3AFB51AB2B698AE900B42C4E /* CountryDetailStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CountryDetailStoryboard.storyboard; sourceTree = "<group>"; };
 		3AFB51B02B698E6F00B42C4E /* CountryDetailViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewLogic.swift; sourceTree = "<group>"; };
@@ -342,7 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */,
-				3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */,
+				3A3783B42B5AA94800D2AFCD /* CommunesNetwork.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -458,7 +456,6 @@
 				3A3E41FC2B6D3B39001F158F /* View */,
 				3A3E41FB2B6D3B0E001F158F /* Controller */,
 				3A3E41FE2B6D3BBE001F158F /* Network */,
-				3AFB51A22B69601C00B42C4E /* Helpers */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -626,15 +623,6 @@
 			path = Communes;
 			sourceTree = "<group>";
 		};
-		3AFB51A22B69601C00B42C4E /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				3AFB51A32B69602E00B42C4E /* countries.json */,
-			);
-			name = Helpers;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -720,7 +708,6 @@
 				3A32F43F2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard in Resources */,
 				3A8DB3422B5FF95900E7BDA3 /* CommunesStoryboard.storyboard in Resources */,
 				3AFB51AC2B698AE900B42C4E /* CountryDetailStoryboard.storyboard in Resources */,
-				3AFB51A42B69602E00B42C4E /* countries.json in Resources */,
 				3A65BFED2B583CCC0095794A /* LaunchScreen.storyboard in Resources */,
 				3A65BFEA2B583CCC0095794A /* Assets.xcassets in Resources */,
 				3A8DB3442B60099600E7BDA3 /* ChuckNorrisStoryboard.storyboard in Resources */,
@@ -784,7 +771,7 @@
 				3A32F4302B629F30006C6FE9 /* DiceBearCollectionViewCell.swift in Sources */,
 				3AFB51A62B6981F200B42C4E /* CountryDetailViewController.swift in Sources */,
 				3AAC265E2B60201E007EED64 /* Extensions.swift in Sources */,
-				3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */,
+				3A3783B52B5AA94800D2AFCD /* CommunesNetwork.swift in Sources */,
 				3A56D8462B64413F00A948BD /* CountriesNetwork.swift in Sources */,
 				3A7DA5032B6ADB9400D1A63C /* MarvelCharactersModelLogic.swift in Sources */,
 				3A7DA5052B6ADDB900D1A63C /* MarvelCharacterCellView.swift in Sources */,
