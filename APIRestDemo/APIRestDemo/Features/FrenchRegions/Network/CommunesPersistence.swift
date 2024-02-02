@@ -1,5 +1,5 @@
 //
-//  CommunesPersistence.swift
+//  CommunesNetwork.swift
 //  APIRestDemo
 //
 //  Created by Adrian Iraizos Mendoza on 19/1/24.
@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 
-final class CommunesPersistence: CommunesFetcher {
-    static let shared = CommunesPersistence()
+final class CommunesNetwork: CommunesFetcher {
+    static let shared = CommunesNetwork()
 							
     let session: URLSession
     

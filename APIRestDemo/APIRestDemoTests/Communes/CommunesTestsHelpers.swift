@@ -10,7 +10,7 @@ import Combine
 
 @testable import APIRestDemo
 
-final class CommunesPersistenceMock: CommunesFetcher {
+final class CommunesNetworkMock: CommunesFetcher {
     var session: URLSession
     
     var subject: PassthroughSubject<String, Never>

@@ -16,10 +16,7 @@ final class RegionsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Al pulsar el detalle se siga mostrando la misma celda
         self.clearsSelectionOnViewWillAppear = false
-        
-        //Botón de editar
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         modelLogic.fetchRegions()
@@ -28,7 +25,6 @@ final class RegionsTableViewController: UITableViewController {
             .sink { [weak self] _ in
                 self?.tableView.reloadData()
             }.store(in: &subscribers)
-        
     }
     
     // MARK: - Table view data source
@@ -54,22 +50,17 @@ final class RegionsTableViewController: UITableViewController {
         return cell
     }
     
-    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             modelLogic.deleteRegion(indexPath: indexPath)
         }
     }
     
-    
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         modelLogic.moveRegion(indexPath: fromIndexPath, to: to)
     }
     
-    
     // MARK: - Navigation
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "segueToDepartements",
               let detail = segue.destination as? DepartementsTableViewController,
@@ -80,6 +71,4 @@ final class RegionsTableViewController: UITableViewController {
         let region = modelLogic.getRegionRow(indexPath: cellIndexPath)
         detail.selectedRegion = region
     }
-    
-    
 }

@@ -21,7 +21,6 @@ final class ViewController: UIViewController, UIGestureRecognizerDelegate {
         goTo(viewControllerName: "CountriesStoryboard")
     }
     
-    
     @IBAction func goToDiceBear(_ sender: Any) {
         goTo(viewControllerName: "DiceBearStoryboard")
     }

@@ -13,7 +13,7 @@ final class CommunesUnitTests: XCTestCase {
     var sut: CommunesModeLogic!
     
     override func setUpWithError() throws {
-        let mock = CommunesPersistenceMock()
+        let mock = CommunesNetworkMock()
         sut = CommunesModeLogic(persistence: mock)
        
     }

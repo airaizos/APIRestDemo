@@ -58,7 +58,6 @@
 		3A7DA5012B6ADAE300D1A63C /* MarvelCharactersStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7DA4FF2B6ADAE300D1A63C /* MarvelCharactersStoryboard.storyboard */; };
 		3A7DA5032B6ADB9400D1A63C /* MarvelCharactersModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7DA5022B6ADB9400D1A63C /* MarvelCharactersModelLogic.swift */; };
 		3A7DA5052B6ADDB900D1A63C /* MarvelCharacterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7DA5042B6ADDB900D1A63C /* MarvelCharacterCellView.swift */; };
-		3A851C002B5ED4F6005758FA /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851BFF2B5ED4F6005758FA /* Helpers.swift */; };
 		3A851C082B5EEF9E005758FA /* APIRestDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851C072B5EEF9E005758FA /* APIRestDemoTests.swift */; };
 		3A851C102B5EEFB6005758FA /* CommunesUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851C0F2B5EEFB6005758FA /* CommunesUnitTests.swift */; };
 		3A851C122B5EF04B005758FA /* CommunesTestsHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A851C112B5EF04B005758FA /* CommunesTestsHelpers.swift */; };
@@ -145,7 +144,6 @@
 		3A7DA5002B6ADAE300D1A63C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = APIRestDemo/Base.lproj/MarvelCharactersStoryboard.storyboard; sourceTree = "<group>"; };
 		3A7DA5022B6ADB9400D1A63C /* MarvelCharactersModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharactersModelLogic.swift; sourceTree = "<group>"; };
 		3A7DA5042B6ADDB900D1A63C /* MarvelCharacterCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterCellView.swift; sourceTree = "<group>"; };
-		3A851BFF2B5ED4F6005758FA /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		3A851C052B5EEF9E005758FA /* APIRestDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIRestDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A851C072B5EEF9E005758FA /* APIRestDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRestDemoTests.swift; sourceTree = "<group>"; };
 		3A851C0F2B5EEFB6005758FA /* CommunesUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesUnitTests.swift; sourceTree = "<group>"; };
@@ -292,13 +290,6 @@
 		3A3783AE2B5AA64C00D2AFCD /* Communes */ = {
 			isa = PBXGroup;
 			children = (
-				3A8DB3402B5FF95900E7BDA3 /* CommunesStoryboard.storyboard */,
-				3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */,
-				3A660DC42B5AE76000E1BC69 /* CommunesModeLogic.swift */,
-				3A660DC02B5AE3C000E1BC69 /* ViewController */,
-				3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */,
-				3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */,
-				3A851BFF2B5ED4F6005758FA /* Helpers.swift */,
 			);
 			name = Communes;
 			sourceTree = "<group>";
@@ -317,6 +308,7 @@
 		3A3E41E12B6D2ED2001F158F /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				3A3E41E62B6D30FA001F158F /* FrenchRegions */,
 				3A3E41E22B6D2EE6001F158F /* Numbers */,
 			);
 			path = Features;
@@ -356,6 +348,43 @@
 				3A65BFF52B58620D0095794A /* NumbersAPIViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		3A3E41E62B6D30FA001F158F /* FrenchRegions */ = {
+			isa = PBXGroup;
+			children = (
+				3A3E41E72B6D3150001F158F /* Model */,
+				3A3E41E82B6D3165001F158F /* View */,
+				3A660DC02B5AE3C000E1BC69 /* Controller */,
+				3A3E41E92B6D3187001F158F /* Network */,
+			);
+			path = FrenchRegions;
+			sourceTree = "<group>";
+		};
+		3A3E41E72B6D3150001F158F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A660DC42B5AE76000E1BC69 /* CommunesModeLogic.swift */,
+				3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A3E41E82B6D3165001F158F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A8DB3402B5FF95900E7BDA3 /* CommunesStoryboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A3E41E92B6D3187001F158F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */,
+				3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		3A65BFD12B583CBE0095794A = {
@@ -419,14 +448,15 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		3A660DC02B5AE3C000E1BC69 /* ViewController */ = {
+		3A660DC02B5AE3C000E1BC69 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				3A3783B82B5AB50E00D2AFCD /* RegionsTableViewController.swift */,
 				3A3783BA2B5AB51D00D2AFCD /* DepartementsTableViewController.swift */,
 				3A3783B62B5AAE3300D2AFCD /* CommunesTableViewController.swift */,
 			);
-			name = ViewController;
+			name = Controller;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		3A660DC12B5AE3E700E1BC69 /* Public */ = {
@@ -662,7 +692,6 @@
 				3A65BFDE2B583CBE0095794A /* AppDelegate.swift in Sources */,
 				3A8DB34E2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift in Sources */,
 				3A32F4302B629F30006C6FE9 /* DiceBearCollectionViewCell.swift in Sources */,
-				3A851C002B5ED4F6005758FA /* Helpers.swift in Sources */,
 				3AFB51A62B6981F200B42C4E /* CountryDetailViewController.swift in Sources */,
 				3AAC265E2B60201E007EED64 /* Extensions.swift in Sources */,
 				3A3783B52B5AA94800D2AFCD /* CommunesPersistence.swift in Sources */,

@@ -96,5 +96,5 @@ func getJSONAsAw<JSON:Codable>(url:URL, type:JSON.Type) async throws -> JSON {
 
 //MARK: Combine
 ///#Combine
-///Ver **CommunesPersistence**
+///Ver **CommunesNetwork**
 ///Ver **NumbersPersistence**

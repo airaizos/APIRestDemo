@@ -17,7 +17,7 @@ final class CommunesModeLogic {
     private var departements = [Departement]()
     private var communes = [Commune]()
     
-    init(persistence: CommunesFetcher = CommunesPersistence.shared) {
+    init(persistence: CommunesFetcher = CommunesNetwork.shared) {
         self.persistence = persistence
         
     }

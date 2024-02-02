@@ -39,7 +39,6 @@ final class CommunesTableViewController: UITableViewController {
         modelLogic.getCommunesCountFor(departement: selectedDepartement)
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "communeCell", for: indexPath)
         
@@ -53,12 +52,9 @@ final class CommunesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
     
-    
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             modelLogic.deleteCommuneFor(indexPath: indexPath)

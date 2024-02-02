@@ -20,7 +20,6 @@ final class DepartementsTableViewController: UITableViewController {
         super.init(coder: coder)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.clearsSelectionOnViewWillAppear = false
@@ -40,7 +39,6 @@ final class DepartementsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         true
     }
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         modelLogic.getDepartementsCountFor(region: selectedRegion)
@@ -79,6 +77,4 @@ final class DepartementsTableViewController: UITableViewController {
         let departement = modelLogic.getDepartementRow(indexPath: cellIndexPath)
         detail.selectedDepartement = departement
     }
-    
-    
 }
