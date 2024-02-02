@@ -11,9 +11,11 @@ final class ChuckNorrisModelLogic {
     static let shared = ChuckNorrisModelLogic()
     
     let persistence: ChuckNorrisPersistence
+    let network: ChuckNorrisNetwork
     
-    init(persistence: ChuckNorrisPersistence = .shared) {
+    init(persistence: ChuckNorrisPersistence = .shared, network: ChuckNorrisNetwork = .shared) {
         self.persistence = persistence
+        self.network = network
     }
     
     var action: ((String) -> Void)?
@@ -33,7 +35,7 @@ final class ChuckNorrisModelLogic {
     }
     
     func getJoke() {
-        persistence.getJoke { result in
+        network.getJoke { result in
             switch result {
             case .success(let success):
                 self.joke = success

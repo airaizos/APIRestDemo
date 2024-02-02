@@ -33,6 +33,7 @@
 		3A3783B72B5AAE3300D2AFCD /* CommunesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B62B5AAE3300D2AFCD /* CommunesTableViewController.swift */; };
 		3A3783B92B5AB50F00D2AFCD /* RegionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B82B5AB50E00D2AFCD /* RegionsTableViewController.swift */; };
 		3A3783BB2B5AB51D00D2AFCD /* DepartementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783BA2B5AB51D00D2AFCD /* DepartementsTableViewController.swift */; };
+		3A3E41EF2B6D3516001F158F /* ChuckNorrisNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3E41EE2B6D3516001F158F /* ChuckNorrisNetwork.swift */; };
 		3A56D8422B64270D00A948BD /* CountryInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56D8412B64270D00A948BD /* CountryInfoModel.swift */; };
 		3A56D8442B64349500A948BD /* CountriesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56D8432B64349500A948BD /* CountriesInterface.swift */; };
 		3A56D8462B64413F00A948BD /* CountriesNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56D8452B64413F00A948BD /* CountriesNetwork.swift */; };
@@ -117,6 +118,7 @@
 		3A3783B62B5AAE3300D2AFCD /* CommunesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesTableViewController.swift; sourceTree = "<group>"; };
 		3A3783B82B5AB50E00D2AFCD /* RegionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsTableViewController.swift; sourceTree = "<group>"; };
 		3A3783BA2B5AB51D00D2AFCD /* DepartementsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartementsTableViewController.swift; sourceTree = "<group>"; };
+		3A3E41EE2B6D3516001F158F /* ChuckNorrisNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisNetwork.swift; sourceTree = "<group>"; };
 		3A56D8412B64270D00A948BD /* CountryInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoModel.swift; sourceTree = "<group>"; };
 		3A56D8432B64349500A948BD /* CountriesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesInterface.swift; sourceTree = "<group>"; };
 		3A56D8452B64413F00A948BD /* CountriesNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesNetwork.swift; sourceTree = "<group>"; };
@@ -195,15 +197,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		3A31F4972B61128B00A5F0D3 /* Logic */ = {
+		3A31F4972B61128B00A5F0D3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				3A8DB3472B600BFC00E7BDA3 /* ChuckNorrisInterface.swift */,
-				3A8DB3492B600CEC00E7BDA3 /* ChuckNorrisPersistence.swift */,
-				3A8DB34B2B600D0100E7BDA3 /* ChuckNorrisModel.swift */,
-				3A8DB34D2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift */,
+				3A3E41EE2B6D3516001F158F /* ChuckNorrisNetwork.swift */,
 			);
-			name = Logic;
+			name = Network;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		3A31F4992B61141D00A5F0D3 /* ChuckNorrisTests */ = {
@@ -308,6 +309,7 @@
 		3A3E41E12B6D2ED2001F158F /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				3A3E41EA2B6D349D001F158F /* ChuckNorris */,
 				3A3E41E62B6D30FA001F158F /* FrenchRegions */,
 				3A3E41E22B6D2EE6001F158F /* Numbers */,
 			);
@@ -385,6 +387,51 @@
 				3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		3A3E41EA2B6D349D001F158F /* ChuckNorris */ = {
+			isa = PBXGroup;
+			children = (
+				3A3E41F12B6D35ED001F158F /* Persistence */,
+				3A3E41ED2B6D34BF001F158F /* Model */,
+				3A3E41EC2B6D34B4001F158F /* Controller */,
+				3A3E41EB2B6D34AB001F158F /* View */,
+				3A31F4972B61128B00A5F0D3 /* Network */,
+			);
+			path = ChuckNorris;
+			sourceTree = "<group>";
+		};
+		3A3E41EB2B6D34AB001F158F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A8DB3432B60099600E7BDA3 /* ChuckNorrisStoryboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A3E41EC2B6D34B4001F158F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A8DB3452B600BCB00E7BDA3 /* ChuckNorrisViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3A3E41ED2B6D34BF001F158F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A8DB34B2B600D0100E7BDA3 /* ChuckNorrisModel.swift */,
+				3A8DB34D2B60177500E7BDA3 /* ChuckNorrisModelLogic.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A3E41F12B6D35ED001F158F /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				3A8DB3492B600CEC00E7BDA3 /* ChuckNorrisPersistence.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		3A65BFD12B583CBE0095794A = {
@@ -503,9 +550,6 @@
 		3A851C132B5EFE7E005758FA /* ChuckNorris */ = {
 			isa = PBXGroup;
 			children = (
-				3A31F4972B61128B00A5F0D3 /* Logic */,
-				3A8DB3432B60099600E7BDA3 /* ChuckNorrisStoryboard.storyboard */,
-				3A8DB3452B600BCB00E7BDA3 /* ChuckNorrisViewController.swift */,
 			);
 			name = ChuckNorris;
 			sourceTree = "<group>";
@@ -669,6 +713,7 @@
 				3A8DB34C2B600D0100E7BDA3 /* ChuckNorrisModel.swift in Sources */,
 				3A660DC52B5AE76000E1BC69 /* CommunesModeLogic.swift in Sources */,
 				3A31F4AE2B61619600A5F0D3 /* DiceBearViewLogic.swift in Sources */,
+				3A3E41EF2B6D3516001F158F /* ChuckNorrisNetwork.swift in Sources */,
 				3A6A34222B6ACA4D005ADBE9 /* MarvelCharactersNetwork.swift in Sources */,
 				3A56D8422B64270D00A948BD /* CountryInfoModel.swift in Sources */,
 				3A31F4A82B61558400A5F0D3 /* DiceBearViewController.swift in Sources */,
