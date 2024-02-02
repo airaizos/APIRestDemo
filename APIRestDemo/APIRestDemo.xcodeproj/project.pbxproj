@@ -188,17 +188,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A1123212B6410D30021EC56 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				3A1123222B6410EA0021EC56 /* BattutaCountryModel.swift */,
-				3A1123242B6410F30021EC56 /* BattutaRegionModel.swift */,
-				3A1123262B6411020021EC56 /* BattutaCityModel.swift */,
-				3A56D8412B64270D00A948BD /* CountryInfoModel.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
 		3A31F4972B61128B00A5F0D3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,11 +261,6 @@
 		3A32F43D2B62E9CF006C6FE9 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
-				3AFB51AD2B698B8100B42C4E /* ViewControllers */,
-				3AFB51A22B69601C00B42C4E /* Helpers */,
-				3A56D8452B64413F00A948BD /* CountriesNetwork.swift */,
-				3A56D8432B64349500A948BD /* CountriesInterface.swift */,
-				3A1123212B6410D30021EC56 /* Models */,
 			);
 			name = Countries;
 			sourceTree = "<group>";
@@ -302,6 +286,8 @@
 		3A3E41E12B6D2ED2001F158F /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				3A3E41FF2B6D3BDA001F158F /* MarvelCharacters */,
+				3A3E41FA2B6D3AF9001F158F /* Countries */,
 				3A3E41F22B6D3633001F158F /* DiceBear */,
 				3A3E41EA2B6D349D001F158F /* ChuckNorris */,
 				3A3E41E62B6D30FA001F158F /* FrenchRegions */,
@@ -487,6 +473,105 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		3A3E41FA2B6D3AF9001F158F /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				3A3E41FD2B6D3B5B001F158F /* Model */,
+				3A3E41FC2B6D3B39001F158F /* View */,
+				3A3E41FB2B6D3B0E001F158F /* Controller */,
+				3A3E41FE2B6D3BBE001F158F /* Network */,
+				3AFB51A22B69601C00B42C4E /* Helpers */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
+		3A3E41FB2B6D3B0E001F158F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3AFB51A52B6981F200B42C4E /* CountryDetailViewController.swift */,
+				3AFB519E2B693A5F00B42C4E /* CountriesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3A3E41FC2B6D3B39001F158F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3AFB51B02B698E6F00B42C4E /* CountryDetailViewLogic.swift */,
+				3AFB51AB2B698AE900B42C4E /* CountryDetailStoryboard.storyboard */,
+				3A32F43E2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A3E41FD2B6D3B5B001F158F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A1123222B6410EA0021EC56 /* BattutaCountryModel.swift */,
+				3A1123242B6410F30021EC56 /* BattutaRegionModel.swift */,
+				3A1123262B6411020021EC56 /* BattutaCityModel.swift */,
+				3A56D8412B64270D00A948BD /* CountryInfoModel.swift */,
+				3AFB51A02B693CFD00B42C4E /* CountryModelLogic.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A3E41FE2B6D3BBE001F158F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3A56D8452B64413F00A948BD /* CountriesNetwork.swift */,
+				3A56D8432B64349500A948BD /* CountriesInterface.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3A3E41FF2B6D3BDA001F158F /* MarvelCharacters */ = {
+			isa = PBXGroup;
+			children = (
+				3A3E42022B6D3BFE001F158F /* Model */,
+				3A3E42012B6D3BF6001F158F /* View */,
+				3A3E42002B6D3BEB001F158F /* Controller */,
+				3A3E42032B6D3C13001F158F /* Network */,
+			);
+			path = MarvelCharacters;
+			sourceTree = "<group>";
+		};
+		3A3E42002B6D3BEB001F158F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3AEB66B42B6AD725002390AE /* MarvelCharactersCollectionViewController.swift */,
+				3AEB66B62B6AD736002390AE /* MarvelFavoritesCollectionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3A3E42012B6D3BF6001F158F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A7DA4FF2B6ADAE300D1A63C /* MarvelCharactersStoryboard.storyboard */,
+				3A7DA5042B6ADDB900D1A63C /* MarvelCharacterCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A3E42022B6D3BFE001F158F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A7DA5022B6ADB9400D1A63C /* MarvelCharactersModelLogic.swift */,
+				3A6A341D2B6AC1C4005ADBE9 /* MarvelResultsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A3E42032B6D3C13001F158F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3A6A341F2B6AC39F005ADBE9 /* MarvelCharactersInterface.swift */,
+				3A6A34212B6ACA4D005ADBE9 /* MarvelCharactersNetwork.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		3A65BFD12B583CBE0095794A = {
 			isa = PBXGroup;
 			children = (
@@ -569,14 +654,6 @@
 		3A6A341C2B6AC1B2005ADBE9 /* MarvelCharacters */ = {
 			isa = PBXGroup;
 			children = (
-				3A7DA4FF2B6ADAE300D1A63C /* MarvelCharactersStoryboard.storyboard */,
-				3A6A341D2B6AC1C4005ADBE9 /* MarvelResultsModel.swift */,
-				3A6A341F2B6AC39F005ADBE9 /* MarvelCharactersInterface.swift */,
-				3A6A34212B6ACA4D005ADBE9 /* MarvelCharactersNetwork.swift */,
-				3AEB66B42B6AD725002390AE /* MarvelCharactersCollectionViewController.swift */,
-				3AEB66B62B6AD736002390AE /* MarvelFavoritesCollectionViewController.swift */,
-				3A7DA5022B6ADB9400D1A63C /* MarvelCharactersModelLogic.swift */,
-				3A7DA5042B6ADDB900D1A63C /* MarvelCharacterCellView.swift */,
 			);
 			name = MarvelCharacters;
 			sourceTree = "<group>";
@@ -613,35 +690,7 @@
 				3AFB51A32B69602E00B42C4E /* countries.json */,
 			);
 			name = Helpers;
-			sourceTree = "<group>";
-		};
-		3AFB51AD2B698B8100B42C4E /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				3AFB51A02B693CFD00B42C4E /* CountryModelLogic.swift */,
-				3AFB51AF2B698BA800B42C4E /* Detail */,
-				3AFB51AE2B698B9400B42C4E /* Countries */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		3AFB51AE2B698B9400B42C4E /* Countries */ = {
-			isa = PBXGroup;
-			children = (
-				3A32F43E2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard */,
-				3AFB519E2B693A5F00B42C4E /* CountriesViewController.swift */,
-			);
-			name = Countries;
-			sourceTree = "<group>";
-		};
-		3AFB51AF2B698BA800B42C4E /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				3AFB51AB2B698AE900B42C4E /* CountryDetailStoryboard.storyboard */,
-				3AFB51A52B6981F200B42C4E /* CountryDetailViewController.swift */,
-				3AFB51B02B698E6F00B42C4E /* CountryDetailViewLogic.swift */,
-			);
-			name = Detail;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

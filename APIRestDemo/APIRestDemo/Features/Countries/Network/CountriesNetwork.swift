@@ -52,7 +52,6 @@ final class CountriesNetwork {
     }
     
     // Detail
-    
     func getRegions(ccaCode:String) async throws -> [BattutaRegionModel] {
         try await getJSONAsync(url: .regions(for: ccaCode), type: [BattutaRegionModel].self)
         
