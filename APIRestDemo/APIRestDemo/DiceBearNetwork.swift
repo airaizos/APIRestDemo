@@ -1,5 +1,5 @@
 //
-//  DiceBearPersistence.swift
+//  DiceBearNetwork.swift
 //  APIRestDemo
 //
 //  Created by Adrian Iraizos Mendoza on 24/1/24.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class DiceBearPersistence {
-    static let shared = DiceBearPersistence()
+final class DiceBearNetwork {
+    static let shared = DiceBearNetwork()
     
     var urls: URLLocator
     var urlProtocol: URLProtocol.Type?
@@ -21,12 +21,11 @@ final class DiceBearPersistence {
             return URLSession.shared
         }
     }
+    
     init(urlProtocol: URLProtocol.Type? = nil, urls: URLLocator = URLProduction()) {
         self.urlProtocol = urlProtocol
         self.urls = urls
     }
-    
-   
     
     func getFunEmoji() async throws -> UIImage {
         try await fetchImage(url: DiceBearModel.funEmoji.url, session: session)
@@ -38,8 +37,6 @@ final class DiceBearPersistence {
             backgroundType: model.backgroundType,
             eyes: model.eyes,
             mouth: model.mouth).url, session: session)
-
     }
-    
 }
 

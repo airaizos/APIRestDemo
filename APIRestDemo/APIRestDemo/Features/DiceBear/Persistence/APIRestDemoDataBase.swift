@@ -17,7 +17,6 @@ final class APIRestDemoDataBase {
     }
 }
 
-
 //MARK: DiceBear
 extension APIRestDemoDataBase {
     func fetchEmojis() throws -> [DiceBearEmojiModel] {
@@ -41,5 +40,4 @@ extension APIRestDemoDataBase {
             throw DataBaseError.insert
         }
     }
-    
 }

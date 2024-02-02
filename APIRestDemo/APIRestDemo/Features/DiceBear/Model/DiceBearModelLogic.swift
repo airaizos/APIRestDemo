@@ -10,7 +10,7 @@ import UIKit
 final class DiceBearModelLogic {
     static let shared = DiceBearModelLogic()
     
-    let persistence: DiceBearPersistence
+    let network: DiceBearNetwork
     var emojiDataBase: APIRestDemoDataBase
     
     private var favoriteEmojis = [DiceBearEmojiModel]() {
@@ -20,23 +20,31 @@ final class DiceBearModelLogic {
         }
     }
     
-    init(persistence: DiceBearPersistence = .shared, emojiDataBase: APIRestDemoDataBase = .shared) {
-        self.persistence = persistence
+    init(network: DiceBearNetwork = .shared, emojiDataBase: APIRestDemoDataBase = .shared) {
+        self.network = network
         self.emojiDataBase = emojiDataBase
         loadFavoritesEmojis()
     }
     
     func getEmoji() async throws -> UIImage {
-       try await persistence.getFunEmoji()
+       try await network.getFunEmoji()
     }
     
     func refreshEmoji(params: DiceBearModel) async throws -> UIImage {
-        try await persistence.getEmojiWithOptions(params)
+        try await network.getEmojiWithOptions(params)
     }
     
     func getRandomEmoji() async throws -> UIImage {
         let randomModel = DiceBearModel.randomModel()
-        return try await persistence.getEmojiWithOptions(randomModel)
+        return try await network.getEmojiWithOptions(randomModel)
+    }
+    
+    func getFunEmoji() async throws -> UIImage {
+        try await network.getFunEmoji()
+    }
+    
+    func getEmoji(model: DiceBearModel) async throws -> UIImage {
+        try await network.getEmojiWithOptions(model)
     }
     
     //MARK: Favorites
@@ -67,6 +75,4 @@ final class DiceBearModelLogic {
             favoriteEmojis = []
         }
     }
-    
-    
 }

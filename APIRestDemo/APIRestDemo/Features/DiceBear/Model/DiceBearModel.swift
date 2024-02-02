@@ -9,8 +9,32 @@ import UIKit
 import CoreData
 
 struct DiceBearModel {
-    
     static let funEmoji = DiceBearModel(design: .funEmoji)
+
+    let design: Design
+    
+    //MARK: Options
+    var backgroundType: BackgroundType = .solid
+    var backgroundColor: String = "FFA07A"
+    var eyes: EyesType = .closed
+    var mouth: MouthType = .cute
+    
+    
+    init(design: Design) {
+        self.design = design
+    }
+    
+    init(funEmojiWithBackgroundColor: String, backgroundType: BackgroundType, eyes: EyesType, mouth : MouthType ) {
+        self.design = .funEmoji
+        self.backgroundColor = funEmojiWithBackgroundColor
+        self.backgroundType = backgroundType
+        self.eyes = eyes
+        self.mouth = mouth
+    }
+}
+
+//MARK: Enums
+extension DiceBearModel {
     
     enum Design {
         case adventurer,funEmoji
@@ -29,22 +53,15 @@ struct DiceBearModel {
     
     enum EyesType: String,CaseIterable {
         case closed = "closed", closed2 = "closed2", crying = "crying", cute = "cute", glasses  = "glasses", love = "love", pissed = "pissed", plan = "plain", sad = "sad", shades = "shades", sleepClose  = "sleepClose", stars = "stars", tearDrop = "tearDrop", wink = "wink", wink2 = "wink2"
-        
     }
     
     enum MouthType: String,CaseIterable {
         case cute = "cute", drip = "drip", faceMask = "faceMask", kissHeart = "kissHeart", lilSmile = "lilSmile", pissed = "pissed", plain = "plain", sad = "sad", shout = "shout", shy = "shy", sick = "sick", smileLol = "smileLol", smileTeeth = "smileTeeth", tongueOut = "tongueOut", wideSmile = "wideSmile"
     }
-    
-    let design: Design
-    //MARK: Options
-    var backgroundType: BackgroundType = .solid
-    var backgroundColor: String = "FFA07A"
-    var eyes: EyesType = .closed
-    var mouth: MouthType = .cute
-    
-    
-    //MARK: QueryItems
+}
+
+//MARK: QueryItems
+extension DiceBearModel {
     var backgroundTypeQueryItem: URLQueryItem {
         URLQueryItem(name: "backgroundType", value: backgroundType.rawValue)
     }
@@ -57,7 +74,6 @@ struct DiceBearModel {
     var mouthQueryItem: URLQueryItem {
         URLQueryItem(name: "mouth", value: mouth.rawValue)
     }
-    
    
     var url: URL {
         var first = URL.diceBearBaseURL.appending(path: design.style)
@@ -65,22 +81,10 @@ struct DiceBearModel {
         
         return first
     }
-    
-    init(design: Design) {
-        self.design = design
-    }
-    
-    init(funEmojiWithBackgroundColor: String, backgroundType: BackgroundType, eyes: EyesType, mouth : MouthType ) {
-        self.design = .funEmoji
-        self.backgroundColor = funEmojiWithBackgroundColor
-        self.backgroundType = backgroundType
-        self.eyes = eyes
-        self.mouth = mouth
-    }
-    
 }
 
 
+//MARK: RandomModel
 extension DiceBearModel {
     static func randomModel() -> DiceBearModel {
         let backgroundType = BackgroundType.allCases.randomElement()!
@@ -98,31 +102,4 @@ extension DiceBearModel {
                       mouth: mouth)
     }
     
-}
-
-
-struct DiceBearEmojiModel {
-    let id: UUID
-    let image: UIImage
-    let details: String
-    let createdAt: Date
-    
-    init(id: UUID? = UUID(), image: UIImage, details: String? = "", createdAt: Date? = Date.now) {
-        self.id = id ?? UUID()
-        self.image = image
-        self.details = details ?? ""
-        self.createdAt = createdAt ?? Date.now
-    }
-}
-
-extension DiceBearEmojiModel {
-    func getEmojiEntityItem(from emoji: DiceBearEmojiModel, in context: NSManagedObjectContext) -> EmojiEntity {
-        let newItem = EmojiEntity(context: context)
-        newItem.id = emoji.id
-        newItem.imageData = emoji.image.pngData()
-        newItem.details = emoji.details
-        newItem.createdAt = emoji.createdAt
-        
-        return newItem
-    }
 }

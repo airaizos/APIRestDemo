@@ -16,7 +16,7 @@
 		3A31F4A22B614DAA00A5F0D3 /* DiceBearStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A31F4A12B614DAA00A5F0D3 /* DiceBearStoryboard.storyboard */; };
 		3A31F4A62B61514B00A5F0D3 /* DiceBearInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4A52B61514B00A5F0D3 /* DiceBearInterface.swift */; };
 		3A31F4A82B61558400A5F0D3 /* DiceBearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4A72B61558400A5F0D3 /* DiceBearViewController.swift */; };
-		3A31F4AA2B6155E000A5F0D3 /* DiceBearPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4A92B6155E000A5F0D3 /* DiceBearPersistence.swift */; };
+		3A31F4AA2B6155E000A5F0D3 /* DiceBearNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4A92B6155E000A5F0D3 /* DiceBearNetwork.swift */; };
 		3A31F4AC2B615F3B00A5F0D3 /* DiceBearModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4AB2B615F3B00A5F0D3 /* DiceBearModelLogic.swift */; };
 		3A31F4AE2B61619600A5F0D3 /* DiceBearViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4AD2B61619600A5F0D3 /* DiceBearViewLogic.swift */; };
 		3A31F4B02B616E8200A5F0D3 /* DiceBearModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F4AF2B616E8200A5F0D3 /* DiceBearModel.swift */; };
@@ -34,6 +34,7 @@
 		3A3783B92B5AB50F00D2AFCD /* RegionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783B82B5AB50E00D2AFCD /* RegionsTableViewController.swift */; };
 		3A3783BB2B5AB51D00D2AFCD /* DepartementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3783BA2B5AB51D00D2AFCD /* DepartementsTableViewController.swift */; };
 		3A3E41EF2B6D3516001F158F /* ChuckNorrisNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3E41EE2B6D3516001F158F /* ChuckNorrisNetwork.swift */; };
+		3A3E41F92B6D379A001F158F /* DiceBearEmojiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3E41F82B6D379A001F158F /* DiceBearEmojiModel.swift */; };
 		3A56D8422B64270D00A948BD /* CountryInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56D8412B64270D00A948BD /* CountryInfoModel.swift */; };
 		3A56D8442B64349500A948BD /* CountriesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56D8432B64349500A948BD /* CountriesInterface.swift */; };
 		3A56D8462B64413F00A948BD /* CountriesNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56D8452B64413F00A948BD /* CountriesNetwork.swift */; };
@@ -100,7 +101,7 @@
 		3A31F4A12B614DAA00A5F0D3 /* DiceBearStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiceBearStoryboard.storyboard; sourceTree = "<group>"; };
 		3A31F4A52B61514B00A5F0D3 /* DiceBearInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearInterface.swift; sourceTree = "<group>"; };
 		3A31F4A72B61558400A5F0D3 /* DiceBearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearViewController.swift; sourceTree = "<group>"; };
-		3A31F4A92B6155E000A5F0D3 /* DiceBearPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearPersistence.swift; sourceTree = "<group>"; };
+		3A31F4A92B6155E000A5F0D3 /* DiceBearNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearNetwork.swift; sourceTree = "<group>"; };
 		3A31F4AB2B615F3B00A5F0D3 /* DiceBearModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearModelLogic.swift; sourceTree = "<group>"; };
 		3A31F4AD2B61619600A5F0D3 /* DiceBearViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearViewLogic.swift; sourceTree = "<group>"; };
 		3A31F4AF2B616E8200A5F0D3 /* DiceBearModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearModel.swift; sourceTree = "<group>"; };
@@ -119,6 +120,7 @@
 		3A3783B82B5AB50E00D2AFCD /* RegionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsTableViewController.swift; sourceTree = "<group>"; };
 		3A3783BA2B5AB51D00D2AFCD /* DepartementsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartementsTableViewController.swift; sourceTree = "<group>"; };
 		3A3E41EE2B6D3516001F158F /* ChuckNorrisNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisNetwork.swift; sourceTree = "<group>"; };
+		3A3E41F82B6D379A001F158F /* DiceBearEmojiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceBearEmojiModel.swift; sourceTree = "<group>"; };
 		3A56D8412B64270D00A948BD /* CountryInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoModel.swift; sourceTree = "<group>"; };
 		3A56D8432B64349500A948BD /* CountriesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesInterface.swift; sourceTree = "<group>"; };
 		3A56D8452B64413F00A948BD /* CountriesNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesNetwork.swift; sourceTree = "<group>"; };
@@ -220,12 +222,6 @@
 		3A31F4A02B614CA400A5F0D3 /* DiceBear */ = {
 			isa = PBXGroup;
 			children = (
-				3A31F4AF2B616E8200A5F0D3 /* DiceBearModel.swift */,
-				3A31F4B22B61A20400A5F0D3 /* Helpers */,
-				3A31F4B12B61A1E400A5F0D3 /* Logic */,
-				3A31F4A12B614DAA00A5F0D3 /* DiceBearStoryboard.storyboard */,
-				3A31F4A72B61558400A5F0D3 /* DiceBearViewController.swift */,
-				3A32F42F2B629F30006C6FE9 /* DiceBearCollectionViewCell.swift */,
 			);
 			name = DiceBear;
 			sourceTree = "<group>";
@@ -233,21 +229,19 @@
 		3A31F4B12B61A1E400A5F0D3 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				3A31F4AB2B615F3B00A5F0D3 /* DiceBearModelLogic.swift */,
-				3A31F4AD2B61619600A5F0D3 /* DiceBearViewLogic.swift */,
 			);
 			name = Logic;
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		3A31F4B22B61A20400A5F0D3 /* Helpers */ = {
+		3A31F4B22B61A20400A5F0D3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				3A31F4A92B6155E000A5F0D3 /* DiceBearPersistence.swift */,
+				3A31F4A92B6155E000A5F0D3 /* DiceBearNetwork.swift */,
 				3A31F4A52B61514B00A5F0D3 /* DiceBearInterface.swift */,
-				3A32F4312B62AAE6006C6FE9 /* DiceBearExtensions.swift */,
-				3A32F43A2B62BCBF006C6FE9 /* EmojiEntityExtensions.swift */,
 			);
-			name = Helpers;
+			name = Network;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		3A32F4332B62B9A5006C6FE9 /* CoreData */ = {
@@ -256,7 +250,6 @@
 				3A65BFE62B583CBE0095794A /* APIRestDemoDataModel.xcdatamodeld */,
 				3A32F4342B62BA0C006C6FE9 /* APIRestDemoContainer.swift */,
 				3A32F4362B62BB5E006C6FE9 /* DataBaseError.swift */,
-				3A32F4382B62BB8C006C6FE9 /* APIRestDemoDataBase.swift */,
 			);
 			name = CoreData;
 			path = ..;
@@ -309,6 +302,7 @@
 		3A3E41E12B6D2ED2001F158F /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				3A3E41F22B6D3633001F158F /* DiceBear */,
 				3A3E41EA2B6D349D001F158F /* ChuckNorris */,
 				3A3E41E62B6D30FA001F158F /* FrenchRegions */,
 				3A3E41E22B6D2EE6001F158F /* Numbers */,
@@ -392,11 +386,11 @@
 		3A3E41EA2B6D349D001F158F /* ChuckNorris */ = {
 			isa = PBXGroup;
 			children = (
-				3A3E41F12B6D35ED001F158F /* Persistence */,
 				3A3E41ED2B6D34BF001F158F /* Model */,
-				3A3E41EC2B6D34B4001F158F /* Controller */,
 				3A3E41EB2B6D34AB001F158F /* View */,
+				3A3E41EC2B6D34B4001F158F /* Controller */,
 				3A31F4972B61128B00A5F0D3 /* Network */,
+				3A3E41F12B6D35ED001F158F /* Persistence */,
 			);
 			path = ChuckNorris;
 			sourceTree = "<group>";
@@ -432,6 +426,65 @@
 				3A8DB3492B600CEC00E7BDA3 /* ChuckNorrisPersistence.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		3A3E41F22B6D3633001F158F /* DiceBear */ = {
+			isa = PBXGroup;
+			children = (
+				3A3E41F52B6D3673001F158F /* Model */,
+				3A3E41F42B6D3667001F158F /* View */,
+				3A3E41F32B6D3648001F158F /* Controller */,
+				3A31F4B22B61A20400A5F0D3 /* Network */,
+				3A3E41F62B6D36E1001F158F /* Persistence */,
+				3A3E41F72B6D3700001F158F /* Helpers */,
+				3A31F4B12B61A1E400A5F0D3 /* Logic */,
+			);
+			path = DiceBear;
+			sourceTree = "<group>";
+		};
+		3A3E41F32B6D3648001F158F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A31F4AD2B61619600A5F0D3 /* DiceBearViewLogic.swift */,
+				3A31F4A72B61558400A5F0D3 /* DiceBearViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3A3E41F42B6D3667001F158F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A32F42F2B629F30006C6FE9 /* DiceBearCollectionViewCell.swift */,
+				3A31F4A12B614DAA00A5F0D3 /* DiceBearStoryboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A3E41F52B6D3673001F158F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A31F4AF2B616E8200A5F0D3 /* DiceBearModel.swift */,
+				3A31F4AB2B615F3B00A5F0D3 /* DiceBearModelLogic.swift */,
+				3A3E41F82B6D379A001F158F /* DiceBearEmojiModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A3E41F62B6D36E1001F158F /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				3A32F4382B62BB8C006C6FE9 /* APIRestDemoDataBase.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		3A3E41F72B6D3700001F158F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3A32F4312B62AAE6006C6FE9 /* DiceBearExtensions.swift */,
+				3A32F43A2B62BCBF006C6FE9 /* EmojiEntityExtensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		3A65BFD12B583CBE0095794A = {
@@ -706,7 +759,7 @@
 				3A6A34202B6AC39F005ADBE9 /* MarvelCharactersInterface.swift in Sources */,
 				3A8DB3482B600BFC00E7BDA3 /* ChuckNorrisInterface.swift in Sources */,
 				3A65BFFC2B5864EA0095794A /* NumberModel.swift in Sources */,
-				3A31F4AA2B6155E000A5F0D3 /* DiceBearPersistence.swift in Sources */,
+				3A31F4AA2B6155E000A5F0D3 /* DiceBearNetwork.swift in Sources */,
 				3A8DB34A2B600CEC00E7BDA3 /* ChuckNorrisPersistence.swift in Sources */,
 				3A65BFF92B5864860095794A /* NumbersInterface.swift in Sources */,
 				3A31F4B02B616E8200A5F0D3 /* DiceBearModel.swift in Sources */,
@@ -721,6 +774,7 @@
 				3A3783B72B5AAE3300D2AFCD /* CommunesTableViewController.swift in Sources */,
 				3A3783B02B5AA71600D2AFCD /* CommunesInterface.swift in Sources */,
 				3A32F4352B62BA0C006C6FE9 /* APIRestDemoContainer.swift in Sources */,
+				3A3E41F92B6D379A001F158F /* DiceBearEmojiModel.swift in Sources */,
 				3A32F43B2B62BCBF006C6FE9 /* EmojiEntityExtensions.swift in Sources */,
 				3A3783BB2B5AB51D00D2AFCD /* DepartementsTableViewController.swift in Sources */,
 				3A3783B92B5AB50F00D2AFCD /* RegionsTableViewController.swift in Sources */,

@@ -20,7 +20,6 @@ final class DiceBearViewController: UIViewController {
     @IBOutlet weak var primaryColorPicker: UIColorWell!
     @IBOutlet weak var secondaryColorPicker: UIColorWell!
     
-    
     let modelLogic = DiceBearModelLogic.shared
     let viewLogic = DiceBearViewLogic.shared
     
@@ -28,7 +27,6 @@ final class DiceBearViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         addObservers()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -109,7 +107,7 @@ extension DiceBearViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
+        viewLogic.getPickerViewComponentsCount()
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -141,7 +139,4 @@ extension DiceBearViewController: UICollectionViewDelegate,UICollectionViewDataS
         cell.emojiImage.image = viewLogic.getEmojiFrom(indexPath)
         return cell
     }
-    
-    
-    
 }

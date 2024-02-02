@@ -29,15 +29,14 @@ final class DiceBearViewLogic {
     
     func getEmoji() {
         Task {
-            let emoji = try await self.modelLogic.persistence.getFunEmoji()
+            let emoji = try await self.modelLogic.getFunEmoji()
             NotificationCenter.default.post(name: .emojiChange, object: emoji)
         }
     }
     
     func updateEmoji(params model: DiceBearModel) {
         Task {
-            let emoji = try await
-            self.modelLogic.persistence.getEmojiWithOptions(model)
+            let emoji = try await self.modelLogic.getEmoji(model: model)
             NotificationCenter.default.post(name: .emojiChange, object: emoji)
         }
     }
@@ -50,9 +49,7 @@ final class DiceBearViewLogic {
         }
     }
     
-    
     //MARK: Outlets
-    
     func getEyesComponentsCount() -> Int {
         eyesOptions.count
     }
@@ -79,6 +76,9 @@ final class DiceBearViewLogic {
         mouthSelection = DiceBearModel.MouthType(rawValue: value) ?? .cute
     }
     
+    func getPickerViewComponentsCount() -> Int {
+        1
+    }
     
     func backgroundSelection(atIndex index:Int) {
         let value = index == 0 ? "gradientLinear" : "solid"
@@ -119,9 +119,7 @@ final class DiceBearViewLogic {
         }
     }
     
-    
     //MARK: CollectionView
-
     func getFavoritesCount() -> Int {
         modelLogic.getFavoritesCount()
     }
