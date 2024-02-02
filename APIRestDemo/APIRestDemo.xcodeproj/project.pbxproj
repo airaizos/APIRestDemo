@@ -114,7 +114,6 @@
 		3A32F43E2B62EFB5006C6FE9 /* CountriesStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CountriesStoryboard.storyboard; sourceTree = "<group>"; };
 		3A3783AF2B5AA71600D2AFCD /* CommunesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesInterface.swift; sourceTree = "<group>"; };
 		3A3783B12B5AA74100D2AFCD /* CommuneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuneModel.swift; sourceTree = "<group>"; };
-		3A3783B32B5AA8D100D2AFCD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3A3783B42B5AA94800D2AFCD /* CommunesPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesPersistence.swift; sourceTree = "<group>"; };
 		3A3783B62B5AAE3300D2AFCD /* CommunesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunesTableViewController.swift; sourceTree = "<group>"; };
 		3A3783B82B5AB50E00D2AFCD /* RegionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsTableViewController.swift; sourceTree = "<group>"; };
@@ -208,13 +207,6 @@
 			name = ChuckNorrisTests;
 			sourceTree = "<group>";
 		};
-		3A31F4A02B614CA400A5F0D3 /* DiceBear */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = DiceBear;
-			sourceTree = "<group>";
-		};
 		3A31F4B12B61A1E400A5F0D3 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,20 +248,6 @@
 				3A65BFEE2B583CCC0095794A /* Info.plist */,
 			);
 			name = System;
-			sourceTree = "<group>";
-		};
-		3A32F43D2B62E9CF006C6FE9 /* Countries */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Countries;
-			sourceTree = "<group>";
-		};
-		3A3783AE2B5AA64C00D2AFCD /* Communes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Communes;
 			sourceTree = "<group>";
 		};
 		3A3E41DF2B6D2E6B001F158F /* Public */ = {
@@ -597,30 +575,8 @@
 				3A3E41DF2B6D2E6B001F158F /* Public */,
 				3A32F43C2B62CB4F006C6FE9 /* System */,
 				3A660DC12B5AE3E700E1BC69 /* Public */,
-				3A65BFF42B5861820095794A /* Controllers */,
-				3A3783B32B5AA8D100D2AFCD /* MyPlayground.playground */,
 			);
 			path = APIRestDemo;
-			sourceTree = "<group>";
-		};
-		3A65BFF42B5861820095794A /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				3A6A341C2B6AC1B2005ADBE9 /* MarvelCharacters */,
-				3A32F43D2B62E9CF006C6FE9 /* Countries */,
-				3A31F4A02B614CA400A5F0D3 /* DiceBear */,
-				3A851C132B5EFE7E005758FA /* ChuckNorris */,
-				3A3783AE2B5AA64C00D2AFCD /* Communes */,
-				3A65BFF72B58646D0095794A /* NumbersAPI */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		3A65BFF72B58646D0095794A /* NumbersAPI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = NumbersAPI;
 			sourceTree = "<group>";
 		};
 		3A65BFFA2B5864D50095794A /* Model */ = {
@@ -651,13 +607,6 @@
 			name = Public;
 			sourceTree = "<group>";
 		};
-		3A6A341C2B6AC1B2005ADBE9 /* MarvelCharacters */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = MarvelCharacters;
-			sourceTree = "<group>";
-		};
 		3A851C062B5EEF9E005758FA /* APIRestDemoTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -675,13 +624,6 @@
 				3A851C112B5EF04B005758FA /* CommunesTestsHelpers.swift */,
 			);
 			path = Communes;
-			sourceTree = "<group>";
-		};
-		3A851C132B5EFE7E005758FA /* ChuckNorris */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ChuckNorris;
 			sourceTree = "<group>";
 		};
 		3AFB51A22B69601C00B42C4E /* Helpers */ = {

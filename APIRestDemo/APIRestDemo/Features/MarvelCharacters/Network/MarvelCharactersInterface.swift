@@ -10,7 +10,7 @@ import Foundation
 extension URL {
     
     static func marvelCharacters(offset: Int) -> URL {
-        let baseURL = URL(string: "https://gateway.marvel.com:443/v1/public/characters?limit=2")!
+        let baseURL = URL(string: "https://gateway.marvel.com:443/v1/public/characters?")!
         
         let keys = mrvl
         
