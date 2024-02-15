@@ -22,7 +22,6 @@ extension APIRestDemoDataBase {
     func fetchEmojis() throws -> [DiceBearEmojiModel] {
         let request = EmojiEntity.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(keyPath: \EmojiEntity.createdAt, ascending: false)]
-        
         do {
             let emojis = try context.fetch(request)
             return emojis.compactMap { $0.emojiModel }

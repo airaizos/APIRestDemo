@@ -12,11 +12,8 @@ import Combine
 
 final class CommunesNetworkMock: CommunesFetcher {
     var session: URLSession
-    
     var subject: PassthroughSubject<String, Never>
-    
     func valuesReceived() {
-       
     }
     
     init(subject: PassthroughSubject<String, Never> = PassthroughSubject<String, Never>(), session: URLSession = .shared) {
@@ -32,7 +29,6 @@ final class CommunesNetworkMock: CommunesFetcher {
         default: break
         }
     }
-    
 }
 
 

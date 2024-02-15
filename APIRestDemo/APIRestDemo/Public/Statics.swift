@@ -8,6 +8,7 @@
 import UIKit
 
 //MARK: Patrón Callback
+
 ///#Patrón Callback JSON Genérico
 func fetchJson<JSON:Codable>(url: URL, type: JSON.Type, session: URLSession, callback: @escaping ((Result<JSON,PersistenceError>) -> Void)) {
      
@@ -15,7 +16,8 @@ func fetchJson<JSON:Codable>(url: URL, type: JSON.Type, session: URLSession, cal
          guard error == nil else {
              return callback(.failure(.general("error General")))
          }
-         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+         guard let response = response as? HTTPURLResponse, 
+                response.statusCode == 200 else {
              return callback(.failure(.status))
          }
          guard let data = data else {
@@ -27,7 +29,6 @@ func fetchJson<JSON:Codable>(url: URL, type: JSON.Type, session: URLSession, cal
          } catch let error {
              callback(.failure(.json(error.localizedDescription)))
          }
-         
      }.resume()
  }
 

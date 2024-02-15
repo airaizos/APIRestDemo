@@ -16,7 +16,7 @@ final class CountriesNetwork {
         self.session = session
     }
     
-    ///Cambia func fetchJson con patron Callback a AsyncAwait
+    ///Cambia func fetchJson con patrón Callback a AsyncAwait
     private func getJSONAsync<JSON:Codable>(url: URL, type: JSON.Type) async throws -> JSON {
         try await withCheckedThrowingContinuation { continuation in
             fetchJson(url: url, type: type.self, session: session) { result in

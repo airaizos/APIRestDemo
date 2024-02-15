@@ -20,6 +20,7 @@ final class RegionsTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         modelLogic.fetchRegions()
+        
         ///Actualiza la tableView` cuando ha descargado las *regions*
         modelLogic.persistence.subject
             .sink { [weak self] _ in

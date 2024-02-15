@@ -20,7 +20,6 @@ final class NumbersNetwork {
     var subscribers = Set<AnyCancellable>()
     
     func getNumberOfTheDay(url: URL = .numbersURL, _ completion: @escaping (Number) -> ()) {
-        
         URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)
             .sink { completed in

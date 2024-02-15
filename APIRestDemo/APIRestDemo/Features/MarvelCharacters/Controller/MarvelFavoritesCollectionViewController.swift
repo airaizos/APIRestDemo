@@ -14,10 +14,10 @@ final class MarvelFavoritesCollectionViewController: UICollectionViewController 
         UICollectionViewDiffableDataSource<Int,MarvelCellCharacter>(collectionView: collectionView) { [self] collectionView, indexPath, character in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favoritesCell", for: indexPath)
             
+            //Integra la vista hecha en SwiftUI en la celda
             cell.contentConfiguration = UIHostingConfiguration {
                 MarvelCharacterCellView(character: character)
             }
-            
             
             return cell
         }

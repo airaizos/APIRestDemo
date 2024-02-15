@@ -20,7 +20,6 @@ final class ChuckNorrisViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
         updateTableView()
         favoritesJokesTableView.delegate = self
         favoritesJokesTableView.dataSource = self
@@ -61,7 +60,6 @@ final class ChuckNorrisViewController: UIViewController {
         jokeLabel.text = modelLogic.getLabel()
         categories.text = modelLogic.getCategories()
     }
-    
 }
 
 
